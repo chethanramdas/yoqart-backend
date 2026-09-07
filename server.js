@@ -34,5 +34,7 @@ app.post('/api/download',async(req,res)=>{
   res.download(file,'yoqart-video.mp4',async()=>{await fs.rm(dir,{recursive:true,force:true})});
  }catch(e){await fs.rm(dir,{recursive:true,force:true}).catch(()=>{});res.status(500).json({error:e.code==='ENOENT'?'yt-dlp is not installed on the server.':'Server error.'})}
 });
-app.get('*',(req,res)=>res.sendFile(path.resolve('public/index.html')));
+app.use((req, res) => {
+  res.sendFile(path.resolve('public/index.html'));
+});
 app.listen(PORT,()=>console.log(`YoqArt server listening on ${PORT}`));
