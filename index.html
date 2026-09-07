@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YoqArt — Free Online Tools</title>
+<meta name="description" content="Free invoice, TDS, PDF, image, text and document tools.">
+<style>
+:root{--ink:#14213d;--muted:#68758b;--accent:#6c5ce7;--line:#e4e8f1;--bg:#f8f9fc}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink);background:var(--bg)}
+a{text-decoration:none;color:inherit}.wrap{max-width:1150px;margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:20;background:#ffffffeb;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:27px;font-weight:900;letter-spacing:-1.5px}.logo b{color:var(--accent)}nav{display:flex;gap:25px;font-weight:700;color:#536078}
+.hero{padding:75px 0;background:linear-gradient(135deg,#f5f3ff,#fff)}.hero h1{font-size:clamp(44px,7vw,78px);line-height:1;letter-spacing:-4px;margin:14px 0}.hero h1 span{color:var(--accent)}.hero p{max-width:650px;font-size:18px;line-height:1.6;color:var(--muted)}
+.pill,.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;color:var(--accent)}.btn{display:inline-block;margin-top:16px;background:var(--ink);color:white;padding:13px 20px;border-radius:11px;font-weight:800}
+.section{padding:70px 22px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.head h2{font-size:38px;letter-spacing:-1.5px;margin:5px 0}.head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:23px;cursor:pointer;transition:.2s;box-shadow:0 6px 22px #14213d08}.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px #14213d12}.icon{width:44px;height:44px;border-radius:12px;background:#f0efff;color:var(--accent);display:grid;place-items:center;font-size:20px;font-weight:900}.card h3{margin:19px 0 7px}.card p{color:var(--muted);min-height:42px;line-height:1.5}.card button{border:0;background:none;color:var(--accent);font-weight:850;padding:0;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted)}footer .wrap{display:flex;justify-content:space-between}
+.modal{display:none;position:fixed;inset:0;z-index:40;background:#0d172bd9;padding:20px;overflow:auto}.modal.show{display:flex;justify-content:center;align-items:flex-start}.box{background:white;width:min(900px,100%);margin:35px 0;border-radius:20px;padding:28px;position:relative}.close{position:absolute;right:15px;top:13px;border:0;border-radius:50%;width:35px;height:35px;font-size:22px;cursor:pointer}.toolhead{padding-right:45px}.toolhead h2{margin:0 0 5px;font-size:30px}.muted{color:var(--muted)}label{display:block;font-weight:750;margin:13px 0 6px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #d6dce7;border-radius:9px;font:inherit}textarea{min-height:150px;resize:vertical}.row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.row3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}.action{border:0;border-radius:9px;background:var(--accent);color:white;padding:12px 15px;font-weight:850;cursor:pointer;margin-top:14px}.result{background:#f3f2ff;padding:16px;border-radius:11px;margin-top:16px;font-weight:800}.table{width:100%;border-collapse:collapse;margin-top:15px}.table th,.table td{border-bottom:1px solid var(--line);padding:9px;text-align:left}.smallbtn{padding:8px 10px;border:1px solid var(--line);background:white;border-radius:8px;cursor:pointer}.invoice{border:1px solid #ddd;padding:25px;margin-top:18px;background:white}.invoice h3{margin-top:0}.right{text-align:right}.danger{color:#c0392b}.note{font-size:13px;color:var(--muted);margin-top:12px}
+.navtools{display:flex;align-items:center;gap:12px}.search{width:210px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:white;font:inherit}.themeBtn{border:1px solid var(--line);background:white;border-radius:10px;width:38px;height:38px;cursor:pointer;font-size:18px}.hidden{display:none!important}
+.preview{max-width:100%;margin-top:15px;border-radius:12px;border:1px solid var(--line)}
+.card .tag{display:inline-block;margin-top:10px;font-size:11px;font-weight:800;padding:4px 7px;border-radius:99px;background:#f0efff;color:var(--accent)}
+body.dark{--ink:#eef2ff;--muted:#aab4ca;--line:#2d374d;--bg:#0e1421;background:var(--bg)}
+body.dark header{background:#101827ee}body.dark .hero{background:linear-gradient(135deg,#17152c,#101827)}
+body.dark .card,body.dark .box,body.dark .invoice,body.dark input,body.dark select,body.dark textarea,body.dark .smallbtn,body.dark .search,body.dark .themeBtn{background:#151e2e;color:var(--ink)}
+body.dark .result{background:#211e43}body.dark .icon{background:#27234d}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}.head{display:block}.row,.row3{grid-template-columns:1fr}.navtools{flex:1;justify-content:flex-end}.search{width:145px}}@media(max-width:520px){.grid{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.navtools nav{display:none}.search{width:145px}footer .wrap{display:block}}
+
+.categoryHero{padding:55px 0 30px}.categoryHero h1{font-size:48px;letter-spacing:-2px;margin:8px 0}.categoryHero p{max-width:720px;color:var(--muted);line-height:1.6}
+.categoryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:25px 0 70px}.categoryCard{background:white;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 6px 22px #14213d08;transition:.2s}.categoryCard:hover{transform:translateY(-3px);box-shadow:0 14px 30px #14213d12}.categoryCard .icon{margin-bottom:15px}.categoryCard h3{margin:5px 0 8px}.categoryCard p{color:var(--muted);line-height:1.5}.categoryCard .btn{margin-top:8px}
+.page{display:none}.page.active{display:block}.back{display:inline-block;margin:20px 0;font-weight:800;color:var(--accent)}.platformGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.platform{border:1px solid var(--line);border-radius:15px;padding:20px;background:white}.platform h3{margin:0 0 6px}.platform p{color:var(--muted);line-height:1.5}.downloadBox{max-width:760px}.status{margin-top:14px}.urlInput{font-size:16px}.notice{padding:14px;border-radius:10px;background:#fff8e8;border:1px solid #f1d38a;color:#70530a;line-height:1.5}
+body.dark .categoryCard,body.dark .platform{background:#151e2e;color:var(--ink)}body.dark .notice{background:#332b18;color:#f2d98c;border-color:#68531f}
+@media(max-width:800px){.categoryGrid,.platformGrid{grid-template-columns:1fr 1fr}}@media(max-width:520px){.categoryGrid,.platformGrid{grid-template-columns:1fr}}
+
+.logo{color:transparent!important;background:linear-gradient(90deg,#7c3aed,#2563eb,#06b6d4);-webkit-background-clip:text;background-clip:text}.logo b{color:inherit!important}
+.pdf-workspace{margin-top:18px}.pdf-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.pdf-pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:14px}.pdf-thumb{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:9px;cursor:grab;position:relative}.pdf-thumb.dragging{opacity:.5}.pdf-thumb canvas{width:100%;height:auto;display:block;background:white;border-radius:6px}.pdf-thumb .thumbbar{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-top:7px;font-size:12px}.pdf-thumb .thumb-actions{display:flex;gap:4px}.pdf-thumb button{border:1px solid var(--line);background:var(--card-bg,#fff);border-radius:6px;padding:4px 7px;cursor:pointer}.dropzone{border:2px dashed var(--line);border-radius:14px;padding:24px;text-align:center;cursor:pointer}.dropzone:hover{border-color:var(--accent)}.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:12px}.progress i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+body.dark .pdf-thumb button{background:#151e2e;color:var(--ink)}
+.file-preview{margin-top:14px}.preview-head{display:flex;justify-content:space-between;align-items:center;margin:10px 0}.file-preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}.file-card{border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:10px;cursor:grab}.file-card.dragging{opacity:.45}.file-meta{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;margin-bottom:9px;overflow:hidden}.file-meta span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.file-order{display:grid;place-items:center;min-width:25px;height:25px;border-radius:7px;background:var(--accent);color:white}.file-pages{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;max-height:330px;overflow:auto;padding-right:2px}.page-preview{position:relative;background:white;border:1px solid var(--line);border-radius:7px;overflow:hidden}.page-preview canvas,.page-preview img{display:block;width:100%;height:auto}.page-preview span{display:block;font-size:10px;text-align:center;padding:4px;color:var(--muted);background:rgba(255,255,255,.92)}.preview-placeholder{padding:20px;text-align:center;color:var(--muted);font-size:12px}.reorderbar{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:9px 11px;border:1px dashed var(--line);border-radius:9px;font-size:12px;font-weight:800}.filehint{font-size:12px;color:var(--muted);margin-top:6px}
+
+.logo{background-size:200% 100%;animation:yoqartLogoShift 6s ease-in-out infinite}@keyframes yoqartLogoShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script></head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#" aria-label="YoqArt">YoqArt</a><div class="navtools">
+<input id="toolSearch" class="search" type="search" placeholder="Search tools..." aria-label="Search tools">
+<button class="themeBtn" onclick="toggleTheme()" title="Toggle dark mode">◐</button>
+<nav><a href="#categories">Home</a><a href="#business-tools">Business Tools</a><a href="#media-tools">Media Tools</a><a href="#about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">About</a></nav>
+</div></div></header>
+<section class="hero"><div class="wrap"><div class="pill">FREE ONLINE TOOLS</div><h1>Work smarter.<br><span>Calculate faster.</span></h1><p>Practical tools for invoices, TDS, PDFs, images, text and everyday business work — designed to be simple and fast.</p><a class="btn" href="#categories">Explore categories ↓</a></div></section>
+
+<section id="categories" class="section wrap">
+<div class="categoryHero"><div class="eyebrow">YOQART CATEGORIES</div><h1>Choose a category</h1><p>Find the right tool faster. Business tools are grouped on their own dedicated page, with all current business utilities in one place.</p></div>
+<div class="categoryGrid">
+<article class="categoryCard"><div class="icon">💼</div><h3>Business Tools</h3><p>Invoices, GST, TDS, EMI and percentage calculators for everyday business work.</p><a class="btn" href="#business-tools">Open Business Tools →</a></article>
+<article class="categoryCard"><div class="icon">📑</div><h3>PDF Tools</h3><p>30+ tools for merging, splitting, converting, editing and managing PDFs.</p><a class="btn" href="#pdf-tools">Open PDF Tools →</a></article><article class="categoryCard"><div class="icon">📁</div><h3>File & Media Tools</h3><p>Image and document utilities for preparing files directly in your browser.</p><a class="btn" href="#media-tools">Explore Tools →</a></article>
+<article class="categoryCard"><div class="icon">▶</div><h3>Social Media Tools</h3><p>Use the media link utility for content you own or have permission to download.</p><a class="btn" href="#media-tools">Open Media Tools →</a></article>
+</div>
+</section>
+
+<section id="business-tools" class="page section wrap">
+<a class="back" href="#categories">← Back to Categories</a>
+<div class="head"><div><div class="eyebrow">BUSINESS TOOLS</div><h2>Business toolbox</h2></div><p>All business tools in one place.</p></div>
+<div class="grid">
+<article class="card" data-tool="invoice" onclick="openTool('invoice')"><div class="icon">📄</div><h3>Invoice Generator</h3><p>Create, print and save professional invoices.</p><button>Open tool →</button></article>
+<article class="card" data-tool="tds" onclick="openTool('tds')"><div class="icon">🧾</div><h3>TDS Calculator</h3><p>Calculate TDS and net payable amount.</p><button>Open tool →</button></article>
+<article class="card" data-tool="gst" onclick="openTool('gst')"><div class="icon">₹</div><h3>GST Calculator</h3><p>Calculate GST and final amount.</p><button>Open tool →</button></article>
+<article class="card" data-tool="emi" onclick="openTool('emi')"><div class="icon">⌁</div><h3>EMI Calculator</h3><p>Estimate monthly loan payments.</p><button>Open tool →</button></article>
+<article class="card" data-tool="percentage" onclick="openTool('percentage')"><div class="icon">%</div><h3>Percentage Calculator</h3><p>Calculate percentages quickly.</p><button>Open tool →</button></article>
+</div>
+</section>
+
+<section id="pdf-tools" class="page section wrap">
+<a class="back" href="#categories">← Back to Categories</a>
+<div class="categoryHero"><div class="eyebrow">PDF TOOLS</div><h1>Complete PDF toolbox</h1><p>Merge, split, convert, edit, optimize and manage PDFs from one dedicated page.</p></div>
+<div class="grid" id="pdfGrid"><article class="card" data-tool="merge-pdf" onclick="openTool('merge-pdf')"><div class="icon">🔗</div><h3>Merge PDF</h3><p>Combine multiple PDF files into one.</p><button>Open tool →</button></article><article class="card" data-tool="split-pdf" onclick="openTool('split-pdf')"><div class="icon">✂️</div><h3>Split PDF</h3><p>Extract selected pages into a new PDF.</p><button>Open tool →</button></article><article class="card" data-tool="remove-pages" onclick="openTool('remove-pages')"><div class="icon">🗑️</div><h3>Remove Pages</h3><p>Remove selected pages from a PDF.</p><button>Open tool →</button></article><article class="card" data-tool="extract-pages" onclick="openTool('extract-pages')"><div class="icon">📤</div><h3>Extract Pages</h3><p>Extract selected pages from a PDF.</p><button>Open tool →</button></article><article class="card" data-tool="organize-pdf" onclick="openTool('organize-pdf')"><div class="icon">↕️</div><h3>Organize PDF</h3><p>Reorder PDF pages.</p><button>Open tool →</button></article><article class="card" data-tool="rotate-pdf" onclick="openTool('rotate-pdf')"><div class="icon">🔄</div><h3>Rotate PDF</h3><p>Rotate all pages.</p><button>Open tool →</button></article><article class="card" data-tool="compress-pdf" onclick="openTool('compress-pdf')"><div class="icon">🗜️</div><h3>Compress PDF</h3><p>Optimize a PDF.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-to-jpg" onclick="openTool('pdf-to-jpg')"><div class="icon">🖼️</div><h3>PDF → JPG</h3><p>Render PDF pages as images.</p><button>Open tool →</button></article><article class="card" data-tool="jpg-to-pdf" onclick="openTool('jpg-to-pdf')"><div class="icon">📷</div><h3>JPG → PDF</h3><p>Combine images into a PDF.</p><button>Open tool →</button></article><article class="card" data-tool="watermark-pdf" onclick="openTool('watermark-pdf')"><div class="icon">💧</div><h3>Watermark PDF</h3><p>Add a text watermark.</p><button>Open tool →</button></article><article class="card" data-tool="page-numbers" onclick="openTool('page-numbers')"><div class="icon">🔢</div><h3>Page Numbers</h3><p>Add page numbers.</p><button>Open tool →</button></article><article class="card" data-tool="crop-pdf" onclick="openTool('crop-pdf')"><div class="icon">✂</div><h3>Crop PDF</h3><p>Crop page margins.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-editor" onclick="openTool('pdf-editor')"><div class="icon">✏️</div><h3>Edit PDF</h3><p>Add simple text annotations.</p><button>Open tool →</button></article><article class="card" data-tool="sign-pdf" onclick="openTool('sign-pdf')"><div class="icon">✍️</div><h3>Sign PDF</h3><p>Add a typed signature.</p><button>Open tool →</button></article><article class="card" data-tool="protect-pdf" onclick="openTool('protect-pdf')"><div class="icon">🔒</div><h3>Protect PDF</h3><p>Password-protection workflow.</p><button>Open tool →</button></article><article class="card" data-tool="unlock-pdf" onclick="openTool('unlock-pdf')"><div class="icon">🔓</div><h3>Unlock PDF</h3><p>Re-save readable PDFs.</p><button>Open tool →</button></article><article class="card" data-tool="repair-pdf" onclick="openTool('repair-pdf')"><div class="icon">🛠️</div><h3>Repair PDF</h3><p>Try rebuilding a readable PDF.</p><button>Open tool →</button></article><article class="card" data-tool="ocr-pdf" onclick="openTool('ocr-pdf')"><div class="icon">🔎</div><h3>OCR PDF</h3><p>OCR preparation workflow.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-forms" onclick="openTool('pdf-forms')"><div class="icon">📝</div><h3>PDF Forms</h3><p>Work with supported PDF forms.</p><button>Open tool →</button></article><article class="card" data-tool="compare-pdf" onclick="openTool('compare-pdf')"><div class="icon">⚖️</div><h3>Compare PDF</h3><p>Compare two PDF files.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-to-word" onclick="openTool('pdf-to-word')"><div class="icon">📄</div><h3>PDF → Word</h3><p>Export PDF text to an editable file.</p><button>Open tool →</button></article><article class="card" data-tool="word-to-pdf" onclick="openTool('word-to-pdf')"><div class="icon">📄</div><h3>Word → PDF</h3><p>Create PDF from document text.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-to-excel" onclick="openTool('pdf-to-excel')"><div class="icon">📊</div><h3>PDF → Excel</h3><p>Export PDF data to CSV.</p><button>Open tool →</button></article><article class="card" data-tool="excel-to-pdf" onclick="openTool('excel-to-pdf')"><div class="icon">📊</div><h3>Excel → PDF</h3><p>Create PDF from spreadsheet text.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-to-ppt" onclick="openTool('pdf-to-ppt')"><div class="icon">📽️</div><h3>PDF → PowerPoint</h3><p>Create slide-ready output.</p><button>Open tool →</button></article><article class="card" data-tool="ppt-to-pdf" onclick="openTool('ppt-to-pdf')"><div class="icon">📽️</div><h3>PowerPoint → PDF</h3><p>Create PDF from slide text.</p><button>Open tool →</button></article><article class="card" data-tool="html-to-pdf" onclick="openTool('html-to-pdf')"><div class="icon">🌐</div><h3>HTML → PDF</h3><p>Print HTML as PDF.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-to-pdfa" onclick="openTool('pdf-to-pdfa')"><div class="icon">📦</div><h3>PDF → PDF/A</h3><p>Archival PDF workflow.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-to-markdown" onclick="openTool('pdf-to-markdown')"><div class="icon">#</div><h3>PDF → Markdown</h3><p>Extract PDF text to Markdown.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-translate" onclick="openTool('pdf-translate')"><div class="icon">🌍</div><h3>Translate PDF</h3><p>Extract text for translation.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-summarize" onclick="openTool('pdf-summarize')"><div class="icon">🤖</div><h3>AI PDF Summarizer</h3><p>Extract text for AI summarization.</p><button>Open tool →</button></article><article class="card" data-tool="scan-to-pdf" onclick="openTool('scan-to-pdf')"><div class="icon">📷</div><h3>Scan to PDF</h3><p>Scan/capture images into a PDF.</p><button>Open tool →</button></article><article class="card" data-tool="pdf-search" onclick="openTool('pdf-search')"><div class="icon">🔍</div><h3>Search PDF</h3><p>Search PDF content.</p><button>Open tool →</button></article></div></section>
+
+<section id="media-tools" class="page section wrap">
+<a class="back" href="#categories">← Back to Categories</a>
+<div class="categoryHero"><div class="eyebrow">MEDIA TOOLS</div><h1>Video & media downloader</h1><p>Paste a supported video URL to prepare a download request.</p></div>
+<div class="platformGrid downloadBox">
+<div class="platform"><h3>▶ YouTube</h3><p>Paste a YouTube video link below.</p></div>
+<div class="platform"><h3>◎ Instagram</h3><p>Paste a public Instagram video/reel link below.</p></div>
+</div>
+<div class="downloadBox" style="margin-top:18px">
+<label for="mediaUrl">Video link</label>
+<input id="mediaUrl" class="urlInput" type="url" placeholder="https://www.youtube.com/... or https://www.instagram.com/...">
+<div class="row"><div><label for="mediaFormat">Format</label><select id="mediaFormat"><option value="mp4">MP4 video</option><option value="audio">Audio (where permitted)</option></select></div><div><label for="mediaQuality">Quality</label><select id="mediaQuality"><option>Best available</option><option>1080p</option><option>720p</option><option>480p</option></select></div></div>
+<button class="action" onclick="prepareMediaDownload()">Download Video</button>
+<div id="mediaStatus" class="status"></div>
+<p class="notice">Only download videos you own or have permission to download, and follow the platform's terms. A real server-side downloader is required for many YouTube/Instagram links because browsers cannot directly fetch protected media. This page validates the link and prepares the request UI without bypassing platform protections.</p>
+</div>
+</section>
+
+<section id="tools" class="section wrap" style="display:none">
+<div class="grid">
+<article class="card" data-tool="pdf" onclick="openTool('pdf')"><div class="icon">📑</div><h3>PDF Utilities</h3><p>Create a PDF from text.</p><button>Open tool →</button></article>
+<article class="card" data-tool="image" onclick="openTool('image')"><div class="icon">🖼️</div><h3>Image Utilities</h3><p>Resize and compress images locally.</p><button>Open tool →</button></article>
+<article class="card" data-tool="text" onclick="openTool('text')"><div class="icon">📝</div><h3>Text Utilities</h3><p>Analyze and clean text.</p><button>Open tool →</button></article>
+<article class="card" data-tool="docs" onclick="openTool('docs')"><div class="icon">📚</div><h3>Document Utilities</h3><p>Create printable documents.</p><button>Open tool →</button></article>
+</div></section>
+<section id="about" style="background:#14213d;color:white;padding:65px 0"><div class="wrap"><div class="eyebrow">ABOUT YOQART</div><h2 style="font-size:38px">Simple tools for everyday work.</h2><p style="max-width:680px;color:#cbd3e1;line-height:1.7">YoqArt is a growing toolbox for individuals, freelancers and businesses. Files used by browser-based utilities can be processed locally where supported.</p></div></section>
+<footer><div class="wrap"><strong>YoqArt</strong><span>© 2026 YoqArt.in • Free online tools</span></div></footer>
+<div id="modal" class="modal"><div class="box"><button class="close" onclick="closeTool()">×</button><div id="content"></div></div></div>
+
+<script>
+const M=document.getElementById('modal'),C=document.getElementById('content');
+function showPage(id, updateHash=true){
+  const category=document.getElementById('categories');
+  const pages=document.querySelectorAll('.page');
+  pages.forEach(x=>x.classList.remove('active'));
+  if(category) category.style.display=(id==='categories'?'block':'none');
+  if(id!=='categories'){
+    const page=document.getElementById(id);
+    if(page) page.classList.add('active');
+    else { if(category) category.style.display='block'; id='categories'; }
+  }
+  if(updateHash){
+    try{ history.pushState(null,'','#'+id); }catch(e){ location.hash=id; }
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goCategory(id){ showPage(id,true); return false; }
+document.addEventListener('click',function(e){
+  const a=e.target.closest('a[href^="#"]');
+  if(!a) return;
+  const id=a.getAttribute('href').slice(1);
+  if(['business-tools','media-tools','pdf-tools','categories'].includes(id)){
+    e.preventDefault(); goCategory(id);
+  }
+});
+window.addEventListener('popstate',()=>showPage((location.hash||'#categories').slice(1),false));
+
+
+function prepareMediaDownload(){
+  const raw=document.getElementById('mediaUrl').value.trim();
+  const status=document.getElementById('mediaStatus');
+  let type='';
+  try{
+    const u=new URL(raw);
+    if(/(^|\.)youtube\.com$|(^|\.)youtu\.be$/.test(u.hostname)) type='YouTube';
+    else if(/(^|\.)instagram\.com$/.test(u.hostname)) type='Instagram';
+  }catch(e){}
+  if(!type){
+    status.innerHTML='<div class="result">Please enter a valid YouTube or Instagram video URL.</div>';
+    return;
+  }
+  const format=document.getElementById('mediaFormat').value;
+  const quality=document.getElementById('mediaQuality').value;
+  status.innerHTML=`<div class="result">${type} link detected.<br><span class="muted">Requested: ${quality} • ${format.toUpperCase()}</span><br><small>To perform the actual media download, connect this form to a compliant server-side media-processing endpoint.</small></div>`;
+}
+
+let yqFiles=[]; let yqDragIndex=-1;
+function filePicker(multiple=false,accept='application/pdf'){
+  return `<div class="filepicker"><input id="toolFiles" type="file" ${multiple?'multiple':''} accept="${accept}" onchange="handleToolFiles(this)"><div class="filehint">${multiple?'Select multiple files — drag the previews below to reorder them.':'Select a file to preview its pages.'}</div><div id="toolPreview" class="file-preview"></div></div>`;
+}
+function getFiles(){return yqFiles.length ? [...yqFiles] : [...(document.getElementById('toolFiles')?.files||[])];}
+function handleToolFiles(input){
+  yqFiles=[...input.files]; renderToolPreview();
+}
+function renderToolPreview(){
+  const host=document.getElementById('toolPreview'); if(!host)return;
+  host.innerHTML='';
+  if(!yqFiles.length)return;
+  const isMulti=document.getElementById('toolFiles')?.multiple;
+  const wrap=document.createElement('div'); wrap.className='preview-head';
+  wrap.innerHTML=`<strong>Preview</strong><span class="muted">${yqFiles.length} file${yqFiles.length===1?'':'s'}${isMulti?' • drag to reorder':''}</span>`;
+  host.appendChild(wrap);
+  const list=document.createElement('div'); list.className='file-preview-grid'; host.appendChild(list);
+  yqFiles.forEach((f,i)=>{
+    const card=document.createElement('div'); card.className='file-card'; card.draggable=!!isMulti; card.dataset.index=i;
+    card.ondragstart=()=>{yqDragIndex=i;card.classList.add('dragging')};
+    card.ondragend=()=>{yqDragIndex=-1;card.classList.remove('dragging')};
+    card.ondragover=e=>{e.preventDefault()};
+    card.ondrop=e=>{e.preventDefault(); const from=yqDragIndex,to=i;if(from<0||from===to)return; const moved=yqFiles.splice(from,1)[0];yqFiles.splice(to,0,moved);renderToolPreview()};
+    const meta=document.createElement('div');meta.className='file-meta';meta.innerHTML=`<span class="file-order">${i+1}</span><span title="${esc(f.name)}">${esc(f.name)}</span>`;card.appendChild(meta);
+    const body=document.createElement('div');body.className='file-pages';card.appendChild(body);
+    if(f.type==='application/pdf' || /\.pdf$/i.test(f.name)) renderPdfFilePreview(f,body,i); else if(f.type.startsWith('image/')) renderImagePreview(f,body); else body.innerHTML='<div class="preview-placeholder">File selected</div>';
+    list.appendChild(card);
+  });
+  if(isMulti && yqFiles.length>1){const bar=document.createElement('div');bar.className='reorderbar';bar.innerHTML='<span>↕ Reorder enabled</span><button type="button" class="smallbtn" onclick="reverseToolFiles()">Reverse order</button>';host.appendChild(bar)}
+}
+function reverseToolFiles(){yqFiles.reverse();renderToolPreview()}
+async function renderPdfFilePreview(file,host,fileIndex){
+  try{
+    const data=await file.arrayBuffer(); const pdf=await pdfjsLib.getDocument({data}).promise;
+    for(let n=1;n<=pdf.numPages;n++){
+      const page=await pdf.getPage(n); const vp=page.getViewport({scale:.55});
+      const wrap=document.createElement('div');wrap.className='page-preview';wrap.dataset.page=n;
+      const canvas=document.createElement('canvas');canvas.width=vp.width;canvas.height=vp.height;await page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;
+      wrap.appendChild(canvas); const cap=document.createElement('span');cap.textContent=`Page ${n}`;wrap.appendChild(cap);host.appendChild(wrap);
+    }
+  }catch(e){host.innerHTML='<div class="preview-placeholder">Unable to render preview. The PDF may be encrypted or damaged.</div>'}
+}
+function renderImagePreview(file,host){
+  const wrap=document.createElement('div');wrap.className='page-preview';const img=document.createElement('img');img.alt=file.name;img.src=URL.createObjectURL(file);img.onload=()=>URL.revokeObjectURL(img.src);wrap.appendChild(img);const cap=document.createElement('span');cap.textContent='Image';wrap.appendChild(cap);host.appendChild(wrap);
+}
+
+function parsePages(str,max){let out=[];for(const part of str.split(',').map(x=>x.trim()).filter(Boolean)){if(part.includes('-')){let [a,b]=part.split('-').map(Number);for(let i=Math.min(a,b);i<=Math.max(a,b);i++)if(i>=1&&i<=max)out.push(i-1)}else{let n=Number(part);if(Number.isInteger(n)&&n>=1&&n<=max)out.push(n-1)}}return [...new Set(out)]}
+function downloadBlob(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)}
+async function loadPdf(f){return PDFLib.PDFDocument.load(await f.arrayBuffer(),{ignoreEncryption:true})}
+async function savePdf(d,name){downloadBlob(new Blob([await d.save()],{type:'application/pdf'}),name)}
+function openTool(t){let h=''; yqFiles=[];
+const P={
+'merge-pdf':`<h2>🔗 Merge & Reorganize PDF</h2><p class="muted">Select 2 or more PDFs. Preview every page and drag files to change their merge order.</p>${filePicker(true)}<button class="action" onclick="mergePDF()">Merge & Download</button>`,
+'split-pdf':`<h2>✂️ Split PDF</h2>${filePicker()}<label>Pages to extract</label><input id="pages" placeholder="1,3-5"><button class="action" onclick="extractPDF()">Create PDF</button>`,
+'remove-pages':`<h2>🗑️ Remove Pages</h2>${filePicker()}<label>Pages to remove</label><input id="pages" placeholder="2,4-6"><button class="action" onclick="removePages()">Create PDF</button>`,
+'extract-pages':`<h2>📤 Extract Pages</h2>${filePicker()}<label>Pages to keep</label><input id="pages" placeholder="1,3-5"><button class="action" onclick="extractPDF()">Create PDF</button>`,
+'organize-pdf':`<h2>↕️ Organize PDF</h2>${filePicker()}<label>New page order</label><input id="pages" placeholder="3,1,2,4"><p class="note">The live page preview above lets you inspect every page. Enter the desired page order, e.g. 3,1,2,4.</p><button class="action" onclick="organizePDF()">Reorder & Download</button>`,
+'rotate-pdf':`<h2>🔄 Rotate PDF</h2>${filePicker()}<label>Degrees</label><select id="rotation"><option>90</option><option>180</option><option>270</option></select><button class="action" onclick="rotatePDF()">Rotate & Download</button>`,
+'compress-pdf':`<h2>🗜️ Compress PDF</h2>${filePicker()}<p class="note">Browser-only structural optimization has limits. Image-heavy PDFs need a server processor for strong compression.</p><button class="action" onclick="resavePDF('compressed')">Optimize & Download</button>`,
+'watermark-pdf':`<h2>💧 Watermark PDF</h2>${filePicker()}<label>Text</label><input id="wm" value="YOQART"><label>Opacity</label><input id="op" type="number" value=".25" min=".05" max="1" step=".05"><button class="action" onclick="watermarkPDF()">Watermark & Download</button>`,
+'page-numbers':`<h2>🔢 Page Numbers</h2>${filePicker()}<button class="action" onclick="numberPDF()">Add Numbers & Download</button>`,
+'crop-pdf':`<h2>✂ Crop PDF</h2>${filePicker()}<label>Margin (points)</label><input id="margin" type="number" value="20"><button class="action" onclick="cropPDF()">Crop & Download</button>`,
+'pdf-editor':`<h2>✏️ Edit PDF</h2>${filePicker()}<label>Text</label><input id="edittext" placeholder="Approved"><button class="action" onclick="editPDF()">Edit & Download</button>`,
+'sign-pdf':`<h2>✍️ Sign PDF</h2>${filePicker()}<label>Signature</label><input id="sig" placeholder="Your name"><button class="action" onclick="signPDF()">Sign & Download</button>`,
+'jpg-to-pdf':`<h2>📷 JPG → PDF & Reorganize</h2><p class="muted">Add multiple JPG/PNG images, preview them, then drag to set the exact order.</p>${filePicker(true,'image/jpeg,image/png')}<button class="action" onclick="jpgToPDF()">Create PDF in This Order</button>`,
+'pdf-to-jpg':`<h2>🖼️ PDF → JPG</h2>${filePicker()}<p class="note">Full PDF page rendering requires PDF.js. This page validates the file and provides the processing hook.</p><button class="action" onclick="pdfJpgNotice()">Continue</button>`,
+'pdf-to-word':`<h2>📄 PDF → Word</h2>${filePicker()}<p class="note">Text extraction is best handled with PDF.js on the browser or a document-processing backend.</p><button class="action" onclick="pdfExportNotice('Word')">Export</button>`,
+'pdf-to-excel':`<h2>📊 PDF → Excel</h2>${filePicker()}<button class="action" onclick="pdfExportNotice('Excel')">Export CSV</button>`,
+'pdf-to-ppt':`<h2>📽️ PDF → PowerPoint</h2>${filePicker()}<button class="action" onclick="pdfExportNotice('PowerPoint')">Export</button>`,
+'pdf-to-markdown':`<h2># PDF → Markdown</h2>${filePicker()}<button class="action" onclick="markdownExport()">Export Markdown</button>`,
+'pdf-search':`<h2>🔍 Search PDF</h2>${filePicker()}<label>Search phrase</label><input id="needle"><button class="action" onclick="searchPDF()">Search</button>`,
+'compare-pdf':`<h2>⚖️ Compare PDF</h2>${filePicker(true)}<button class="action" onclick="comparePDF()">Compare</button><div id="toolout"></div>`,
+'protect-pdf':`<h2>🔒 Protect PDF</h2>${filePicker()}<p class="note">Password encryption requires a PDF security backend; this browser build does not pretend to encrypt files.</p><button class="action" onclick="backendNotice('password protection')">Continue</button>`,
+'unlock-pdf':`<h2>🔓 Unlock PDF</h2>${filePicker()}<p class="note">Files that are already readable can be re-saved. Password-protected PDFs require the password.</p><button class="action" onclick="resavePDF('unlocked')">Re-save</button>`,
+'repair-pdf':`<h2>🛠️ Repair PDF</h2>${filePicker()}<button class="action" onclick="resavePDF('repaired')">Try Repair</button>`,
+'ocr-pdf':`<h2>🔎 OCR PDF</h2>${filePicker()}<p class="note">OCR requires an OCR engine such as Tesseract or a server-side processor.</p><button class="action" onclick="backendNotice('OCR')">Prepare</button>`,
+'pdf-forms':`<h2>📝 PDF Forms</h2>${filePicker()}<button class="action" onclick="resavePDF('forms')">Load & Save</button>`,
+'pdf-to-pdfa':`<h2>📦 PDF → PDF/A</h2>${filePicker()}<p class="note">True PDF/A conformance requires validation and metadata handling.</p><button class="action" onclick="backendNotice('PDF/A conversion')">Prepare</button>`,
+'pdf-translate':`<h2>🌍 Translate PDF</h2>${filePicker()}<button class="action" onclick="markdownExport()">Extract for translation</button>`,
+'pdf-summarize':`<h2>🤖 AI PDF Summarizer</h2>${filePicker()}<button class="action" onclick="markdownExport()">Extract for AI</button>`,
+'scan-to-pdf':`<h2>📷 Scan to PDF</h2><input id="toolFiles" type="file" accept="image/*" capture="environment" multiple onchange="handleToolFiles(this)"><div id="toolPreview" class="file-preview"></div><button class="action" onclick="jpgToPDF()">Create PDF in This Order</button>`
+};
+const generic=`<h2>${esc(t)}</h2><p class="muted">YoqArt tool interface.</p><p class="note">This feature can be connected to a production document-processing backend.</p>`;
+h=P[t]||generic;
+if(['word-to-pdf','excel-to-pdf','ppt-to-pdf','html-to-pdf'].includes(t))h=`<h2>${esc(t)}</h2><label>Content</label><textarea id="docContent" placeholder="Paste your content here..."></textarea><button class="action" onclick="printTextAsPDF()">Print / Save as PDF</button>`;
+C.innerHTML=h;M.classList.add('show')}
+
+async function mergePDF(){const fs=getFiles();if(fs.length<2)return alert('Select at least 2 PDFs.');const o=await PDFLib.PDFDocument.create();for(const f of fs){const d=await loadPdf(f);(await o.copyPages(d,d.getPageIndices())).forEach(p=>o.addPage(p))}await savePdf(o,'yoqart-merged.pdf')}
+async function extractPDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),p=parsePages(document.getElementById('pages').value,d.getPageCount());if(!p.length)return alert('Enter valid pages.');const o=await PDFLib.PDFDocument.create();(await o.copyPages(d,p)).forEach(x=>o.addPage(x));await savePdf(o,'yoqart-extracted.pdf')}
+async function removePages(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),rm=parsePages(document.getElementById('pages').value,d.getPageCount()),o=await PDFLib.PDFDocument.create();const keep=d.getPageIndices().filter(i=>!rm.includes(i));(await o.copyPages(d,keep)).forEach(x=>o.addPage(x));await savePdf(o,'yoqart-removed.pdf')}
+async function organizePDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),p=parsePages(document.getElementById('pages').value,d.getPageCount());if(p.length!==d.getPageCount())return alert('Enter every page exactly once.');const o=await PDFLib.PDFDocument.create();(await o.copyPages(d,p)).forEach(x=>o.addPage(x));await savePdf(o,'yoqart-organized.pdf')}
+async function rotatePDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),r=+rotation.value;d.getPages().forEach(p=>p.setRotation(PDFLib.degrees((p.getRotation().angle+r)%360)));await savePdf(d,'yoqart-rotated.pdf')}
+async function resavePDF(name){const f=getFiles()[0];if(!f)return;await savePdf(await loadPdf(f),`yoqart-${name}.pdf`)}
+async function watermarkPDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),font=await d.embedFont(PDFLib.StandardFonts.HelveticaBold),txt=wm.value||'YOQART',op=+document.getElementById('op').value||.25;d.getPages().forEach(p=>{const s=p.getSize();p.drawText(txt,{x:s.width/2-50,y:s.height/2,size:40,font,opacity:op,rotate:PDFLib.degrees(35)})});await savePdf(d,'yoqart-watermarked.pdf')}
+async function numberPDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),font=await d.embedFont(PDFLib.StandardFonts.Helvetica);d.getPages().forEach((p,i)=>{const s=p.getSize();p.drawText(`${i+1} / ${d.getPageCount()}`,{x:s.width/2-15,y:18,size:10,font})});await savePdf(d,'yoqart-numbered.pdf')}
+async function cropPDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),m=+margin.value||0;d.getPages().forEach(p=>{const s=p.getSize();p.setCropBox(m,m,Math.max(1,s.width-2*m),Math.max(1,s.height-2*m))});await savePdf(d,'yoqart-cropped.pdf')}
+async function editPDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),font=await d.embedFont(PDFLib.StandardFonts.Helvetica);d.getPages().forEach(p=>p.drawText(edittext.value||'YoqArt',{x:40,y:40,size:16,font}));await savePdf(d,'yoqart-edited.pdf')}
+async function signPDF(){const f=getFiles()[0];if(!f)return;const d=await loadPdf(f),font=await d.embedFont(PDFLib.StandardFonts.HelveticaOblique);d.getPages().forEach(p=>p.drawText(sig.value||'Signature',{x:40,y:40,size:18,font}));await savePdf(d,'yoqart-signed.pdf')}
+async function jpgToPDF(){const fs=getFiles();if(!fs.length)return;const o=await PDFLib.PDFDocument.create();for(const f of fs){const b=await f.arrayBuffer(),img=f.type==='image/png'?await o.embedPng(b):await o.embedJpg(b),scale=Math.min(595/img.width,842/img.height),p=o.addPage([595,842]);p.drawImage(img,{x:(595-img.width*scale)/2,y:(842-img.height*scale)/2,width:img.width*scale,height:img.height*scale})}await savePdf(o,'yoqart-images.pdf')}
+async function comparePDF(){const fs=getFiles();if(fs.length!==2)return alert('Select exactly 2 PDFs.');const a=await loadPdf(fs[0]),b=await loadPdf(fs[1]);toolout.innerHTML=`<div class="result">${esc(fs[0].name)}: ${a.getPageCount()} pages<br>${esc(fs[1].name)}: ${b.getPageCount()} pages<br><b>${a.getPageCount()===b.getPageCount()?'Same page count':'Different page counts'}</b></div>`}
+function pdfJpgNotice(){alert('PDF → JPG requires a PDF renderer such as PDF.js. The YoqArt page is ready for that renderer/backend connection.')}
+function backendNotice(x){alert(`${x} requires a production document-processing engine. The YoqArt UI is ready for the backend endpoint.`)}
+function pdfExportNotice(x){const f=getFiles()[0];if(f)downloadBlob(new Blob([`YoqArt ${x} export placeholder\\nSource: ${f.name}`],{type:'text/plain'}),`yoqart-${x.toLowerCase()}-export.txt`)}
+function markdownExport(){const f=getFiles()[0];if(!f)return;downloadBlob(new Blob([`# YoqArt PDF export\\n\\nSource: ${f.name}\\n\\nThis file is prepared for text extraction/translation/AI processing.`],{type:'text/markdown'}),'yoqart-pdf.md')}
+function searchPDF(){const f=getFiles()[0];if(!f)return;alert(`Loaded ${f.name}. Full text search requires PDF.js text extraction in the browser.`)}
+function printTextAsPDF(){const text=document.getElementById('docContent').value,w=window.open('','_blank');if(!w)return;w.document.write(`<html><body style="font-family:Arial;padding:40px;white-space:pre-wrap">${esc(text)}</body></html>`);w.document.close();setTimeout(()=>w.print(),250)}
+function closeTool(){M.classList.remove('show')}
+M.onclick=e=>{if(e.target===M)closeTool()}
+const money=n=>'₹'+Number(n||0).toLocaleString('en-IN',{maximumFractionDigits:2});
+function calcTds(){let a=+ta.value,r=+tr.value,t=a*r/100;tout.innerHTML=`<div class="result">TDS: ${money(t)}<br><span class="muted">Net payable: ${money(a-t)}</span></div>`}
+function calcGst(){let a=+ga.value,r=+gr.value,g=a*r/100;gout.innerHTML=`<div class="result">GST: ${money(g)}<br><span class="muted">Total: ${money(a+g)}</span></div>`}
+function calcEmi(){let p=+ep.value,r=+er.value/1200,n=+en.value,m=r?p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):p/n;eout.innerHTML=`<div class="result">Monthly EMI: ${money(m)}<br><span class="muted">Total payment: ${money(m*n)} • Interest: ${money(m*n-p)}</span></div>`}
+function calcPct(){let a=+pa.value,b=+pb.value,v=b?a/b*100:0;pout.innerHTML=`<div class="result">${v.toFixed(2)}%</div>`}
+function textStats(){let x=txt.value.trim(),words=x?x.split(/\s+/).length:0; xout.innerHTML=`<div class="result">${words} words • ${x.length} characters • ${(x.match(/[.!?]+/g)||[]).length} sentences</div>`}
+function upper(){txt.value=txt.value.toUpperCase()}function lower(){txt.value=txt.value.toLowerCase()}function cleanText(){txt.value=txt.value.replace(/\s+/g,' ').trim()}
+let inv=[];function addItem(){let d=document.getElementById('desc').value||'Item',q=+qty.value||1,r=+rate.value||0;inv.push({d,q,r});drawItems()}
+function drawItems(){items.innerHTML=inv.map((x,i)=>`<tr><td>${esc(x.d)}</td><td>${x.q}</td><td>${money(x.r)}</td><td>${money(x.q*x.r)}</td><td><button class="smallbtn danger" onclick="inv.splice(${i},1);drawItems()">×</button></td></tr>`).join('')}
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderInvoice(){if(!inv.length)addItem();let sub=inv.reduce((a,x)=>a+x.q*x.r,0),rate=+ig.value,t=sub*rate/100,total=sub+t,mode=taxmode.value,seller=esc(document.getElementById('seller').value||'Seller'),customer=esc(document.getElementById('customer').value||'Customer');invout.innerHTML=`<div class="invoice" id="invoiceprint"><h3>${seller}</h3><p>GSTIN: ${esc(sgst.value||'—')}</p><hr><div class="row"><div><b>Bill To</b><br>${customer}<br>GSTIN: ${esc(cgst.value||'—')}</div><div class="right"><b>Invoice ${esc(ino.value)}</b><br>${idate.value||new Date().toLocaleDateString('en-IN')}</div></div><table class="table"><tr><th>Description</th><th>Qty</th><th>Rate</th><th>Total</th></tr>${inv.map(x=>`<tr><td>${esc(x.d)}</td><td>${x.q}</td><td>${money(x.r)}</td><td>${money(x.q*x.r)}</td></tr>`).join('')}</table><p class="right">Subtotal: ${money(sub)}<br>${mode==='IGST'?'IGST':'CGST + SGST (half each)'} @ ${rate}% total: ${money(t)}<br><b>Grand Total: ${money(total)}</b></p></div><button class="action" onclick="printElement('invoiceprint')">Print / Save as PDF</button>`}
+function printElement(id){
+  const source=document.getElementById(id);
+  if(!source) return;
+  const w=window.open('','_blank');
+  if(!w){ alert('Please allow pop-ups to print the document.'); return; }
+  const styles='body{font-family:Arial;padding:35px}.invoice{border:1px solid #ddd;padding:25px}.row{display:flex;justify-content:space-between}.right{text-align:right}table{width:100%;border-collapse:collapse;margin-top:20px}th,td{border-bottom:1px solid #ddd;padding:9px;text-align:left}';
+  w.document.write('<!doctype html><html><head><title>YoqArt Document</title><style>'+styles+'</style></head><body>'+source.outerHTML+'</body></html>');
+  w.document.close();
+  w.focus();
+  setTimeout(()=>w.print(),250);
+}
+if(localStorage.getItem('yoqart-theme')==='dark') document.body.classList.add('dark'); else document.body.classList.remove('dark');
+
+document.getElementById('toolSearch').addEventListener('input', function(){
+  const q=this.value.toLowerCase().trim();
+  document.querySelectorAll('.card').forEach(card=>{
+    card.classList.toggle('hidden', q && !card.innerText.toLowerCase().includes(q));
+  });
+});
+
+function copyResult(id){
+  const el=document.getElementById(id);
+  if(!el || !el.innerText) return;
+  navigator.clipboard?.writeText(el.innerText).then(()=> {
+    const old=el.dataset.copied;
+    el.dataset.copied='1';
+    setTimeout(()=>el.dataset.copied=old||'',1200);
+  });
+}
+
+function saveInvoice(){
+  const payload={
+    seller:seller.value, sgst:sgst.value, customer:customer.value, cgst:cgst.value,
+    ino:ino.value, idate:idate.value, ig:ig.value, taxmode:taxmode.value, items:inv
+  };
+  localStorage.setItem('yoqart-invoice-draft', JSON.stringify(payload));
+  alert('Invoice draft saved on this device.');
+}
+function loadInvoice(){
+  const raw=localStorage.getItem('yoqart-invoice-draft');
+  if(!raw) return alert('No saved invoice draft found.');
+  const x=JSON.parse(raw);
+  seller.value=x.seller||''; sgst.value=x.sgst||''; customer.value=x.customer||''; cgst.value=x.cgst||'';
+  ino.value=x.ino||'INV-001'; idate.value=x.idate||''; ig.value=x.ig||'18'; taxmode.value=x.taxmode||'CGST + SGST';
+  inv=Array.isArray(x.items)?x.items:[]; drawItems();
+}
+window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeTool(); });
+
+window.addEventListener('beforeprint', ()=>document.body.classList.add('printing'));
+</script></body></html>
+<script>
+(function(){
+  function bootRoute(){
+    const id=(location.hash||'#categories').slice(1);
+    if(['business-tools','media-tools','pdf-tools','categories'].includes(id)){
+      showPage(id);
+    } else {
+      showPage('categories');
+    }
+  }
+  window.addEventListener('hashchange',bootRoute);
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',bootRoute);
+  else bootRoute();
+})();
+</script>
+<script>
+/* YoqArt v7 client-side PDF engine. Designed for Cloudflare Pages/static hosting. */
+(function(){
+  const $=id=>document.getElementById(id);
+  window.toggleTheme=function(){
+    document.body.classList.toggle('dark');
+    localStorage.setItem('yoqart-theme',document.body.classList.contains('dark')?'dark':'light');
+    const b=document.querySelector('.themeBtn'); if(b)b.textContent=document.body.classList.contains('dark')?'☀':'◐';
+  };
+  const theme=localStorage.getItem('yoqart-theme');
+  if(theme==='dark')document.body.classList.add('dark'); else document.body.classList.remove('dark');
+  const tb=document.querySelector('.themeBtn'); if(tb)tb.textContent=document.body.classList.contains('dark')?'☀':'◐';
+  if(window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';}
+  window.__yoqartPdfFiles=[]; window.__yoqartPdfOrder=[];
+
+  function esc2(s){return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+  function picker(multiple=false,accept='application/pdf',id='toolFiles'){return `<div class="dropzone" onclick="document.getElementById('${id}').click()">📄 <b>Choose file${multiple?'s':''}</b><br><span class="muted">or drag and drop</span><input id="${id}" type="file" ${multiple?'multiple':''} accept="${accept}" style="display:none" onchange="window.yoqartFilesChanged(this)"></div>`}
+  window.yoqartFilesChanged=async function(input){
+    window.__yoqartPdfFiles=[...input.files];
+    const out=$('pdfWorkspace'); if(out && window.__yoqartPdfFiles.length) await renderWorkspace(window.__yoqartPdfFiles[0]);
+  };
+  async function getPdfFile(){const fs=window.__yoqartPdfFiles.length?window.__yoqartPdfFiles:[...($('toolFiles')?.files||[])];if(!fs[0]){alert('Please select a PDF first.');return null}return fs[0]}
+  async function pdfDoc(f){return await PDFLib.PDFDocument.load(await f.arrayBuffer(),{ignoreEncryption:true,updateMetadata:false})}
+  async function dlPdf(d,name){const bytes=await d.save();downloadBlob(new Blob([bytes],{type:'application/pdf'}),name)}
+  function pages(str,max){let a=[];(str||'').split(',').forEach(x=>{x=x.trim();if(!x)return;if(x.includes('-')){let [a1,b]=x.split('-').map(Number);if(Number.isInteger(a1)&&Number.isInteger(b)){for(let i=Math.min(a1,b);i<=Math.max(a1,b);i++)if(i>=1&&i<=max)a.push(i-1)}}else{let n=Number(x);if(Number.isInteger(n)&&n>=1&&n<=max)a.push(n-1)}});return [...new Set(a)]}
+  async function renderPage(file,n,scale=1){const data=await file.arrayBuffer();const pdf=await pdfjsLib.getDocument({data}).promise;const page=await pdf.getPage(n+1);const viewport=page.getViewport({scale});const c=document.createElement('canvas');c.width=viewport.width;c.height=viewport.height;await page.render({canvasContext:c.getContext('2d'),viewport}).promise;return c}
+  async function renderWorkspace(file){
+    const wrap=$('pdfWorkspace'); if(!wrap)return; wrap.innerHTML='<div class="muted">Loading PDF previews…</div>';
+    try{const data=await file.arrayBuffer();const pdf=await pdfjsLib.getDocument({data}).promise;window.__yoqartPdfOrder=Array.from({length:pdf.numPages},(_,i)=>i);wrap.innerHTML=`<div class="pdf-toolbar"><button class="smallbtn" onclick="selectAllPdfPages()">Select all</button><button class="smallbtn" onclick="clearPdfSelection()">Clear</button><button class="action" style="margin-top:0" onclick="downloadReorderedPDF()">Apply order & Download</button></div><div class="note">Drag page cards to reorder. Use ↺/↻ to rotate, × to remove. Changes are applied when you download.</div><div id="pdfPages" class="pdf-pages"></div>`;const grid=$('pdfPages');for(let i=0;i<pdf.numPages;i++){const card=document.createElement('div');card.className='pdf-thumb';card.draggable=true;card.dataset.index=i;card.innerHTML=`<div class="muted" style="text-align:center">Loading…</div>`;card.addEventListener('dragstart',e=>{card.classList.add('dragging');e.dataTransfer.setData('text/plain',String(i))});card.addEventListener('dragend',()=>card.classList.remove('dragging'));card.addEventListener('dragover',e=>e.preventDefault());card.addEventListener('drop',e=>{e.preventDefault();const from=Number(e.dataTransfer.getData('text/plain'));const to=[...grid.children].indexOf(card);if(from===to)return;const arr=[...grid.children];grid.insertBefore(arr[from],arr[to]);window.__yoqartPdfOrder=[...grid.children].map(x=>Number(x.dataset.index));});grid.appendChild(card);const canvas=await renderPage(file,i,.55);card.innerHTML='';card.appendChild(canvas);const bar=document.createElement('div');bar.className='thumbbar';bar.innerHTML=`<span>Page ${i+1}</span><span class="thumb-actions"><button onclick="event.stopPropagation();rotateWorkspacePage(${i},-90)">↺</button><button onclick="event.stopPropagation();rotateWorkspacePage(${i},90)">↻</button><button onclick="event.stopPropagation();removeWorkspacePage(${i})">×</button></span>`;card.appendChild(bar)} }catch(e){wrap.innerHTML=`<div class="result">Could not preview this PDF: ${esc2(e.message||e)}</div>`}
+  }
+  window.rotateWorkspacePage=function(i,d){const cards=[...document.querySelectorAll('.pdf-thumb')];const c=cards.find(x=>Number(x.dataset.index)===i);if(c){c.dataset.rotation=String((Number(c.dataset.rotation||0)+d+360)%360);c.style.transform=`rotate(${c.dataset.rotation}deg)`;}}
+  window.removeWorkspacePage=function(i){const c=[...document.querySelectorAll('.pdf-thumb')].find(x=>Number(x.dataset.index)===i);if(c)c.remove();window.__yoqartPdfOrder=[...document.querySelectorAll('.pdf-thumb')].map(x=>Number(x.dataset.index));}
+  window.selectAllPdfPages=()=>{};window.clearPdfSelection=()=>{};
+  window.downloadReorderedPDF=async function(){const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),order=[...document.querySelectorAll('.pdf-thumb')].map(x=>Number(x.dataset.index));if(!order.length)return alert('No pages remain.');const o=await PDFLib.PDFDocument.create();const cp=await o.copyPages(d,order);cp.forEach((p,i)=>{const card=[...document.querySelectorAll('.pdf-thumb')][i];const rot=Number(card?.dataset.rotation||0);if(rot)p.setRotation(PDFLib.degrees((p.getRotation().angle+rot)%360));o.addPage(p)});await dlPdf(o,'yoqart-organized.pdf');}
+  async function extractText(f){const data=await f.arrayBuffer();const pdf=await pdfjsLib.getDocument({data}).promise;let text='';for(let i=1;i<=pdf.numPages;i++){const pg=await pdf.getPage(i);const c=await pg.getTextContent();text+=c.items.map(x=>x.str).join(' ')+'\n\n';}return text;}
+  async function makeTextPdf(text,name){const d=await PDFLib.PDFDocument.create(),font=await d.embedFont(PDFLib.StandardFonts.Helvetica),W=595,H=842,margin=40;let p=d.addPage([W,H]),y=H-50;for(const line of String(text).split(/\r?\n/).flatMap(l=>{const a=[];for(let i=0;i<l.length;i+=95)a.push(l.slice(i,i+95));return a.length?a:['']})){if(y<50){p=d.addPage([W,H]);y=H-50}p.drawText(line,{x:margin,y,size:10,font});y-=14}await dlPdf(d,name)}
+  async function mergeFiles(fs){const o=await PDFLib.PDFDocument.create();for(const f of fs){const d=await pdfDoc(f);(await o.copyPages(d,d.getPageIndices())).forEach(p=>o.addPage(p))}await dlPdf(o,'yoqart-merged.pdf')}
+  window.mergePDF=async()=>{const fs=window.__yoqartPdfFiles.length?window.__yoqartPdfFiles:[...($('toolFiles')?.files||[])];if(fs.length<2)return alert('Select at least 2 PDFs.');await mergeFiles(fs)};
+  window.extractPDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),a=pages($('pages')?.value,d.getPageCount());if(!a.length)return alert('Enter valid page numbers.');const o=await PDFLib.PDFDocument.create();(await o.copyPages(d,a)).forEach(p=>o.addPage(p));await dlPdf(o,'yoqart-extracted.pdf')};
+  window.removePages=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),rm=pages($('pages')?.value,d.getPageCount()),keep=d.getPageIndices().filter(i=>!rm.includes(i));if(!keep.length)return alert('You cannot remove every page.');const o=await PDFLib.PDFDocument.create();(await o.copyPages(d,keep)).forEach(p=>o.addPage(p));await dlPdf(o,'yoqart-removed.pdf')};
+  window.organizePDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),a=pages($('pages')?.value,d.getPageCount());if(a.length!==d.getPageCount())return alert('Enter every page exactly once, e.g. 3,1,2,4.');const o=await PDFLib.PDFDocument.create();(await o.copyPages(d,a)).forEach(p=>o.addPage(p));await dlPdf(o,'yoqart-organized.pdf')};
+  window.rotatePDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),r=Number($('rotation')?.value||90);d.getPages().forEach(p=>p.setRotation(PDFLib.degrees((p.getRotation().angle+r)%360)));await dlPdf(d,'yoqart-rotated.pdf')};
+  window.resavePDF=async name=>{const f=await getPdfFile();if(!f)return;await dlPdf(await pdfDoc(f),`yoqart-${name}.pdf`)};
+  window.watermarkPDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),font=await d.embedFont(PDFLib.StandardFonts.HelveticaBold),txt=$('wm')?.value||'YOQART',op=Number($('op')?.value||.25);d.getPages().forEach(p=>{const s=p.getSize();p.drawText(txt,{x:s.width/2-50,y:s.height/2,size:40,font,opacity:op,rotate:PDFLib.degrees(35)})});await dlPdf(d,'yoqart-watermarked.pdf')};
+  window.numberPDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),font=await d.embedFont(PDFLib.StandardFonts.Helvetica);d.getPages().forEach((p,i)=>{const s=p.getSize();p.drawText(`${i+1} / ${d.getPageCount()}`,{x:s.width/2-18,y:18,size:10,font})});await dlPdf(d,'yoqart-numbered.pdf')};
+  window.cropPDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),m=Math.max(0,Number($('margin')?.value||20));d.getPages().forEach(p=>{const s=p.getSize();p.setCropBox(m,m,Math.max(1,s.width-2*m),Math.max(1,s.height-2*m))});await dlPdf(d,'yoqart-cropped.pdf')};
+  window.editPDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),font=await d.embedFont(PDFLib.StandardFonts.Helvetica);const txt=$('edittext')?.value||'YoqArt';d.getPages().forEach(p=>p.drawText(txt,{x:40,y:40,size:16,font}));await dlPdf(d,'yoqart-edited.pdf')};
+  window.signPDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f),font=await d.embedFont(PDFLib.StandardFonts.HelveticaOblique),txt=$('sig')?.value||'Signature';d.getPages().forEach(p=>p.drawText(txt,{x:40,y:40,size:18,font}));await dlPdf(d,'yoqart-signed.pdf')};
+  window.jpgToPDF=async()=>{const fs=[...($('toolFiles')?.files||[])];if(!fs.length)return alert('Select images.');const o=await PDFLib.PDFDocument.create();for(const f of fs){if(!/^image\/(jpeg|png)$/.test(f.type))continue;const b=await f.arrayBuffer(),img=f.type==='image/png'?await o.embedPng(b):await o.embedJpg(b),s=Math.min(555/img.width,802/img.height),p=o.addPage([595,842]);p.drawImage(img,{x:(595-img.width*s)/2,y:(842-img.height*s)/2,width:img.width*s,height:img.height*s})}await dlPdf(o,'yoqart-images.pdf')};
+  window.pdfToJpg=async()=>{const f=await getPdfFile();if(!f)return;const data=await f.arrayBuffer(),pdf=await pdfjsLib.getDocument({data}).promise,zip=new JSZip();for(let i=1;i<=pdf.numPages;i++){const pg=await pdf.getPage(i),v=pg.getViewport({scale:1.5}),c=document.createElement('canvas');c.width=v.width;c.height=v.height;await pg.render({canvasContext:c.getContext('2d'),viewport:v}).promise;const blob=await new Promise(r=>c.toBlob(r,'image/jpeg',.9));zip.file(`page-${i}.jpg`,blob)}downloadBlob(await zip.generateAsync({type:'blob'}),'yoqart-pdf-jpg.zip')};
+  window.pdfToWord=async()=>{const f=await getPdfFile();if(!f)return;const text=await extractText(f);downloadBlob(new Blob([`<html><body><pre style="white-space:pre-wrap">${esc2(text)}</pre></body></html>`],{type:'application/msword'}),'yoqart-document.doc')};
+  window.pdfToExcel=async()=>{const f=await getPdfFile();if(!f)return;const text=await extractText(f),rows=text.split(/\r?\n/).filter(Boolean).map(x=>[x]);if(window.XLSX){const ws=XLSX.utils.aoa_to_sheet(rows),wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'PDF Text');XLSX.writeFile(wb,'yoqart-pdf.xlsx')}else downloadBlob(new Blob([text],{type:'text/csv'}),'yoqart-pdf.csv')};
+  window.pdfToPpt=async()=>{const f=await getPdfFile();if(!f)return;const text=await extractText(f);if(window.PptxGenJS){const ppt=new PptxGenJS();text.split(/\n\n+/).filter(Boolean).slice(0,100).forEach((t,i)=>{let s=ppt.addSlide();s.addText(t.slice(0,2500),{x:.5,y:.5,w:9,h:6.2,fontSize:18,breakLine:false});});await ppt.writeFile({fileName:'yoqart-pdf.pptx'})}else downloadBlob(new Blob([text],{type:'text/plain'}),'yoqart-pdf-presentation.txt')};
+  window.excelToPdf=async()=>{const f=$('toolFiles')?.files?.[0];if(!f)return alert('Select an Excel file.');const wb=XLSX.read(await f.arrayBuffer(),{type:'array'}),txt=wb.SheetNames.map(n=>`SHEET: ${n}\n${XLSX.utils.sheet_to_csv(wb.Sheets[n])}`).join('\n\n');await makeTextPdf(txt,'yoqart-excel.pdf')};
+  window.officeToPdf=async()=>{const text=$('docContent')?.value||'';await makeTextPdf(text,'yoqart-document.pdf')};
+  window.htmlToPdf=()=>printTextAsPDF();
+  window.pdfToMarkdown=async()=>{const f=await getPdfFile();if(!f)return;const text=await extractText(f);downloadBlob(new Blob(['# '+f.name+'\n\n'+text],{type:'text/markdown'}),'yoqart-pdf.md')};
+  window.searchPDF=async()=>{const f=await getPdfFile();if(!f)return;const needle=($('needle')?.value||'').toLowerCase();if(!needle)return alert('Enter a search phrase.');const text=await extractText(f),hits=text.split(/\n\n+/).filter(x=>x.toLowerCase().includes(needle));$('toolout').innerHTML=`<div class="result">${hits.length} matching section(s).<pre style="white-space:pre-wrap;font:inherit;margin-top:10px">${esc2(hits.slice(0,30).join('\n\n'))}</pre></div>`};
+  window.comparePDF=async()=>{const fs=[...($('toolFiles')?.files||[])];if(fs.length!==2)return alert('Select exactly 2 PDFs.');const [a,b]=await Promise.all(fs.map(pdfDoc));const [ta,tb]=await Promise.all(fs.map(extractText));$('toolout').innerHTML=`<div class="result">${esc2(fs[0].name)}: ${a.getPageCount()} pages<br>${esc2(fs[1].name)}: ${b.getPageCount()} pages<br>Text difference: ${ta===tb?'No text difference detected':'Text content differs.'}</div>`};
+  window.ocrPDF=async()=>{const f=await getPdfFile();if(!f)return;const data=await f.arrayBuffer(),pdf=await pdfjsLib.getDocument({data}).promise,all=[];for(let i=1;i<=pdf.numPages;i++){const pg=await pdf.getPage(i),v=pg.getViewport({scale:1.5}),c=document.createElement('canvas');c.width=v.width;c.height=v.height;await pg.render({canvasContext:c.getContext('2d'),viewport:v}).promise;const r=await Tesseract.recognize(c,'eng',{logger:m=>{if(m.progress&&$('ocrProgress'))$('ocrProgress').value=Math.round(m.progress*100)}});all.push(`PAGE ${i}\n${r.data.text}`)}downloadBlob(new Blob([all.join('\n\n')],{type:'text/plain'}),'yoqart-ocr.txt')};
+  window.compressPDF=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f);d.setTitle('YoqArt optimized PDF');d.setProducer('YoqArt');await dlPdf(d,'yoqart-compressed.pdf')};
+  window.protectPDF=async()=>{alert('PDF password encryption is not safely available in a pure Cloudflare Pages browser build. This tool is intentionally disabled rather than producing a falsely protected PDF. Use a Worker/backend endpoint for true encryption.')};
+  window.unlockPDF=async()=>{const f=await getPdfFile();if(!f)return;try{const d=await pdfDoc(f);await dlPdf(d,'yoqart-unlocked.pdf')}catch(e){alert('This PDF is encrypted or unsupported. A password-capable backend is required.')}};
+  window.repairPDF=async()=>{const f=await getPdfFile();if(!f)return;try{const d=await pdfDoc(f);await dlPdf(d,'yoqart-repaired.pdf')}catch(e){alert('The browser PDF parser could not open this file. Use a server-side repair engine for damaged PDFs.')}};
+  window.pdfForms=async()=>{const f=await getPdfFile();if(!f)return;const d=await pdfDoc(f);const fields=d.getForm().getFields();$('toolout').innerHTML=`<div class="result">Found ${fields.length} interactive form field(s). This viewer can inspect forms; advanced form filling/export can be added with the backend.</div>`};
+  window.pdfToPdfA=async()=>{const f=await getPdfFile();if(!f)return;alert('A true PDF/A file requires conformance validation and embedded-font/color-profile handling. The browser cannot guarantee PDF/A compliance.');await resavePDF('pdfa-candidate')};
+  window.translatePDF=async()=>{const f=await getPdfFile();if(!f)return;const text=await extractText(f);downloadBlob(new Blob([text],{type:'text/plain'}),'yoqart-translation-source.txt');alert('Text extracted successfully. Connect your preferred translation API in a Cloudflare Worker to translate automatically.')};
+  window.summarizePDF=async()=>{const f=await getPdfFile();if(!f)return;const text=await extractText(f),sent=text.replace(/\s+/g,' ').split(/(?<=[.!?])\s+/).filter(Boolean);const summary=sent.slice(0,Math.min(12,sent.length)).join(' ');$('toolout').innerHTML=`<div class="result"><b>Quick extractive summary</b><p class="muted">${esc2(summary||'No text was found in this PDF.')}</p></div>`};
+
+  const oldOpen=window.openTool;
+  window.openTool=function(t){
+    if(!['merge-pdf','split-pdf','remove-pages','extract-pages','organize-pdf','rotate-pdf','compress-pdf','pdf-to-jpg','jpg-to-pdf','watermark-pdf','page-numbers','crop-pdf','pdf-editor','sign-pdf','protect-pdf','unlock-pdf','repair-pdf','ocr-pdf','pdf-forms','compare-pdf','pdf-to-word','word-to-pdf','pdf-to-excel','excel-to-pdf','pdf-to-ppt','ppt-to-pdf','html-to-pdf','pdf-to-pdfa','pdf-to-markdown','pdf-translate','pdf-summarize','scan-to-pdf','pdf-search'].includes(t))return oldOpen(t);
+    const base=`<div class="toolhead"><h2>${esc2(t)}</h2></div>`;
+    let h='';
+    if(t==='merge-pdf')h=`<h2>🔗 Merge PDF</h2>${picker(true)}<button class="action" onclick="mergePDF()">Merge & Download</button>`;
+    else if(['split-pdf','extract-pages','remove-pages','organize-pdf'].includes(t))h=`<h2>📑 ${t.replaceAll('-',' ')}</h2>${picker()}<div id="pdfWorkspace" class="pdf-workspace"></div><label>Pages</label><input id="pages" placeholder="1,3-5">${t==='organize-pdf'?'<p class="note">For visual drag-and-drop ordering, use the preview above; this field is optional.</p>':''}<button class="action" onclick="${t==='split-pdf'||t==='extract-pages'?'extractPDF':t==='remove-pages'?'removePages':'organizePDF'}()">Process & Download</button>`;
+    else if(t==='pdf-to-jpg')h=`<h2>🖼️ PDF → JPG</h2>${picker()}<div id="pdfWorkspace" class="pdf-workspace"></div><button class="action" onclick="pdfToJpg()">Convert all pages to JPG</button>`;
+    else if(t==='jpg-to-pdf'||t==='scan-to-pdf')h=`<h2>📷 ${t==='jpg-to-pdf'?'JPG → PDF':'Scan to PDF'}</h2>${picker(true,'image/jpeg,image/png,image/webp')}<button class="action" onclick="jpgToPDF()">Create PDF</button>`;
+    else if(t==='rotate-pdf')h=`<h2>🔄 Rotate PDF</h2>${picker()}<label>Degrees</label><select id="rotation"><option>90</option><option>180</option><option>270</option></select><button class="action" onclick="rotatePDF()">Rotate & Download</button>`;
+    else if(t==='compress-pdf')h=`<h2>🗜️ Compress PDF</h2>${picker()}<p class="note">Browser-safe optimization removes/rebuilds metadata. For aggressive image compression, use a Worker/backend with Ghostscript or another PDF engine.</p><button class="action" onclick="compressPDF()">Optimize & Download</button>`;
+    else if(t==='watermark-pdf')h=`<h2>💧 Watermark PDF</h2>${picker()}<label>Watermark</label><input id="wm" value="YOQART"><label>Opacity</label><input id="op" type="number" min="0.05" max="1" step="0.05" value="0.25"><button class="action" onclick="watermarkPDF()">Add Watermark</button>`;
+    else if(t==='page-numbers')h=`<h2>🔢 Page Numbers</h2>${picker()}<button class="action" onclick="numberPDF()">Add Page Numbers</button>`;
+    else if(t==='crop-pdf')h=`<h2>✂️ Crop PDF</h2>${picker()}<label>Margin to crop (points)</label><input id="margin" type="number" value="20" min="0"><button class="action" onclick="cropPDF()">Crop & Download</button>`;
+    else if(t==='pdf-editor')h=`<h2>✏️ Edit PDF</h2>${picker()}<label>Text annotation</label><input id="edittext" value="YoqArt"><button class="action" onclick="editPDF()">Add Text & Download</button>`;
+    else if(t==='sign-pdf')h=`<h2>✍️ Sign PDF</h2>${picker()}<label>Typed signature</label><input id="sig" placeholder="Your name"><button class="action" onclick="signPDF()">Sign & Download</button>`;
+    else if(t==='protect-pdf')h=`<h2>🔒 Protect PDF</h2>${picker()}<p class="notice">True PDF password encryption requires a password-capable PDF engine. Cloudflare Pages alone cannot guarantee it.</p><button class="action" onclick="protectPDF()">Protect PDF</button>`;
+    else if(t==='unlock-pdf')h=`<h2>🔓 Unlock PDF</h2>${picker()}<button class="action" onclick="unlockPDF()">Unlock / Re-save</button>`;
+    else if(t==='repair-pdf')h=`<h2>🛠️ Repair PDF</h2>${picker()}<button class="action" onclick="repairPDF()">Repair / Rebuild</button>`;
+    else if(t==='ocr-pdf')h=`<h2>🔎 OCR PDF</h2>${picker()}<progress id="ocrProgress" value="0" max="100" style="width:100%;margin-top:15px"></progress><button class="action" onclick="ocrPDF()">Run OCR</button>`;
+    else if(t==='pdf-forms')h=`<h2>📝 PDF Forms</h2>${picker()}<button class="action" onclick="pdfForms()">Inspect Form Fields</button><div id="toolout"></div>`;
+    else if(t==='compare-pdf')h=`<h2>⚖️ Compare PDF</h2>${picker(true)}<button class="action" onclick="comparePDF()">Compare</button><div id="toolout"></div>`;
+    else if(t==='pdf-to-word')h=`<h2>📄 PDF → Word</h2>${picker()}<button class="action" onclick="pdfToWord()">Convert to Word</button>`;
+    else if(t==='pdf-to-excel')h=`<h2>📊 PDF → Excel</h2>${picker()}<button class="action" onclick="pdfToExcel()">Export to Excel</button>`;
+    else if(t==='pdf-to-ppt')h=`<h2>📽️ PDF → PowerPoint</h2>${picker()}<button class="action" onclick="pdfToPpt()">Convert to PowerPoint</button>`;
+    else if(t==='pdf-to-markdown')h=`<h2># PDF → Markdown</h2>${picker()}<button class="action" onclick="pdfToMarkdown()">Export Markdown</button>`;
+    else if(t==='pdf-search')h=`<h2>🔍 Search PDF</h2>${picker()}<label>Search phrase</label><input id="needle"><button class="action" onclick="searchPDF()">Search</button><div id="toolout"></div>`;
+    else if(t==='pdf-to-pdfa')h=`<h2>📦 PDF → PDF/A</h2>${picker()}<button class="action" onclick="pdfToPdfA()">Create PDF/A Candidate</button>`;
+    else if(t==='pdf-translate')h=`<h2>🌍 Translate PDF</h2>${picker()}<button class="action" onclick="translatePDF()">Extract Translation Source</button>`;
+    else if(t==='pdf-summarize')h=`<h2>🤖 AI PDF Summarizer</h2>${picker()}<button class="action" onclick="summarizePDF()">Summarize Text</button><div id="toolout"></div>`;
+    else if(['word-to-pdf','excel-to-pdf','ppt-to-pdf','html-to-pdf'].includes(t)){h=`<h2>${esc2(t.replaceAll('-',' '))}</h2>${t==='excel-to-pdf'?picker(false,'.xlsx,.xls,.csv'):t==='html-to-pdf'?'<label>HTML / text</label><textarea id="docContent" placeholder="Paste HTML or text here..."></textarea>': '<label>Content</label><textarea id="docContent" placeholder="Paste document text here..."></textarea>'}<button class="action" onclick="${t==='excel-to-pdf'?'excelToPdf':t==='html-to-pdf'?'htmlToPdf':'officeToPdf'}()">Create PDF</button>`}
+    C.innerHTML=h;M.classList.add('show');
+    const inp=$('toolFiles');if(inp)inp.addEventListener('change',()=>{window.__yoqartPdfFiles=[...inp.files];if(['merge-pdf','compare-pdf'].includes(t))return;if(inp.files[0]&&/application\/pdf/.test(inp.files[0].type))renderWorkspace(inp.files[0]);});
+  };
+})();
+</script>
