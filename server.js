@@ -25,5 +25,49 @@ app.post('/api/convert/pdf-to-excel',upload.single('file'),(req,res)=>conversion
 app.post('/api/protect-pdf',upload.single('file'),async(req,res)=>{const f=req.file,pw=String(req.body?.password||'');if(!f)return res.status(400).json({error:'Please upload a PDF file.'});if(!pw)return res.status(400).json({error:'Please provide a password.'});const dir=path.join(os.tmpdir(),'yoqart-protect',crypto.randomUUID());await fs.mkdir(dir,{recursive:true});const out=path.join(dir,'yoqart-protected.pdf');try{const r=await run('gs',['-sDEVICE=pdfwrite','-dCompatibilityLevel=1.4','-dNOPAUSE','-dQUIET','-dBATCH',`-sOwnerPassword=${pw}`,`-sUserPassword=${pw}`,'-dEncryptionR=3','-dKeyLength=128',`-sOutputFile=${out}`,f.path]);if(r.code!==0){await cleanup(dir,f.path);return res.status(502).json({error:'PDF protection failed.'})}res.download(out,'yoqart-protected.pdf',()=>cleanup(dir,f.path))}catch(e){await cleanup(dir,f.path);res.status(500).json({error:'Protection engine is unavailable.'})}});
 app.post('/api/compress-pdf',upload.single('file'),async(req,res)=>{const f=req.file;if(!f)return res.status(400).json({error:'Please upload a PDF file.'});const dir=path.join(os.tmpdir(),'yoqart-compress',crypto.randomUUID());await fs.mkdir(dir,{recursive:true});const out=path.join(dir,'yoqart-compressed.pdf');const quality=['screen','ebook','printer','prepress'].includes(req.body?.quality)?req.body.quality:'ebook';try{const r=await run('gs',['-sDEVICE=pdfwrite','-dCompatibilityLevel=1.4',`-dPDFSETTINGS=/${quality}`,'-dNOPAUSE','-dQUIET','-dBATCH',`-sOutputFile=${out}`,f.path]);if(r.code!==0){await cleanup(dir,f.path);return res.status(502).json({error:'PDF compression failed.'})}let st=await fs.stat(out),src=await fs.stat(f.path);if(st.size>=src.size&&quality!=='screen'){const retry=path.join(dir,'yoqart-compressed-screen.pdf');const rr=await run('gs',['-sDEVICE=pdfwrite','-dCompatibilityLevel=1.4','-dPDFSETTINGS=/screen','-dNOPAUSE','-dQUIET','-dBATCH',`-sOutputFile=${retry}`,f.path]);if(rr.code===0){const rs=await fs.stat(retry);if(rs.size<st.size){await fs.rename(retry,out);st=rs}}}res.setHeader('X-YoqArt-Original-Bytes',String(src.size));res.setHeader('X-YoqArt-Compressed-Bytes',String(st.size));res.setHeader('X-YoqArt-Reduced',String(st.size<src.size));res.download(out,'yoqart-compressed.pdf',()=>cleanup(dir,f.path));}catch(e){await cleanup(dir,f.path);res.status(500).json({error:'Compression engine is unavailable.'})}});
 app.post('/api/download',async(req,res)=>{const {url,quality='Best available',format='mp4'}=req.body||{};if(!allowedMedia(url))return res.status(400).json({error:'Unsupported or invalid YouTube/Instagram URL.'});if(format!=='mp4')return res.status(400).json({error:'Only MP4 is enabled.'});const h=quality==='1080p'?1080:quality==='720p'?720:quality==='480p'?480:quality==='360p'?360:1080;const dir=path.join(os.tmpdir(),'yoqart-media',crypto.randomUUID());await fs.mkdir(dir,{recursive:true});const out=path.join(dir,'video.%(ext)s');try{const r=await run('yt-dlp',['--no-playlist','--restrict-filenames','--max-filesize',`${MAX_MB}M`,'--match-filter',`duration <= ${MAX_SECONDS}`,'-f',`bv*[height<=${h}][ext=mp4]+ba[ext=m4a]/b[height<=${h}][ext=mp4]/b[height<=${h}]`,'--merge-output-format','mp4','-o',out,'--print','after_move:filepath',url]);if(r.code!==0){const msg=(r.err||'Unable to process URL.').split('\n').filter(Boolean).slice(-1)[0];await cleanup(dir);return res.status(502).json({error:msg})}const file=r.out.trim().split(/\r?\n/).filter(Boolean).pop();if(!file){await cleanup(dir);return res.status(502).json({error:'Media file was not created.'})}await fs.stat(file);res.download(file,'yoqart-video.mp4',()=>cleanup(dir));}catch(e){await cleanup(dir);res.status(500).json({error:'Media processing error.'})}});
+
+const toolNames = {
+  "merge-pdf":"Merge PDF","split-pdf":"Split PDF","remove-pages":"Remove Pages","extract-pages":"Extract Pages",
+  "organize-pdf":"Organize PDF","rotate-pdf":"Rotate PDF","compress-pdf":"Compress PDF","pdf-to-jpg":"PDF to JPG",
+  "jpg-to-pdf":"JPG to PDF","watermark-pdf":"Watermark PDF","page-numbers":"Page Numbers","crop-pdf":"Crop PDF",
+  "pdf-editor":"Edit PDF","sign-pdf":"Sign PDF","unlock-pdf":"Unlock / Re-save PDF","repair-pdf":"Repair PDF",
+  "ocr-pdf":"OCR PDF","pdf-forms":"PDF Forms","protect-pdf":"Protect PDF","compare-pdf":"Compare PDF",
+  "pdf-to-word":"PDF to Word","word-to-pdf":"Word to PDF","pdf-to-excel":"PDF to Excel","excel-to-pdf":"Excel to PDF",
+  "pdf-to-ppt":"PDF to PowerPoint","ppt-to-pdf":"PowerPoint to PDF","html-to-pdf":"HTML to PDF","pdf-to-pdfa":"PDF to PDF/A",
+  "pdf-to-markdown":"PDF to Markdown","pdf-search":"Search PDF","pdf-translate":"Translate PDF",
+  "pdf-summarize":"Summarize PDF","scan-to-pdf":"Scan to PDF","invoice":"Invoice Generator",
+  "credit-note":"Credit Note Generator","debit-note":"Debit Note Generator","payslip":"Payslip Generator",
+  "tds":"TDS Calculator","gst":"GST Calculator","emi":"EMI Calculator","percentage":"Percentage Calculator",
+  "image-tools":"Image Converter","text-tools":"Text Tools","document-tools":"Document Creator",
+  "excel-tools":"Excel Viewer","media-downloader":"Media Downloader"
+};
+
+const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+app.get('/tools/:id', async (req,res,next)=>{
+  const id = String(req.params.id || '').toLowerCase();
+  const name = toolNames[id];
+  if (!name) return res.status(404).send('Tool not found');
+  try {
+    let page = await fs.readFile(path.resolve('public/index.html'), 'utf8');
+    const title = `${name} Online — YoqArt`;
+    const description = `Use YoqArt's ${name} online. Free, simple and mobile-friendly tools for everyday digital work.`;
+    const schema = JSON.stringify({
+      "@context":"https://schema.org",
+      "@type":"WebPage",
+      "name":title,
+      "description":description,
+      "url":`https://yoqart.in/tools/${encodeURIComponent(id)}`
+    });
+    page = page
+      .replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`)
+      .replace(/<meta name="description" content="[^"]*">/i, `<meta name="description" content="${escapeHtml(description)}">`)
+      .replace(/<link rel="canonical" href="[^"]*">/i, `<link rel="canonical" href="https://yoqart.in/tools/${encodeURIComponent(id)}">`)
+      .replace('</head>', `<meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="https://yoqart.in/tools/${encodeURIComponent(id)}"><script type="application/ld+json">${schema}</script></head>`);
+    res.type('html').send(page);
+  } catch (e) {
+    next(e);
+  }
+});
+
 app.use((req,res)=>res.sendFile(path.resolve('public/index.html')));
 app.listen(PORT,()=>console.log(`YoqArt server listening on ${PORT}`));
