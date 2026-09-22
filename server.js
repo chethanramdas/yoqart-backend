@@ -49,8 +49,9 @@ app.get('/tools/:id', async (req,res,next)=>{
   if (!name) return res.status(404).send('Tool not found');
   try {
     let page = await fs.readFile(path.resolve('public/index.html'), 'utf8');
-    const title = `${name} Online — YoqArt`;
-    const description = `Use YoqArt's ${name} online. Free, simple and mobile-friendly tools for everyday digital work.`;
+    const unlimited = ['invoice','credit-note','debit-note','payslip'].includes(id) || id.endsWith('-pdf') || ['merge-pdf','split-pdf','remove-pages','extract-pages','organize-pdf','rotate-pdf','compress-pdf','pdf-to-jpg','jpg-to-pdf','watermark-pdf','page-numbers','crop-pdf','pdf-editor','sign-pdf','unlock-pdf','repair-pdf','ocr-pdf','pdf-forms','protect-pdf','compare-pdf','pdf-to-word','word-to-pdf','pdf-to-excel','excel-to-pdf','pdf-to-ppt','ppt-to-pdf','html-to-pdf','pdf-to-pdfa','pdf-to-markdown','pdf-search','pdf-translate','pdf-summarize','scan-to-pdf'].includes(id);
+    const title = `${name}${unlimited ? ' — Free Unlimited' : ' Online'} — YoqArt`;
+    const description = unlimited ? `Use YoqArt's ${name} free with no artificial daily or monthly usage counter. Mobile-friendly online tools for everyday digital work.` : `Use YoqArt's ${name} online. Free, simple and mobile-friendly tools for everyday digital work.`;
     const schema = JSON.stringify({
       "@context":"https://schema.org",
       "@type":"WebPage",
