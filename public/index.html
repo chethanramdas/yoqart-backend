@@ -170,7 +170,23 @@ const social=[['media-downloader','▶','Media Downloader','Prepare authorized Y
 const meta=Object.fromEntries([...pdfTools,...business,...fileTools,...social].map(x=>[x[0],x]));
 function cards(arr){return arr.map(([id,ic,title,desc])=>{const unlimited=pdfTools.some(x=>x[0]===id)||['invoice','credit-note','debit-note','payslip'].includes(id);return `<article class="card" data-tool="${id}"><div class="icon">${ic}</div>${unlimited?'<span class="unlimited-badge">Unlimited use</span>':''}<h3>${title}</h3><p>${desc}</p><button type="button" data-open="${id}">Open tool →</button></article>`}).join('')}
 $('businessGrid').innerHTML=cards(business);$('pdfGrid').innerHTML=cards(pdfTools);$('fileGrid').innerHTML=cards(fileTools);$('socialGrid').innerHTML=cards(social);
-function showSection(id){const allowed=new Set(['categories','business-tools','pdf-tools','file-tools','social-tools','why-yoqart','about','privacy','terms','disclaimer','contact','feedback','account-page']);if(!allowed.has(id))id='categories';document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$('tool-page').classList.remove('active');$('categories').style.display=id==='categories'?'block':'none';document.querySelector('.hero').style.display=id==='categories'?'block':'none';const p=$(id);if(p&&p.classList.contains('page'))p.classList.add('active');if(id!=='categories')lastCategory='#'+id;window.scrollTo({top:0,behavior:'smooth'});}
+function showSection(id){
+  const allowed=new Set(['categories','business-tools','pdf-tools','file-tools','social-tools','why-yoqart','about','privacy','terms','disclaimer','contact','feedback','account-page']);
+  if(!allowed.has(id))id='categories';
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  $('tool-page').classList.remove('active');
+  $('categories').style.display=id==='categories'?'block':'none';
+  document.querySelector('.hero').style.display=id==='categories'?'block':'none';
+
+  document.querySelectorAll('#why-yoqart,#about').forEach(x=>{
+    x.style.display=id==='account-page'?'none':'';
+  });
+
+  const p=$(id);
+  if(p&&p.classList.contains('page'))p.classList.add('active');
+  if(id!=='categories')lastCategory='#'+id;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 function categoryForTool(t){if(pdfTools.some(x=>x[0]===t))return '#pdf-tools';if(business.some(x=>x[0]===t))return '#business-tools';if(fileTools.some(x=>x[0]===t))return '#file-tools';if(social.some(x=>x[0]===t))return '#social-tools';return '#categories'}
 function showLoading(text='Working…'){const o=$('loadingOverlay'),t=$('loadingText');if(t)t.textContent=text;if(o){o.classList.add('show');o.setAttribute('aria-hidden','false')}}
 function hideLoading(){const o=$('loadingOverlay');if(o){o.classList.remove('show');o.setAttribute('aria-hidden','true')}}
