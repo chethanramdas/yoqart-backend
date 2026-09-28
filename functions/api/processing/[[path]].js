@@ -1,1 +1,17 @@
-ZnVuY3Rpb24gcmVzcG9uc2UoZGF0YSxzdGF0dXM9MjAwKXtyZXR1cm4gUmVzcG9uc2UuanNvbihkYXRhLHtzdGF0dXN9KX0KCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBvblJlcXVlc3QoY29udGV4dCl7CiAgY29uc3Qge3JlcXVlc3QsZW52fT1jb250ZXh0OwogIGNvbnN0IGJhc2U9U3RyaW5nKGVudi5QUk9DRVNTSU5HX0FQSV9VUkx8fCcnKS5yZXBsYWNlKC9cLyQvLCcnKTsKICBpZighYmFzZSlyZXR1cm4gcmVzcG9uc2Uoe2Vycm9yOidZb3FBcnQgcHJvY2Vzc2luZyBiYWNrZW5kIGlzIG5vdCBjb25maWd1cmVkLiBTZXQgUFJPQ0VTU0lOR19BUElfVVJMIGluIENsb3VkZmxhcmUgUGFnZXMuJ30sNTAzKTsKICBpZihyZXF1ZXN0Lm1ldGhvZD09PSdPUFRJT05TJylyZXR1cm4gbmV3IFJlc3BvbnNlKG51bGwse3N0YXR1czoyMDQsaGVhZGVyczp7J0FjY2Vzcy1Db250cm9sLUFsbG93LU1ldGhvZHMnOidQT1NULEdFVCxPUFRJT05TJywnQWNjZXNzLUNvbnRyb2wtQWxsb3ctSGVhZGVycyc6J0NvbnRlbnQtVHlwZSd9fSk7CiAgY29uc3QgcGFydHM9QXJyYXkuaXNBcnJheShjb250ZXh0LnBhcmFtcy5wYXRoKT9jb250ZXh0LnBhcmFtcy5wYXRoOltjb250ZXh0LnBhcmFtcy5wYXRoXS5maWx0ZXIoQm9vbGVhbik7CiAgaWYoIXBhcnRzLmxlbmd0aClyZXR1cm4gcmVzcG9uc2Uoe2Vycm9yOidQcm9jZXNzaW5nIGVuZHBvaW50IGlzIHJlcXVpcmVkLid9LDQwNCk7CiAgY29uc3QgdGFyZ2V0PWJhc2UrJy8nK3BhcnRzLm1hcCh4PT5lbmNvZGVVUklDb21wb25lbnQoeCkpLmpvaW4oJy8nKTsKICBjb25zdCBoZWFkZXJzPW5ldyBIZWFkZXJzKHJlcXVlc3QuaGVhZGVycyk7aGVhZGVycy5kZWxldGUoJ2hvc3QnKTtoZWFkZXJzLmRlbGV0ZSgnY29udGVudC1sZW5ndGgnKTsKICB0cnl7CiAgICBjb25zdCB1cHN0cmVhbT1hd2FpdCBmZXRjaCh0YXJnZXQse21ldGhvZDpyZXF1ZXN0Lm1ldGhvZCxoZWFkZXJzLGJvZHk6cmVxdWVzdC5tZXRob2Q9PT0nR0VUJ3x8cmVxdWVzdC5tZXRob2Q9PT0nSEVBRCc/dW5kZWZpbmVkOnJlcXVlc3QuYm9keSxyZWRpcmVjdDonbWFudWFsJ30pOwogICAgY29uc3Qgb3V0SGVhZGVycz1uZXcgSGVhZGVycyh1cHN0cmVhbS5oZWFkZXJzKTtvdXRIZWFkZXJzLmRlbGV0ZSgnc2V0LWNvb2tpZScpOwogICAgcmV0dXJuIG5ldyBSZXNwb25zZSh1cHN0cmVhbS5ib2R5LHtzdGF0dXM6dXBzdHJlYW0uc3RhdHVzLHN0YXR1c1RleHQ6dXBzdHJlYW0uc3RhdHVzVGV4dCxoZWFkZXJzOm91dEhlYWRlcnN9KTsKICB9Y2F0Y2goZSl7cmV0dXJuIHJlc3BvbnNlKHtlcnJvcjonVW5hYmxlIHRvIHJlYWNoIHRoZSBZb3FBcnQgcHJvY2Vzc2luZyBiYWNrZW5kLid9LDUwMil9Cn0K
+function response(data,status=200){return Response.json(data,{status})}
+
+export async function onRequest(context){
+  const {request,env}=context;
+  const base=String(env.PROCESSING_API_URL||'').replace(/\/$/,'');
+  if(!base)return response({error:'YoqArt processing backend is not configured. Set PROCESSING_API_URL in Cloudflare Pages.'},503);
+  if(request.method==='OPTIONS')return new Response(null,{status:204,headers:{'Access-Control-Allow-Methods':'POST,GET,OPTIONS','Access-Control-Allow-Headers':'Content-Type'}});
+  const parts=Array.isArray(context.params.path)?context.params.path:[context.params.path].filter(Boolean);
+  if(!parts.length)return response({error:'Processing endpoint is required.'},404);
+  const target=base+'/'+parts.map(x=>encodeURIComponent(x)).join('/');
+  const headers=new Headers(request.headers);headers.delete('host');headers.delete('content-length');
+  try{
+    const upstream=await fetch(target,{method:request.method,headers,body:request.method==='GET'||request.method==='HEAD'?undefined:request.body,redirect:'manual'});
+    const outHeaders=new Headers(upstream.headers);outHeaders.delete('set-cookie');
+    return new Response(upstream.body,{status:upstream.status,statusText:upstream.statusText,headers:outHeaders});
+  }catch(e){return response({error:'Unable to reach the YoqArt processing backend.'},502)}
+}
