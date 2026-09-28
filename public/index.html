@@ -73,6 +73,27 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
   body.printing #out .tool-actions{display:none!important}
   body.printing .invoice-paper table,body.printing .payslip-paper table{min-width:0!important}
 }
+
+/* YoqArt mobile overflow/gap fix */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+img,video,iframe,canvas{max-width:100%}
+.wrap{max-width:100%;min-width:0}
+header,.nav,.navtools,.hero,.section,.about,.footer,.native-ad-slot,.ad-slot{max-width:100%;min-width:0}
+.navtools{min-width:0}
+.search{min-width:0;max-width:42vw}
+.ad-slot-inner{max-width:100%;min-width:0}
+.native-ad-slot{box-sizing:border-box}
+@media(max-width:600px){
+  .nav{width:100%;max-width:100%;overflow:hidden}
+  .logo{flex:0 0 112px;min-width:0}
+  .navtools{flex:1 1 auto;min-width:0}
+  .search{flex:1 1 auto;width:auto;max-width:none;min-width:0}
+  .accountBtn{flex:0 0 auto}
+  .menuBtn{flex:0 0 42px}
+  .hero>.wrap,.section.wrap,.footer .wrap{width:calc(100% - 22px);max-width:calc(100% - 22px)}
+  .ad-slot{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+}
+
 </style>
 <script src="https://pl31431916.profitableratecpmnetwork.com/82/59/19/825919f62f1df1d9f89215d25b955a7.js"></script>
 </head>
@@ -179,7 +200,7 @@ function showSection(id){
   document.querySelector('.hero').style.display=id==='categories'?'block':'none';
 
   document.querySelectorAll('#why-yoqart,#about').forEach(x=>{
-    x.style.display=id==='account-page'?'none':'';
+    x.style.display=['account-page','contact','feedback'].includes(id)?'none':'';
   });
 
   const p=$(id);
