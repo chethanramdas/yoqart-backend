@@ -5,4 +5,4 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "DB"
 database_name = "yoqart-db"
-database_id = "YOUR_DATABASE_ID"
+database_id = "8507024c-d295-4699-a30a-971e23437dd5"
