@@ -1,1 +1,54 @@
-IyBZb3FBcnQg4oCUIENsb3VkZmxhcmUgTG9naW4gKyBNeSBEb2N1bWVudHMKClRoaXMgYnVpbGQgYWRkcyBvcHRpb25hbCBZb3FBcnQgYWNjb3VudHMgdXNpbmcgQ2xvdWRmbGFyZSBQYWdlcyBGdW5jdGlvbnMsIEQxIGFuZCBSMi4KCiMjIFdoYXQgaXMgaW5jbHVkZWQKLSBTaWdudXAsIGxvZ2luIGFuZCBsb2dvdXQKLSBFbWFpbCB2ZXJpZmljYXRpb24KLSBGb3Jnb3QvcmVzZXQgcGFzc3dvcmQKLSBTZWN1cmUgUEJLREYyIHBhc3N3b3JkIGhhc2hpbmcKLSBIdHRwT25seSBzZXNzaW9uIGNvb2tpZXMKLSBNeSBEb2N1bWVudHMKLSBTYXZlIGdlbmVyYXRlZCBJbnZvaWNlLCBQYXlzbGlwLCBDcmVkaXQgTm90ZSBhbmQgRGViaXQgTm90ZSBhcyBQREZzIHRvIFIyCi0gRG93bmxvYWQvZGVsZXRlIHNhdmVkIGRvY3VtZW50cwotIEQxIHN0b3JlcyBhY2NvdW50L3Nlc3Npb24vZG9jdW1lbnQgbWV0YWRhdGE7IFIyIHN0b3JlcyBQREYgZmlsZXMKLSBFeGlzdGluZyBZb3FBcnQgVUksIFNFTywgQWRzdGVycmEgYW5kIHRvb2xzIGFyZSBwcmVzZXJ2ZWQKCiMjIENsb3VkZmxhcmUgc2V0dXAKMS4gUGFnZXMgcHJvamVjdDogYHlvcWFydGAKMi4gRDEgZGF0YWJhc2U6IGB5b3FhcnQtZGJgCjMuIFIyIGJ1Y2tldDogYHlvcWFydC1maWxlc2AKNC4gSW4gUGFnZXMgPiBTZXR0aW5ncyA+IEJpbmRpbmdzIGFkZDoKICAgLSBEMSBkYXRhYmFzZSBiaW5kaW5nIHZhcmlhYmxlIGBEQmAgLT4gYHlvcWFydC1kYmAKICAgLSBSMiBidWNrZXQgYmluZGluZyB2YXJpYWJsZSBgQlVDS0VUYCAtPiBgeW9xYXJ0LWZpbGVzYAo1LiBSdW4gYHNjaGVtYS5zcWxgIGFnYWluc3QgYHlvcWFydC1kYmAgb25jZS4KNi4gQWRkIGEgc2VjcmV0IGBSRVNFTkRfQVBJX0tFWWAgZm9yIGVtYWlsIGRlbGl2ZXJ5Lgo3LiBBZGQgYSB2YXJpYWJsZSBgQVVUSF9GUk9NX0VNQUlMYCBzdWNoIGFzIGBZb3FBcnQgPG5vcmVwbHlAeW9xYXJ0LmluPmAgYWZ0ZXIgdGhlIHNlbmRpbmcgZG9tYWluIGlzIHZlcmlmaWVkIHdpdGggeW91ciBlbWFpbCBwcm92aWRlci4KOC4gRGVwbG95IHdpdGggV3JhbmdsZXIgb3IgR2l0LiBDbG91ZGZsYXJlIFBhZ2VzIGRhc2hib2FyZCBEaXJlY3QgVXBsb2FkIGRvZXMgbm90IGRlcGxveSBQYWdlcyBGdW5jdGlvbnMuCgojIyBXcmFuZ2xlcgpGcm9tIHRoZSBwcm9qZWN0IHJvb3Q6CmBucHggd3JhbmdsZXIgcGFnZXMgZGVwbG95IHB1YmxpYyAtLXByb2plY3QtbmFtZSB5b3FhcnRgCgpJZiB1c2luZyBhIEdpdCByZXBvc2l0b3J5LCBjb25uZWN0IHRoZSByZXBvc2l0b3J5IHRvIHRoZSBleGlzdGluZyBQYWdlcyBwcm9qZWN0IGFuZCBkZXBsb3kgZnJvbSB0aGUgcmVwb3NpdG9yeSByb290LiBUaGUgYGZ1bmN0aW9ucy9gIGRpcmVjdG9yeSBtdXN0IGJlIGF0IHRoZSBwcm9qZWN0IHJvb3QgYW5kIGBwdWJsaWMvYCBpcyB0aGUgUGFnZXMgb3V0cHV0IGRpcmVjdG9yeS4KCiMjIEltcG9ydGFudApEbyBub3QgcHV0IEFQSSBrZXlzLCBwYXNzd29yZHMsIG9yIENsb3VkZmxhcmUgYWNjb3VudCB0b2tlbnMgaW4gdGhpcyBaSVAgb3IgaW4gZnJvbnRlbmQgSmF2YVNjcmlwdC4KCiMjIE5hdGl2ZSBwcm9jZXNzaW5nIGJhY2tlbmQgKHJlcXVpcmVkIGZvciA1IHNlcnZlciB0b29scykKQ2xvdWRmbGFyZSBQYWdlcyBjYW5ub3QgcnVuIEdob3N0c2NyaXB0LCB5dC1kbHAgb3IgdGhlIFB5dGhvbiBQREYgY29udmVyc2lvbiBzdGFjayB1c2VkIGJ5IGBzZXJ2ZXIuanNgLiBEZXBsb3kgdGhlIHJlcG9zaXRvcnkncyBEb2NrZXJmaWxlIHRvIFJlbmRlciwgUmFpbHdheSwgRmx5LmlvIG9yIGFub3RoZXIgY29udGFpbmVyIGhvc3QuCgpBZnRlciB0aGUgYmFja2VuZCBpcyBsaXZlLCBhZGQgdGhpcyBDbG91ZGZsYXJlIFBhZ2VzIGVudmlyb25tZW50IHZhcmlhYmxlOgotIGBQUk9DRVNTSU5HX0FQSV9VUkxgID0gdGhlIEhUVFBTIGJhc2UgVVJMIG9mIHRoZSBkZXBsb3llZCBZb3FBcnQgYmFja2VuZCwgZm9yIGV4YW1wbGUgYGh0dHBzOi8veW9xYXJ0LXByb2Nlc3NpbmcuZXhhbXBsZS5jb21gCgpUaGUgUGFnZXMgRnVuY3Rpb24gYXQgYC9hcGkvcHJvY2Vzc2luZy8qYCBwcm94aWVzIHRoZSBmaXZlIHByb2Nlc3NpbmcgZW5kcG9pbnRzIHRvIHRoYXQgYmFja2VuZC4gVGhlIGJyb3dzZXIgY29udGludWVzIHRvIGNhbGwgWW9xQXJ0J3Mgc2FtZS1vcmlnaW4gYC9hcGkvcHJvY2Vzc2luZy8uLi5gIFVSTHMuCgoKIyMgRmVlZGJhY2sgYW5kIENvbnRhY3QgY29uZmlndXJhdGlvbgotIFJ1biB0aGUgdXBkYXRlZCBgc2NoZW1hLnNxbGAgYWdhaW5zdCBEMS4gSXQgYWRkcyBgY29udGFjdF9pbnF1aXJpZXNgIGFuZCBgYXBpX3JhdGVfbGltaXRzYC4KLSBUaGUgQVBJcyBhcmUgYC9hcGkvdjEvY29udGFjdGAgYW5kIGAvYXBpL3YxL2ZlZWRiYWNrYC4KLSBFbWFpbCBkZWxpdmVyeSB1c2VzIHRoZSBleGlzdGluZyBSZXNlbmQgc2V0dXAgKGBSRVNFTkRfQVBJX0tFWWAgYW5kIGBBVVRIX0ZST01fRU1BSUxgKS4KLSBDb250YWN0IGVtYWlscyBhcmUgc2VudCB0byBgY29udGFjdEB5b3FhcnQuaW5gIHdpdGggdGhlIHZpc2l0b3IncyBlbWFpbCBhcyBSZXBseS1Uby4gRmVlZGJhY2sgaXMgc2VudCB0byBgZmVlZGJhY2tAeW9xYXJ0LmluYC4KLSBSYXRlIGxpbWl0aW5nIGlzIHN0b3JlZCBpbiBEMTogNSBzdWJtaXNzaW9ucyBwZXIgSVAgcGVyIDEwIG1pbnV0ZXMgZm9yIGVhY2ggcHVibGljIGZvcm0uCi0gRm9yIHByb2R1Y3Rpb24gQ0FQVENIQSBwcm90ZWN0aW9uLCBjb25maWd1cmUgYFJFQ0FQVENIQV9TRUNSRVRfS0VZYDsgdGhlIGZyb250ZW5kIGFjY2VwdHMgYSByZUNBUFRDSEEgdG9rZW4gYXMgYHJlY2FwdGNoYVRva2VuYC4gU2V0IGBSRUNBUFRDSEFfTUlOX1NDT1JFYCBpZiBkZXNpcmVkIChmb3IgZXhhbXBsZSBgMC41YCkuIEFsc28gYWRkIHlvdXIgcmVDQVBUQ0hBIHNpdGUta2V5L3Rva2VuIGdlbmVyYXRpb24gdG8gdGhlIGZyb250ZW5kIGJlZm9yZSBlbmFibGluZyB0aGUgc2VjcmV0LgotIE5ldmVyIHBsYWNlIGBSRUNBUFRDSEFfU0VDUkVUX0tFWWAgaW4gZnJvbnRlbmQgSmF2YVNjcmlwdC4K
+# YoqArt — Cloudflare Login + My Documents
+
+This build adds optional YoqArt accounts using Cloudflare Pages Functions, D1 and R2.
+
+## What is included
+- Signup, login and logout
+- Email verification
+- Forgot/reset password
+- Secure PBKDF2 password hashing
+- HttpOnly session cookies
+- My Documents
+- Save generated Invoice, Payslip, Credit Note and Debit Note as PDFs to R2
+- Download/delete saved documents
+- D1 stores account/session/document metadata; R2 stores PDF files
+- Existing YoqArt UI, SEO, Adsterra and tools are preserved
+
+## Cloudflare setup
+1. Pages project: `yoqart`
+2. D1 database: `yoqart-db`
+3. R2 bucket: `yoqart-files`
+4. In Pages > Settings > Bindings add:
+   - D1 database binding variable `DB` -> `yoqart-db`
+   - R2 bucket binding variable `BUCKET` -> `yoqart-files`
+5. Run `schema.sql` against `yoqart-db` once.
+6. Add a secret `RESEND_API_KEY` for email delivery.
+7. Add a variable `AUTH_FROM_EMAIL` such as `YoqArt <noreply@yoqart.in>` after the sending domain is verified with your email provider.
+8. Deploy with Wrangler or Git. Cloudflare Pages dashboard Direct Upload does not deploy Pages Functions.
+
+## Wrangler
+From the project root:
+`npx wrangler pages deploy public --project-name yoqart`
+
+If using a Git repository, connect the repository to the existing Pages project and deploy from the repository root. The `functions/` directory must be at the project root and `public/` is the Pages output directory.
+
+## Important
+Do not put API keys, passwords, or Cloudflare account tokens in this ZIP or in frontend JavaScript.
+
+## Native processing backend (required for 5 server tools)
+Cloudflare Pages cannot run Ghostscript, yt-dlp or the Python PDF conversion stack used by `server.js`. Deploy the repository's Dockerfile to Render, Railway, Fly.io or another container host.
+
+After the backend is live, add this Cloudflare Pages environment variable:
+- `PROCESSING_API_URL` = the HTTPS base URL of the deployed YoqArt backend, for example `https://yoqart-processing.example.com`
+
+The Pages Function at `/api/processing/*` proxies the five processing endpoints to that backend. The browser continues to call YoqArt's same-origin `/api/processing/...` URLs.
+
+
+## Feedback and Contact configuration
+- Run the updated `schema.sql` against D1. It adds `contact_inquiries` and `api_rate_limits`.
+- The APIs are `/api/v1/contact` and `/api/v1/feedback`.
+- Email delivery uses the existing Resend setup (`RESEND_API_KEY` and `AUTH_FROM_EMAIL`).
+- Contact emails are sent to `contact@yoqart.in` with the visitor's email as Reply-To. Feedback is sent to `feedback@yoqart.in`.
+- Rate limiting is stored in D1: 5 submissions per IP per 10 minutes for each public form.
+- For production CAPTCHA protection, configure `RECAPTCHA_SECRET_KEY`; the frontend accepts a reCAPTCHA token as `recaptchaToken`. Set `RECAPTCHA_MIN_SCORE` if desired (for example `0.5`). Also add your reCAPTCHA site-key/token generation to the frontend before enabling the secret.
+- Never place `RECAPTCHA_SECRET_KEY` in frontend JavaScript.
