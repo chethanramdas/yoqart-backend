@@ -1,1 +1,267 @@
-Ly8gWW9xQXJ0IG5hdGl2ZSBwcm9jZXNzaW5nIHJvdXRlcyAoUERGIGNvbnZlcnNpb24sIGNvbXByZXNzLCBwcm90ZWN0LCBtZWRpYSBkb3dubG9hZCkuCi8vIE1vdW50ZWQgYXQgIi8iLCAiL2FwaSIgYW5kICIvYXBpL3Byb2Nlc3NpbmciIHNvIHRoZSBDbG91ZGZsYXJlIHByb3h5Ci8vICgvYXBpL3Byb2Nlc3NpbmcvPGVuZHBvaW50PiAtPiA8UFJPQ0VTU0lOR19BUElfVVJMPi88ZW5kcG9pbnQ+KSBhbmQgZGlyZWN0IGNhbGxzIGJvdGggd29yay4KaW1wb3J0IGV4cHJlc3MgZnJvbSAnZXhwcmVzcyc7CmltcG9ydCBtdWx0ZXIgZnJvbSAnbXVsdGVyJzsKaW1wb3J0IGZzIGZyb20gJ2ZzL3Byb21pc2VzJzsKaW1wb3J0IG9zIGZyb20gJ29zJzsKaW1wb3J0IHBhdGggZnJvbSAncGF0aCc7CmltcG9ydCBjcnlwdG8gZnJvbSAnY3J5cHRvJzsKaW1wb3J0IHtzcGF3bn0gZnJvbSAnY2hpbGRfcHJvY2Vzcyc7CmltcG9ydCB7ZmlsZVVSTFRvUGF0aH0gZnJvbSAndXJsJzsKCmNvbnN0IEhFUkUgPSBwYXRoLmRpcm5hbWUoZmlsZVVSTFRvUGF0aChpbXBvcnQubWV0YS51cmwpKTsKY29uc3QgTUFYX01CID0gTnVtYmVyKHByb2Nlc3MuZW52Lk1BWF9VUExPQURfTUIgfHwgNTApOwpjb25zdCBNQVhfU0VDT05EUyA9IE51bWJlcihwcm9jZXNzLmVudi5NQVhfTUVESUFfU0VDT05EUyB8fCA5MDApOwpjb25zdCBDT05WRVJUX1RJTUVPVVRfTVMgPSBOdW1iZXIocHJvY2Vzcy5lbnYuQ09OVkVSVF9USU1FT1VUX01TIHx8IDI4MDAwMCk7CmNvbnN0IEdTX1RJTUVPVVRfTVMgPSBOdW1iZXIocHJvY2Vzcy5lbnYuR1NfVElNRU9VVF9NUyB8fCAxMjAwMDApOwpjb25zdCBNRURJQV9USU1FT1VUX01TID0gTnVtYmVyKHByb2Nlc3MuZW52Lk1FRElBX1RJTUVPVVRfTVMgfHwgMjgwMDAwKTsKY29uc3QgUFlUSE9OID0gcHJvY2Vzcy5lbnYuUFlUSE9OX0JJTiB8fCAncHl0aG9uMyc7CmNvbnN0IFVQTE9BRF9ESVIgPSBwYXRoLmpvaW4ob3MudG1wZGlyKCksICd5b3FhcnQtdXBsb2FkJyk7Cgphd2FpdCBmcy5ta2RpcihVUExPQURfRElSLCB7cmVjdXJzaXZlOiB0cnVlfSk7CmNvbnN0IHVwbG9hZCA9IG11bHRlcih7ZGVzdDogVVBMT0FEX0RJUiwgbGltaXRzOiB7ZmlsZVNpemU6IE1BWF9NQiAqIDEwMjQgKiAxMDI0LCBmaWxlczogMX19KTsKCmNvbnN0IE1JTUUgPSB7CiAgZG9jeDogJ2FwcGxpY2F0aW9uL3ZuZC5vcGVueG1sZm9ybWF0cy1vZmZpY2Vkb2N1bWVudC53b3JkcHJvY2Vzc2luZ21sLmRvY3VtZW50JywKICB4bHN4OiAnYXBwbGljYXRpb24vdm5kLm9wZW54bWxmb3JtYXRzLW9mZmljZWRvY3VtZW50LnNwcmVhZHNoZWV0bWwuc2hlZXQnLAogIHBkZjogJ2FwcGxpY2F0aW9uL3BkZicsCiAgbXA0OiAndmlkZW8vbXA0Jwp9OwoKY29uc3QgTVNHID0gewogIG5vRmlsZTogJ1BsZWFzZSB1cGxvYWQgYSBQREYgZmlsZS4nLAogIG5vdFBkZjogJ1RoaXMgZmlsZSBpcyBub3QgYSB2YWxpZCBQREYuJywKICB0b29CaWc6IGBUaGlzIGZpbGUgaXMgdG9vIGxhcmdlLiBUaGUgbGltaXQgaXMgJHtNQVhfTUJ9IE1CLmAsCiAgZmFpbDogIldlIGNvdWxkbid0IHByb2Nlc3MgdGhpcyBmaWxlLiBQbGVhc2UgdHJ5IGFnYWluLiIsCiAgZW5jcnlwdGVkOiAnVGhpcyBQREYgaXMgcGFzc3dvcmQgcHJvdGVjdGVkLiBQbGVhc2UgdW5sb2NrIGl0IGZpcnN0LicKfTsKCmNvbnN0IGFsbG93ZWRNZWRpYSA9IHUgPT4gewogIHRyeSB7CiAgICBjb25zdCB4ID0gbmV3IFVSTCh1KTsKICAgIGlmICghWydodHRwczonLCAnaHR0cDonXS5pbmNsdWRlcyh4LnByb3RvY29sKSkgcmV0dXJuIGZhbHNlOwogICAgY29uc3QgaCA9IHguaG9zdG5hbWUudG9Mb3dlckNhc2UoKTsKICAgIHJldHVybiBbJ3lvdXR1YmUuY29tJywgJ3d3dy55b3V0dWJlLmNvbScsICdtLnlvdXR1YmUuY29tJywgJ3lvdXR1LmJlJywgJ2luc3RhZ3JhbS5jb20nLCAnd3d3Lmluc3RhZ3JhbS5jb20nXS5pbmNsdWRlcyhoKSB8fCBoLmVuZHNXaXRoKCcuaW5zdGFncmFtLmNvbScpOwogIH0gY2F0Y2ggeyByZXR1cm4gZmFsc2U7IH0KfTsKCi8vIFJ1biBhIGNoaWxkIHByb2Nlc3Mgd2l0aCBhIGhhcmQgdGltZW91dC4gTmV2ZXIgcmVqZWN0cyBmb3Igbm9uLXplcm8gZXhpdDsgcmVzb2x2ZXMge2NvZGUsb3V0LGVycix0aW1lZE91dH0uCmNvbnN0IHJ1biA9IChjbWQsIGFyZ3MsIHt0aW1lb3V0TXMgPSAxMjAwMDAsIGN3ZH0gPSB7fSkgPT4gbmV3IFByb21pc2UocmVzb2x2ZSA9PiB7CiAgbGV0IG91dCA9ICcnLCBlcnIgPSAnJywgdGltZWRPdXQgPSBmYWxzZSwgc2V0dGxlZCA9IGZhbHNlOwogIGNvbnN0IGRvbmUgPSByID0+IHsgaWYgKCFzZXR0bGVkKSB7IHNldHRsZWQgPSB0cnVlOyByZXNvbHZlKHIpOyB9IH07CiAgbGV0IHA7CiAgdHJ5IHsgcCA9IHNwYXduKGNtZCwgYXJncywge3N0ZGlvOiBbJ2lnbm9yZScsICdwaXBlJywgJ3BpcGUnXSwgY3dkfSk7IH0KICBjYXRjaCAoZSkgeyByZXR1cm4gZG9uZSh7Y29kZTogLTEsIG91dCwgZXJyOiBTdHJpbmcoZSksIHRpbWVkT3V0fSk7IH0KICBjb25zdCB0aW1lciA9IHNldFRpbWVvdXQoKCkgPT4geyB0aW1lZE91dCA9IHRydWU7IHAua2lsbCgnU0lHS0lMTCcpOyB9LCB0aW1lb3V0TXMpOwogIHAuc3Rkb3V0Lm9uKCdkYXRhJywgZCA9PiB7IGlmIChvdXQubGVuZ3RoIDwgMWU2KSBvdXQgKz0gZDsgfSk7CiAgcC5zdGRlcnIub24oJ2RhdGEnLCBkID0+IHsgaWYgKGVyci5sZW5ndGggPCAxZTYpIGVyciArPSBkOyB9KTsKICBwLm9uKCdlcnJvcicsIGUgPT4geyBjbGVhclRpbWVvdXQodGltZXIpOyBkb25lKHtjb2RlOiAtMSwgb3V0LCBlcnI6IGVyciArIFN0cmluZyhlKSwgdGltZWRPdXR9KTsgfSk7CiAgcC5vbignY2xvc2UnLCBjb2RlID0+IHsgY2xlYXJUaW1lb3V0KHRpbWVyKTsgZG9uZSh7Y29kZSwgb3V0LCBlcnIsIHRpbWVkT3V0fSk7IH0pOwp9KTsKCmFzeW5jIGZ1bmN0aW9uIGNsZWFudXAoLi4ueHMpIHsgZm9yIChjb25zdCB4IG9mIHhzKSBpZiAoeCkgYXdhaXQgZnMucm0oeCwge3JlY3Vyc2l2ZTogdHJ1ZSwgZm9yY2U6IHRydWV9KS5jYXRjaCgoKSA9PiB7fSk7IH0KCi8vIFJlYWwgUERGIHNpZ25hdHVyZSBjaGVjayAobm90IGp1c3QgZXh0ZW5zaW9uIC8gY2xpZW50IE1JTUUpLgphc3luYyBmdW5jdGlvbiBoYXNQZGZTaWduYXR1cmUoZmlsZSkgewogIGxldCBmaDsKICB0cnkgewogICAgZmggPSBhd2FpdCBmcy5vcGVuKGZpbGUsICdyJyk7CiAgICBjb25zdCBidWYgPSBCdWZmZXIuYWxsb2MoMTAyNCk7CiAgICBjb25zdCB7Ynl0ZXNSZWFkfSA9IGF3YWl0IGZoLnJlYWQoYnVmLCAwLCAxMDI0LCAwKTsKICAgIHJldHVybiBidWYuc3ViYXJyYXkoMCwgYnl0ZXNSZWFkKS5pbmNsdWRlcygnJVBERi0nKTsKICB9IGNhdGNoIHsgcmV0dXJuIGZhbHNlOyB9IGZpbmFsbHkgeyBhd2FpdCBmaD8uY2xvc2UoKS5jYXRjaCgoKSA9PiB7fSk7IH0KfQoKYXN5bmMgZnVuY3Rpb24gY2hlY2tQZGZVcGxvYWQoZikgewogIGlmICghZikgcmV0dXJuIHtzdGF0dXM6IDQwMCwgZXJyb3I6IE1TRy5ub0ZpbGV9OwogIGlmICghZi5zaXplKSByZXR1cm4ge3N0YXR1czogNDAwLCBlcnJvcjogJ1RoZSB1cGxvYWRlZCBmaWxlIGlzIGVtcHR5Lid9OwogIGlmICghKGF3YWl0IGhhc1BkZlNpZ25hdHVyZShmLnBhdGgpKSkgcmV0dXJuIHtzdGF0dXM6IDQwMCwgZXJyb3I6IE1TRy5ub3RQZGZ9OwogIHJldHVybiBudWxsOwp9CgpmdW5jdGlvbiBzZW5kRmlsZShyZXMsIGZpbGUsIGRvd25sb2FkTmFtZSwga2luZCwgY2xlYW51cFBhdGhzLCBleHRyYUhlYWRlcnMgPSB7fSkgewogIHJlcy5zZXRIZWFkZXIoJ0NvbnRlbnQtVHlwZScsIE1JTUVba2luZF0pOwogIHJlcy5zZXRIZWFkZXIoJ0FjY2Vzcy1Db250cm9sLUV4cG9zZS1IZWFkZXJzJywgJ0NvbnRlbnQtRGlzcG9zaXRpb24sWC1Zb3FBcnQtT3JpZ2luYWwtQnl0ZXMsWC1Zb3FBcnQtQ29tcHJlc3NlZC1CeXRlcyxYLVlvcUFydC1SZWR1Y2VkLFgtWW9xQXJ0LUVuZ2luZScpOwogIGZvciAoY29uc3QgW2ssIHZdIG9mIE9iamVjdC5lbnRyaWVzKGV4dHJhSGVhZGVycykpIHJlcy5zZXRIZWFkZXIoaywgdik7CiAgcmVzLmRvd25sb2FkKGZpbGUsIGRvd25sb2FkTmFtZSwgKCkgPT4gY2xlYW51cCguLi5jbGVhbnVwUGF0aHMpKTsKfQoKLy8gV3JhcCBhc3luYyBoYW5kbGVycyBzbyBhbiBleGNlcHRpb24gY2FuIG5ldmVyIGxlYWsgYSBzdGFjayB0cmFjZSBvciBoYW5nIHRoZSByZXF1ZXN0Lgpjb25zdCBzYWZlID0gZm4gPT4gYXN5bmMgKHJlcSwgcmVzKSA9PiB7CiAgdHJ5IHsgYXdhaXQgZm4ocmVxLCByZXMpOyB9CiAgY2F0Y2ggKGUpIHsKICAgIGNvbnNvbGUuZXJyb3IoJ3Byb2Nlc3NpbmcgZXJyb3I6JywgZSk7CiAgICBhd2FpdCBjbGVhbnVwKHJlcS5maWxlPy5wYXRoKTsKICAgIGlmICghcmVzLmhlYWRlcnNTZW50KSByZXMuc3RhdHVzKDUwMCkuanNvbih7ZXJyb3I6IE1TRy5mYWlsfSk7CiAgfQp9OwoKLy8gLS0tLS0tLS0tLSBQREYgLT4gV29yZCAvIEV4Y2VsIC0tLS0tLS0tLS0KYXN5bmMgZnVuY3Rpb24gY29udmVyc2lvbihyZXEsIHJlcywga2luZCkgewogIGNvbnN0IGYgPSByZXEuZmlsZTsKICBjb25zdCBiYWQgPSBhd2FpdCBjaGVja1BkZlVwbG9hZChmKTsKICBpZiAoYmFkKSB7IGF3YWl0IGNsZWFudXAoZj8ucGF0aCk7IHJldHVybiByZXMuc3RhdHVzKGJhZC5zdGF0dXMpLmpzb24oe2Vycm9yOiBiYWQuZXJyb3J9KTsgfQogIGNvbnN0IGRpciA9IHBhdGguam9pbihvcy50bXBkaXIoKSwgJ3lvcWFydC1jb252ZXJ0JywgY3J5cHRvLnJhbmRvbVVVSUQoKSk7CiAgYXdhaXQgZnMubWtkaXIoZGlyLCB7cmVjdXJzaXZlOiB0cnVlfSk7CiAgY29uc3QgZXh0ID0ga2luZCA9PT0gJ3dvcmQnID8gJ2RvY3gnIDogJ3hsc3gnOwogIGNvbnN0IG91dCA9IHBhdGguam9pbihkaXIsIGB5b3FhcnQtY29udmVydGVkLiR7ZXh0fWApOwogIGNvbnN0IHIgPSBhd2FpdCBydW4oUFlUSE9OLCBbcGF0aC5qb2luKEhFUkUsICdjb252ZXJ0LnB5JyksIGtpbmQsIGYucGF0aCwgb3V0XSwge3RpbWVvdXRNczogQ09OVkVSVF9USU1FT1VUX01TfSk7CiAgaWYgKHIuY29kZSAhPT0gMCkgewogICAgY29uc29sZS5lcnJvcihgY29udmVydCAke2tpbmR9IGZhaWxlZCAoY29kZSAke3IuY29kZX0sIHRpbWVvdXQgJHtyLnRpbWVkT3V0fSk6YCwgci5lcnIuc2xpY2UoLTIwMDApKTsKICAgIGF3YWl0IGNsZWFudXAoZGlyLCBmLnBhdGgpOwogICAgaWYgKHIudGltZWRPdXQpIHJldHVybiByZXMuc3RhdHVzKDUwNCkuanNvbih7ZXJyb3I6ICdDb252ZXJzaW9uIHRvb2sgdG9vIGxvbmcuIFRyeSBhIHNtYWxsZXIgUERGLid9KTsKICAgIGlmIChyLmNvZGUgPT09IDMpIHJldHVybiByZXMuc3RhdHVzKDQyMikuanNvbih7ZXJyb3I6IE1TRy5lbmNyeXB0ZWR9KTsKICAgIGlmIChyLmNvZGUgPT09IDQpIHJldHVybiByZXMuc3RhdHVzKDQyMikuanNvbih7ZXJyb3I6ICdObyByZWFkYWJsZSB0ZXh0IG9yIHRhYmxlcyB3ZXJlIGZvdW5kIGluIHRoaXMgUERGLid9KTsKICAgIHJldHVybiByZXMuc3RhdHVzKDUwMikuanNvbih7ZXJyb3I6IE1TRy5mYWlsfSk7CiAgfQogIGNvbnN0IGVuZ2luZSA9IChyLm91dC50cmltKCkuc3BsaXQoJ1xuJykucG9wKCkgfHwgJycpLnJlcGxhY2UoL1teYS16MC05XystXS9naSwgJycpLnNsaWNlKDAsIDQwKTsKICBzZW5kRmlsZShyZXMsIG91dCwgYHlvcWFydC1jb252ZXJ0ZWQuJHtleHR9YCwgZXh0LCBbZGlyLCBmLnBhdGhdLCB7J1gtWW9xQXJ0LUVuZ2luZSc6IGVuZ2luZSB8fCAndW5rbm93bid9KTsKfQpjb25zdCBjb252ZXJ0SGFuZGxlciA9IGtpbmQgPT4gW3VwbG9hZC5zaW5nbGUoJ2ZpbGUnKSwgc2FmZSgocmVxLCByZXMpID0+IGNvbnZlcnNpb24ocmVxLCByZXMsIGtpbmQpKV07CgovLyAtLS0tLS0tLS0tIFByb3RlY3QgLS0tLS0tLS0tLQphc3luYyBmdW5jdGlvbiBwcm90ZWN0KHJlcSwgcmVzKSB7CiAgY29uc3QgZiA9IHJlcS5maWxlLCBwdyA9IFN0cmluZyhyZXEuYm9keT8ucGFzc3dvcmQgfHwgJycpOwogIGNvbnN0IGJhZCA9IGF3YWl0IGNoZWNrUGRmVXBsb2FkKGYpOwogIGlmIChiYWQpIHsgYXdhaXQgY2xlYW51cChmPy5wYXRoKTsgcmV0dXJuIHJlcy5zdGF0dXMoYmFkLnN0YXR1cykuanNvbih7ZXJyb3I6IGJhZC5lcnJvcn0pOyB9CiAgaWYgKCFwdykgeyBhd2FpdCBjbGVhbnVwKGYucGF0aCk7IHJldHVybiByZXMuc3RhdHVzKDQwMCkuanNvbih7ZXJyb3I6ICdQbGVhc2UgcHJvdmlkZSBhIHBhc3N3b3JkLid9KTsgfQogIGlmIChwdy5sZW5ndGggPiAxMjgpIHsgYXdhaXQgY2xlYW51cChmLnBhdGgpOyByZXR1cm4gcmVzLnN0YXR1cyg0MDApLmpzb24oe2Vycm9yOiAnUGFzc3dvcmQgaXMgdG9vIGxvbmcuJ30pOyB9CiAgY29uc3QgZGlyID0gcGF0aC5qb2luKG9zLnRtcGRpcigpLCAneW9xYXJ0LXByb3RlY3QnLCBjcnlwdG8ucmFuZG9tVVVJRCgpKTsKICBhd2FpdCBmcy5ta2RpcihkaXIsIHtyZWN1cnNpdmU6IHRydWV9KTsKICBjb25zdCBvdXQgPSBwYXRoLmpvaW4oZGlyLCAneW9xYXJ0LXByb3RlY3RlZC5wZGYnKTsKICAvLyBxcGRmIGlzIHByZWZlcnJlZCAocGFzc3dvcmQgcGFzc2VkIGFzIGFyZyBidXQgZmlsZSBpcyByZS1lbmNyeXB0ZWQgd2l0aG91dCByZS1yZW5kZXJpbmcpOyBHaG9zdHNjcmlwdCBpcyB0aGUgZmFsbGJhY2suCiAgbGV0IHIgPSBhd2FpdCBydW4oJ3FwZGYnLCBbJy0tZW5jcnlwdCcsIHB3LCBwdywgJzI1NicsICctLScsIGYucGF0aCwgb3V0XSwge3RpbWVvdXRNczogR1NfVElNRU9VVF9NU30pOwogIGlmIChyLmNvZGUgIT09IDAgJiYgci5jb2RlICE9PSAzKSB7CiAgICByID0gYXdhaXQgcnVuKCdncycsIFsnLXNERVZJQ0U9cGRmd3JpdGUnLCAnLWRDb21wYXRpYmlsaXR5TGV2ZWw9MS43JywgJy1kTk9QQVVTRScsICctZFFVSUVUJywgJy1kQkFUQ0gnLCBgLXNPd25lclBhc3N3b3JkPSR7cHd9YCwgYC1zVXNlclBhc3N3b3JkPSR7cHd9YCwgJy1kRW5jcnlwdGlvblI9MycsICctZEtleUxlbmd0aD0xMjgnLCBgLXNPdXRwdXRGaWxlPSR7b3V0fWAsIGYucGF0aF0sIHt0aW1lb3V0TXM6IEdTX1RJTUVPVVRfTVN9KTsKICB9CiAgY29uc3QgdiA9IHIuY29kZSA9PT0gMCB8fCByLmNvZGUgPT09IDMgPyBhd2FpdCBydW4oUFlUSE9OLCBbcGF0aC5qb2luKEhFUkUsICdjb252ZXJ0LnB5JyksICd2ZXJpZnktZW5jcnlwdGVkJywgb3V0LCBwd10sIHt0aW1lb3V0TXM6IDMwMDAwfSkgOiB7Y29kZTogMX07CiAgaWYgKHYuY29kZSAhPT0gMCkgewogICAgY29uc29sZS5lcnJvcigncHJvdGVjdCBmYWlsZWQ6Jywgci5lcnIuc2xpY2UoLTEwMDApKTsKICAgIGF3YWl0IGNsZWFudXAoZGlyLCBmLnBhdGgpOwogICAgcmV0dXJuIHJlcy5zdGF0dXMoNTAyKS5qc29uKHtlcnJvcjogTVNHLmZhaWx9KTsKICB9CiAgc2VuZEZpbGUocmVzLCBvdXQsICd5b3FhcnQtcHJvdGVjdGVkLnBkZicsICdwZGYnLCBbZGlyLCBmLnBhdGhdKTsKfQoKLy8gLS0tLS0tLS0tLSBDb21wcmVzcyAtLS0tLS0tLS0tCmFzeW5jIGZ1bmN0aW9uIGNvbXByZXNzKHJlcSwgcmVzKSB7CiAgY29uc3QgZiA9IHJlcS5maWxlOwogIGNvbnN0IGJhZCA9IGF3YWl0IGNoZWNrUGRmVXBsb2FkKGYpOwogIGlmIChiYWQpIHsgYXdhaXQgY2xlYW51cChmPy5wYXRoKTsgcmV0dXJuIHJlcy5zdGF0dXMoYmFkLnN0YXR1cykuanNvbih7ZXJyb3I6IGJhZC5lcnJvcn0pOyB9CiAgY29uc3QgZGlyID0gcGF0aC5qb2luKG9zLnRtcGRpcigpLCAneW9xYXJ0LWNvbXByZXNzJywgY3J5cHRvLnJhbmRvbVVVSUQoKSk7CiAgYXdhaXQgZnMubWtkaXIoZGlyLCB7cmVjdXJzaXZlOiB0cnVlfSk7CiAgY29uc3Qgb3V0ID0gcGF0aC5qb2luKGRpciwgJ3lvcWFydC1jb21wcmVzc2VkLnBkZicpOwogIGNvbnN0IHF1YWxpdHkgPSBbJ3NjcmVlbicsICdlYm9vaycsICdwcmludGVyJywgJ3ByZXByZXNzJ10uaW5jbHVkZXMocmVxLmJvZHk/LnF1YWxpdHkpID8gcmVxLmJvZHkucXVhbGl0eSA6ICdlYm9vayc7CiAgY29uc3QgZ3MgPSAocSwgbykgPT4gcnVuKCdncycsIFsnLXNERVZJQ0U9cGRmd3JpdGUnLCAnLWRDb21wYXRpYmlsaXR5TGV2ZWw9MS40JywgYC1kUERGU0VUVElOR1M9LyR7cX1gLCAnLWROT1BBVVNFJywgJy1kUVVJRVQnLCAnLWRCQVRDSCcsIGAtc091dHB1dEZpbGU9JHtvfWAsIGYucGF0aF0sIHt0aW1lb3V0TXM6IEdTX1RJTUVPVVRfTVN9KTsKICBjb25zdCByID0gYXdhaXQgZ3MocXVhbGl0eSwgb3V0KTsKICBpZiAoci5jb2RlICE9PSAwKSB7CiAgICBjb25zb2xlLmVycm9yKCdjb21wcmVzcyBmYWlsZWQ6Jywgci5lcnIuc2xpY2UoLTEwMDApKTsKICAgIGF3YWl0IGNsZWFudXAoZGlyLCBmLnBhdGgpOwogICAgcmV0dXJuIHJlcy5zdGF0dXMoNTAyKS5qc29uKHtlcnJvcjogTVNHLmZhaWx9KTsKICB9CiAgbGV0IHN0ID0gYXdhaXQgZnMuc3RhdChvdXQpLCBzcmMgPSBhd2FpdCBmcy5zdGF0KGYucGF0aCk7CiAgaWYgKHN0LnNpemUgPj0gc3JjLnNpemUgJiYgcXVhbGl0eSAhPT0gJ3NjcmVlbicpIHsKICAgIGNvbnN0IHJldHJ5ID0gcGF0aC5qb2luKGRpciwgJ3lvcWFydC1jb21wcmVzc2VkLXNjcmVlbi5wZGYnKTsKICAgIGNvbnN0IHJyID0gYXdhaXQgZ3MoJ3NjcmVlbicsIHJldHJ5KTsKICAgIGlmIChyci5jb2RlID09PSAwKSB7IGNvbnN0IHJzID0gYXdhaXQgZnMuc3RhdChyZXRyeSk7IGlmIChycy5zaXplIDwgc3Quc2l6ZSkgeyBhd2FpdCBmcy5yZW5hbWUocmV0cnksIG91dCk7IHN0ID0gcnM7IH0gfQogIH0KICAvLyBJZiBjb21wcmVzc2lvbiBjb3VsZCBub3Qgc2hyaW5rIHRoZSBmaWxlLCBiZSBob25lc3QgYW5kIHJldHVybiB0aGUgb3JpZ2luYWwgYnl0ZXMgdW5jaGFuZ2VkLCBmbGFnZ2VkIGFzIG5vdCByZWR1Y2VkLgogIGxldCBmaWxlID0gb3V0OwogIGlmIChzdC5zaXplID49IHNyYy5zaXplKSB7IGZpbGUgPSBmLnBhdGg7IHN0ID0gc3JjOyB9CiAgc2VuZEZpbGUocmVzLCBmaWxlLCAneW9xYXJ0LWNvbXByZXNzZWQucGRmJywgJ3BkZicsIFtkaXIsIGYucGF0aF0sIHsKICAgICdYLVlvcUFydC1PcmlnaW5hbC1CeXRlcyc6IFN0cmluZyhzcmMuc2l6ZSksCiAgICAnWC1Zb3FBcnQtQ29tcHJlc3NlZC1CeXRlcyc6IFN0cmluZyhzdC5zaXplKSwKICAgICdYLVlvcUFydC1SZWR1Y2VkJzogU3RyaW5nKHN0LnNpemUgPCBzcmMuc2l6ZSkKICB9KTsKfQoKLy8gLS0tLS0tLS0tLSBNZWRpYSBkb3dubG9hZGVyIC0tLS0tLS0tLS0KYXN5bmMgZnVuY3Rpb24gbWVkaWFEb3dubG9hZChyZXEsIHJlcykgewogIGNvbnN0IHt1cmwsIHF1YWxpdHkgPSAnQmVzdCBhdmFpbGFibGUnLCBmb3JtYXQgPSAnbXA0J30gPSByZXEuYm9keSB8fCB7fTsKICBpZiAoIWFsbG93ZWRNZWRpYSh1cmwpKSByZXR1cm4gcmVzLnN0YXR1cyg0MDApLmpzb24oe2Vycm9yOiAnVW5zdXBwb3J0ZWQgb3IgaW52YWxpZCBZb3VUdWJlL0luc3RhZ3JhbSBVUkwuJ30pOwogIGlmIChmb3JtYXQgIT09ICdtcDQnKSByZXR1cm4gcmVzLnN0YXR1cyg0MDApLmpzb24oe2Vycm9yOiAnT25seSBNUDQgaXMgZW5hYmxlZC4nfSk7CiAgY29uc3QgaCA9IHF1YWxpdHkgPT09ICcxMDgwcCcgPyAxMDgwIDogcXVhbGl0eSA9PT0gJzcyMHAnID8gNzIwIDogcXVhbGl0eSA9PT0gJzQ4MHAnID8gNDgwIDogcXVhbGl0eSA9PT0gJzM2MHAnID8gMzYwIDogMTA4MDsKICBjb25zdCBkaXIgPSBwYXRoLmpvaW4ob3MudG1wZGlyKCksICd5b3FhcnQtbWVkaWEnLCBjcnlwdG8ucmFuZG9tVVVJRCgpKTsKICBhd2FpdCBmcy5ta2RpcihkaXIsIHtyZWN1cnNpdmU6IHRydWV9KTsKICBjb25zdCByID0gYXdhaXQgcnVuKCd5dC1kbHAnLCBbJy0tbm8tcGxheWxpc3QnLCAnLS1yZXN0cmljdC1maWxlbmFtZXMnLCAnLS1tYXgtZmlsZXNpemUnLCBgJHtNQVhfTUJ9TWAsICctLW1hdGNoLWZpbHRlcicsIGBkdXJhdGlvbiA8PSAke01BWF9TRUNPTkRTfWAsICctZicsIGBidipbaGVpZ2h0PD0ke2h9XVtleHQ9bXA0XStiYVtleHQ9bTRhXS9iW2hlaWdodDw9JHtofV1bZXh0PW1wNF0vYltoZWlnaHQ8PSR7aH1dYCwgJy0tbWVyZ2Utb3V0cHV0LWZvcm1hdCcsICdtcDQnLCAnLW8nLCBwYXRoLmpvaW4oZGlyLCAndmlkZW8uJShleHQpcycpLCAnLS1wcmludCcsICdhZnRlcl9tb3ZlOmZpbGVwYXRoJywgJy0tJywgdXJsXSwge3RpbWVvdXRNczogTUVESUFfVElNRU9VVF9NU30pOwogIGlmIChyLmNvZGUgIT09IDApIHsKICAgIGNvbnNvbGUuZXJyb3IoJ3l0LWRscCBmYWlsZWQ6Jywgci5lcnIuc2xpY2UoLTEwMDApKTsKICAgIGF3YWl0IGNsZWFudXAoZGlyKTsKICAgIGlmIChyLnRpbWVkT3V0KSByZXR1cm4gcmVzLnN0YXR1cyg1MDQpLmpzb24oe2Vycm9yOiAnVGhlIGRvd25sb2FkIHRvb2sgdG9vIGxvbmcuJ30pOwogICAgcmV0dXJuIHJlcy5zdGF0dXMoNTAyKS5qc29uKHtlcnJvcjogJ1VuYWJsZSB0byBkb3dubG9hZCB0aGlzIG1lZGlhLiBJdCBtYXkgYmUgcHJpdmF0ZSwgdG9vIGxvbmcsIHRvbyBsYXJnZSBvciByZXN0cmljdGVkLid9KTsKICB9CiAgY29uc3QgZmlsZSA9IHIub3V0LnRyaW0oKS5zcGxpdCgvXHI/XG4vKS5maWx0ZXIoQm9vbGVhbikucG9wKCk7CiAgaWYgKCFmaWxlIHx8ICFwYXRoLnJlc29sdmUoZmlsZSkuc3RhcnRzV2l0aChwYXRoLnJlc29sdmUoZGlyKSkpIHsgYXdhaXQgY2xlYW51cChkaXIpOyByZXR1cm4gcmVzLnN0YXR1cyg1MDIpLmpzb24oe2Vycm9yOiAnTWVkaWEgZmlsZSB3YXMgbm90IGNyZWF0ZWQuJ30pOyB9CiAgYXdhaXQgZnMuc3RhdChmaWxlKTsKICBzZW5kRmlsZShyZXMsIGZpbGUsICd5b3FhcnQtdmlkZW8ubXA0JywgJ21wNCcsIFtkaXJdKTsKfQoKLy8gLS0tLS0tLS0tLSBIZWFsdGggKHJlcG9ydHMgd2hpY2ggZW5naW5lcyBhcmUgYWN0dWFsbHkgcHJlc2VudCkgLS0tLS0tLS0tLQpsZXQgZW5naW5lQ2FjaGUgPSBudWxsOwphc3luYyBmdW5jdGlvbiBlbmdpbmVzKCkgewogIGlmIChlbmdpbmVDYWNoZSAmJiBEYXRlLm5vdygpIC0gZW5naW5lQ2FjaGUudCA8IDYwMDAwKSByZXR1cm4gZW5naW5lQ2FjaGUudjsKICBjb25zdCB2ID0gSlNPTi5wYXJzZSgoYXdhaXQgcnVuKFBZVEhPTiwgW3BhdGguam9pbihIRVJFLCAnY29udmVydC5weScpLCAnZW5naW5lcyddLCB7dGltZW91dE1zOiA2MDAwMH0pKS5vdXQudHJpbSgpLnNwbGl0KCdcbicpLnBvcCgpIHx8ICd7fScpOwogIGZvciAoY29uc3QgYiBvZiBbJ2dzJywgJ3FwZGYnLCAneXQtZGxwJywgJ2ZmbXBlZyddKSB2W2JdID0gKGF3YWl0IHJ1bignd2hpY2gnLCBbYl0pKS5jb2RlID09PSAwOwogIGVuZ2luZUNhY2hlID0ge3Q6IERhdGUubm93KCksIHZ9OwogIHJldHVybiB2Owp9CgpleHBvcnQgZnVuY3Rpb24gcHJvY2Vzc2luZ1JvdXRlcigpIHsKICBjb25zdCByID0gZXhwcmVzcy5Sb3V0ZXIoKTsKICByLnBvc3QoJy9jb252ZXJ0L3BkZi10by13b3JkJywgLi4uY29udmVydEhhbmRsZXIoJ3dvcmQnKSk7CiAgci5wb3N0KCcvY29udmVydC9wZGYtdG8tZXhjZWwnLCAuLi5jb252ZXJ0SGFuZGxlcignZXhjZWwnKSk7CiAgci5wb3N0KCcvcHJvdGVjdC1wZGYnLCB1cGxvYWQuc2luZ2xlKCdmaWxlJyksIHNhZmUocHJvdGVjdCkpOwogIHIucG9zdCgnL2NvbXByZXNzLXBkZicsIHVwbG9hZC5zaW5nbGUoJ2ZpbGUnKSwgc2FmZShjb21wcmVzcykpOwogIHIucG9zdCgnL2Rvd25sb2FkJywgc2FmZShtZWRpYURvd25sb2FkKSk7CiAgci5nZXQoJy9oZWFsdGgnLCBzYWZlKGFzeW5jIChyZXEsIHJlcykgPT4gcmVzLmpzb24oe29rOiB0cnVlLCBzZXJ2aWNlOiAnWW9xQXJ0IGJhY2tlbmQnLCB2ZXJzaW9uOiAnMi4xLjAnLCBlbmdpbmVzOiBhd2FpdCBlbmdpbmVzKCl9KSkpOwogIHJldHVybiByOwp9CgovLyBNdWx0ZXIgLyBib2R5LXBhcnNlciBlcnJvcnMgLT4gY2xlYW4gSlNPTiwgbm8gc3RhY2sgdHJhY2VzLgpleHBvcnQgZnVuY3Rpb24gcHJvY2Vzc2luZ0Vycm9ySGFuZGxlcihlcnIsIHJlcSwgcmVzLCBuZXh0KSB7CiAgaWYgKHJlcy5oZWFkZXJzU2VudCkgcmV0dXJuIG5leHQoZXJyKTsKICBpZiAocmVxLmZpbGU/LnBhdGgpIGNsZWFudXAocmVxLmZpbGUucGF0aCk7CiAgaWYgKGVycj8uY29kZSA9PT0gJ0xJTUlUX0ZJTEVfU0laRScpIHJldHVybiByZXMuc3RhdHVzKDQxMykuanNvbih7ZXJyb3I6IE1TRy50b29CaWd9KTsKICBpZiAoZXJyPy5uYW1lID09PSAnTXVsdGVyRXJyb3InKSByZXR1cm4gcmVzLnN0YXR1cyg0MDApLmpzb24oe2Vycm9yOiBNU0cuZmFpbH0pOwogIGNvbnNvbGUuZXJyb3IoZXJyKTsKICByZXMuc3RhdHVzKGVycj8uc3RhdHVzIHx8IDUwMCkuanNvbih7ZXJyb3I6IE1TRy5mYWlsfSk7Cn0KCi8vIFJlbW92ZSBzdGFsZSB0ZW1wIGZpbGVzIGxlZnQgYnkgY3Jhc2hlZCByZXF1ZXN0cy4KZXhwb3J0IGZ1bmN0aW9uIHN0YXJ0VGVtcFN3ZWVwZXIoKSB7CiAgY29uc3Qgc3dlZXAgPSBhc3luYyAoKSA9PiB7CiAgICBmb3IgKGNvbnN0IGQgb2YgW1VQTE9BRF9ESVIsIC4uLlsnY29udmVydCcsICdwcm90ZWN0JywgJ2NvbXByZXNzJywgJ21lZGlhJ10ubWFwKHggPT4gcGF0aC5qb2luKG9zLnRtcGRpcigpLCAneW9xYXJ0LScgKyB4KSldKSB7CiAgICAgIGZvciAoY29uc3QgbiBvZiBhd2FpdCBmcy5yZWFkZGlyKGQpLmNhdGNoKCgpID0+IFtdKSkgewogICAgICAgIGNvbnN0IHAgPSBwYXRoLmpvaW4oZCwgbik7CiAgICAgICAgY29uc3Qgc3QgPSBhd2FpdCBmcy5zdGF0KHApLmNhdGNoKCgpID0+IG51bGwpOwogICAgICAgIGlmIChzdCAmJiBEYXRlLm5vdygpIC0gc3QubXRpbWVNcyA+IDMwICogNjAgKiAxMDAwKSBhd2FpdCBjbGVhbnVwKHApOwogICAgICB9CiAgICB9CiAgfTsKICBzZXRJbnRlcnZhbChzd2VlcCwgMTAgKiA2MCAqIDEwMDApLnVucmVmKCk7Cn0K
+// YoqArt native processing routes (PDF conversion, compress, protect, media download).
+// Mounted at "/", "/api" and "/api/processing" so the Cloudflare proxy
+// (/api/processing/<endpoint> -> <PROCESSING_API_URL>/<endpoint>) and direct calls both work.
+import express from 'express';
+import multer from 'multer';
+import fs from 'fs/promises';
+import os from 'os';
+import path from 'path';
+import crypto from 'crypto';
+import {spawn} from 'child_process';
+import {fileURLToPath} from 'url';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const MAX_MB = Number(process.env.MAX_UPLOAD_MB || 50);
+const MAX_SECONDS = Number(process.env.MAX_MEDIA_SECONDS || 900);
+const CONVERT_TIMEOUT_MS = Number(process.env.CONVERT_TIMEOUT_MS || 280000);
+const GS_TIMEOUT_MS = Number(process.env.GS_TIMEOUT_MS || 120000);
+const MEDIA_TIMEOUT_MS = Number(process.env.MEDIA_TIMEOUT_MS || 280000);
+const PYTHON = process.env.PYTHON_BIN || 'python3';
+const UPLOAD_DIR = path.join(os.tmpdir(), 'yoqart-upload');
+
+await fs.mkdir(UPLOAD_DIR, {recursive: true});
+const upload = multer({dest: UPLOAD_DIR, limits: {fileSize: MAX_MB * 1024 * 1024, files: 1}});
+
+const MIME = {
+  docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  pdf: 'application/pdf',
+  mp4: 'video/mp4'
+};
+
+const MSG = {
+  noFile: 'Please upload a PDF file.',
+  notPdf: 'This file is not a valid PDF.',
+  tooBig: `This file is too large. The limit is ${MAX_MB} MB.`,
+  fail: "We couldn't process this file. Please try again.",
+  encrypted: 'This PDF is password protected. Please unlock it first.'
+};
+
+const allowedMedia = u => {
+  try {
+    const x = new URL(u);
+    if (!['https:', 'http:'].includes(x.protocol)) return false;
+    const h = x.hostname.toLowerCase();
+    return ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be', 'instagram.com', 'www.instagram.com'].includes(h) || false;
+  } catch { return false; }
+};
+
+// Run a child process with a hard timeout. Never rejects for non-zero exit; resolves {code,out,err,timedOut}.
+const run = (cmd, args, {timeoutMs = 120000, cwd, argumentsInput} = {}) => new Promise(resolve => {
+  let out = '', err = '', timedOut = false, settled = false;
+  const done = r => { if (!settled) { settled = true; resolve(r); } };
+  let p;
+  try { p = spawn(cmd, args, {stdio: ['pipe', 'pipe', 'pipe'], cwd, detached: process.platform !== 'win32'});
+    p.stdin.on('error',()=>{}); p.stdin.end(argumentsInput || ''); }
+  catch (e) { return done({code: -1, out, err: String(e), timedOut}); }
+  const timer = setTimeout(() => { timedOut = true; try { if(process.platform !== 'win32')process.kill(-p.pid,'SIGKILL');else p.kill('SIGKILL'); } catch {} }, timeoutMs);
+  p.stdout.on('data', d => { if (out.length < 1e6) out += d; });
+  p.stderr.on('data', d => { if (err.length < 1e6) err += d; });
+  p.on('error', e => { clearTimeout(timer); done({code: -1, out, err: err + String(e), timedOut}); });
+  p.on('close', code => { clearTimeout(timer); done({code, out, err, timedOut}); });
+});
+
+async function cleanup(...xs) { for (const x of xs) if (x) await fs.rm(x, {recursive: true, force: true}).catch(() => {}); }
+
+// Real PDF signature check (not just extension / client MIME).
+async function hasPdfSignature(file) {
+  let fh;
+  try {
+    fh = await fs.open(file, 'r');
+    const buf = Buffer.alloc(1024);
+    const {bytesRead} = await fh.read(buf, 0, 1024, 0);
+    return buf.subarray(0, bytesRead).includes('%PDF-');
+  } catch { return false; } finally { await fh?.close().catch(() => {}); }
+}
+
+async function checkPdfUpload(f) {
+  if (!f) return {status: 400, error: MSG.noFile};
+  if (!f.size) return {status: 400, error: 'The uploaded file is empty.'};
+  if (!(await hasPdfSignature(f.path))) return {status: 400, error: MSG.notPdf};
+  return null;
+}
+
+function sendFile(res, file, downloadName, kind, cleanupPaths, extraHeaders = {}) {
+  res.setHeader('Content-Type', MIME[kind]);
+  res.setHeader('Access-Control-Expose-Headers', 'Content-Disposition,X-YoqArt-Original-Bytes,X-YoqArt-Compressed-Bytes,X-YoqArt-Reduced,X-YoqArt-Engine');
+  for (const [k, v] of Object.entries(extraHeaders)) res.setHeader(k, v);
+  res.download(file, downloadName, () => cleanup(...cleanupPaths));
+}
+
+// Wrap async handlers so an exception can never leak a stack trace or hang the request.
+const safe = fn => async (req, res) => {
+  try { await fn(req, res); }
+  catch (e) {
+    console.error('Processing request failed', {code:e.code||'INTERNAL'});
+    await cleanup(req.file?.path);
+    if (!res.headersSent) res.status(500).json({error: MSG.fail});
+  }
+};
+
+// ---------- PDF -> Word / Excel ----------
+async function conversion(req, res, kind) {
+  const f = req.file;
+  const bad = await checkPdfUpload(f);
+  if (bad) { await cleanup(f?.path); return res.status(bad.status).json({error: bad.error}); }
+  const dir = path.join(os.tmpdir(), 'yoqart-convert', crypto.randomUUID());
+  await fs.mkdir(dir, {recursive: true});
+  const ext = kind === 'word' ? 'docx' : 'xlsx';
+  const out = path.join(dir, `yoqart-converted.${ext}`);
+  const r = await run(PYTHON, [path.join(HERE, 'convert.py'), kind, f.path, out], {timeoutMs: CONVERT_TIMEOUT_MS});
+  if (r.code !== 0) {
+    console.error('Conversion failed',{kind,code:r.code,timedOut:r.timedOut});
+    await cleanup(dir, f.path);
+    if (r.timedOut) return res.status(504).json({error: 'Conversion took too long. Try a smaller PDF.'});
+    if (r.code === 3) return res.status(422).json({error: MSG.encrypted});
+    if (r.code === 4) return res.status(422).json({error: 'No readable text or tables were found in this PDF.'});
+    return res.status(502).json({error: MSG.fail});
+  }
+  const engine = (r.out.trim().split('\n').pop() || '').replace(/[^a-z0-9_+-]/gi, '').slice(0, 40);
+  sendFile(res, out, `yoqart-converted.${ext}`, ext, [dir, f.path], {'X-YoqArt-Engine': engine || 'unknown'});
+}
+const convertHandler = kind => [upload.single('file'), safe((req, res) => conversion(req, res, kind))];
+
+// ---------- Protect ----------
+async function protect(req, res) {
+  const f = req.file, pw = String(req.body?.password || '');
+  const bad = await checkPdfUpload(f);
+  if (bad) { await cleanup(f?.path); return res.status(bad.status).json({error: bad.error}); }
+  if (!pw) { await cleanup(f.path); return res.status(400).json({error: 'Please provide a password.'}); }
+  if (pw.length > 128) { await cleanup(f.path); return res.status(400).json({error: 'Password is too long.'}); }
+  const dir = path.join(os.tmpdir(), 'yoqart-protect', crypto.randomUUID());
+  await fs.mkdir(dir, {recursive: true});
+  const out = path.join(dir, 'yoqart-protected.pdf');
+  const r = await run(PYTHON, [path.join(HERE,'native_pdf.py'),'protect',f.path,out], {timeoutMs:GS_TIMEOUT_MS,argumentsInput:pw});
+  if (r.code !== 0) { await cleanup(dir,f.path); return res.status(422).json({error:'Unable to protect this PDF. Check that it is readable and unencrypted.'}); }
+  sendFile(res, out, 'yoqart-protected.pdf', 'pdf', [dir, f.path]);
+}
+
+// ---------- Compress ----------
+async function compress(req, res) {
+  const f = req.file;
+  const bad = await checkPdfUpload(f);
+  if (bad) { await cleanup(f?.path); return res.status(bad.status).json({error: bad.error}); }
+  const dir = path.join(os.tmpdir(), 'yoqart-compress', crypto.randomUUID());
+  await fs.mkdir(dir, {recursive: true});
+  const out = path.join(dir, 'yoqart-compressed.pdf');
+  const quality = ['screen', 'ebook', 'printer', 'prepress'].includes(req.body?.quality) ? req.body.quality : 'ebook';
+  const gs = (q, o) => run('gs', ['-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.4', `-dPDFSETTINGS=/${q}`, '-dSAFER', '-dNOPAUSE', '-dQUIET', '-dBATCH', `-sOutputFile=${o}`, f.path], {timeoutMs: GS_TIMEOUT_MS});
+  const r = await gs(quality, out);
+  if (r.code !== 0) {
+    console.error('Compression failed',{code:r.code});
+    await cleanup(dir, f.path);
+    return res.status(502).json({error: MSG.fail});
+  }
+  const verified=await run(PYTHON,[path.join(HERE,'native_pdf.py'),'verify',f.path,out]);
+  if(verified.code!==0){await cleanup(dir,f.path);return res.status(422).json({error:'PDF output validation failed. The source may be encrypted or malformed.'});}
+  let st = await fs.stat(out), src = await fs.stat(f.path);
+  // If compression could not shrink the file, be honest and return the original bytes unchanged, flagged as not reduced.
+  let file = out;
+  if (st.size >= src.size) { file = f.path; st = src; }
+  sendFile(res, file, 'yoqart-compressed.pdf', 'pdf', [dir, f.path], {
+    'X-YoqArt-Original-Bytes': String(src.size),
+    'X-YoqArt-Compressed-Bytes': String(st.size),
+    'X-YoqArt-Reduced': String(st.size < src.size)
+  });
+}
+
+// ---------- Media downloader ----------
+async function mediaDownload(req, res) {
+  const {url, quality = 'Best available', format = 'mp4'} = req.body || {};
+  if (!allowedMedia(url)) return res.status(400).json({error: 'Unsupported or invalid YouTube/Instagram URL.'});
+  if (format !== 'mp4') return res.status(400).json({error: 'Only MP4 is enabled.'});
+  const h = quality === '1080p' ? 1080 : quality === '720p' ? 720 : quality === '480p' ? 480 : quality === '360p' ? 360 : 1080;
+  const dir = path.join(os.tmpdir(), 'yoqart-media', crypto.randomUUID());
+  await fs.mkdir(dir, {recursive: true});
+  const r = await run('yt-dlp', ['--no-playlist', '--restrict-filenames', '--max-filesize', `${MAX_MB}M`, '--match-filter', `duration <= ${MAX_SECONDS}`, '-f', `bv*[height<=${h}][ext=mp4]+ba[ext=m4a]/b[height<=${h}][ext=mp4]/b[height<=${h}]`, '--merge-output-format', 'mp4', '-o', path.join(dir, 'video.%(ext)s'), '--print', 'after_move:filepath', '--', url], {timeoutMs: MEDIA_TIMEOUT_MS});
+  if (r.code !== 0) {
+    console.error('Media processing failed',{code:r.code,timedOut:r.timedOut});
+    await cleanup(dir);
+    if (r.timedOut) return res.status(504).json({error: 'The download took too long.'});
+    return res.status(502).json({error: 'Unable to download this media. It may be private, too long, too large or restricted.'});
+  }
+  const file = r.out.trim().split(/\r?\n/).filter(Boolean).pop();
+  if (!file || !path.resolve(file).startsWith(path.resolve(dir)+path.sep)) { await cleanup(dir); return res.status(502).json({error: 'Media file was not created.'}); }
+  const st=await fs.stat(file);if(!st.size||st.size>MAX_MB*1024*1024){await cleanup(dir);return res.status(413).json({error:MSG.tooBig});}
+  sendFile(res, file, 'yoqart-video.mp4', 'mp4', [dir]);
+}
+
+async function nativeOperation(req,res,kind,type) {
+ const f=req.file;
+ const bad=kind==='office'?(!f||!f.size?{status:400,error:'Choose an Office document.'}:null):await checkPdfUpload(f);
+ if(bad){await cleanup(f?.path);return res.status(bad.status).json({error:bad.error});}
+ const dir=path.join(os.tmpdir(),'yoqart-convert',crypto.randomUUID());await fs.mkdir(dir,{recursive:true});
+ let src=f.path;
+ try {
+  if(kind==='office'){
+   const ext=path.extname(f.originalname).toLowerCase();
+   if(!({word:['.docx','.doc'],excel:['.xlsx','.xls','.csv'],ppt:['.pptx','.ppt']}[type]||[]).includes(ext))return res.status(400).json({error:'Choose a supported '+type+' document.'});
+   src=path.join(dir,'input'+ext);await fs.copyFile(f.path,src);
+  }
+  const out=path.join(dir,'yoqart-'+kind+'.pdf');
+  const r=await run(PYTHON,[path.join(HERE,'native_pdf.py'),kind,src,out],{timeoutMs:120000,argumentsInput:String(req.body?.password||'')});
+  if(r.code!==0)return res.status(r.timedOut?504:422).json({error:kind==='unlock'?'Password incorrect or PDF unreadable.':'Conversion failed. Check that the required engine is installed and the file is readable.'});
+  sendFile(res,out,'yoqart-'+kind+'.pdf','pdf',[dir,f.path]);return;
+ } finally { if(!res.headersSent)await cleanup(dir,f.path); }
+}
+
+// ---------- Health (reports which engines are actually present) ----------
+let engineCache = null;
+async function engines() {
+  if (engineCache && Date.now() - engineCache.t < 60000) return engineCache.v;
+  const v = JSON.parse((await run(PYTHON, [path.join(HERE, 'convert.py'), 'engines'], {timeoutMs: 60000})).out.trim().split('\n').pop() || '{}');
+  for (const b of ['gs', 'qpdf', 'yt-dlp', 'ffmpeg', 'libreoffice']) v[b] = (await run('which', [b])).code === 0;
+  engineCache = {t: Date.now(), v};
+  return v;
+}
+
+export function processingRouter() {
+  const r = express.Router();
+  let active=0;
+  const clients=new Map();
+  r.use((req,res,next)=>{
+    res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
+    if(req.method==='GET')return next();
+    if(process.env.PROCESSING_API_TOKEN&&req.get('X-YoqArt-Processing-Token')!==process.env.PROCESSING_API_TOKEN)return res.status(401).json({error:'Unauthorized processing request.'});
+    const now=Date.now(),key=req.ip,old=clients.get(key),state=old&&now-old.start<600000?old:{start:now,count:0};state.count++;clients.set(key,state);
+    if(clients.size>10000)for(const [k,v] of clients)if(now-v.start>=600000)clients.delete(k);
+    if(state.count>30)return res.status(429).json({error:'Too many processing requests. Please try later.'});
+    if(active>=Number(process.env.MAX_CONCURRENT_JOBS||2))return res.status(503).json({error:'Processing is busy. Please try again shortly.'});
+    active++;let ended=false;const done=()=>{if(!ended){ended=true;active--;}};res.once('finish',done);res.once('close',done);next();
+  });
+  r.post('/convert/pdf-to-word', ...convertHandler('word'));
+  r.post('/convert/pdf-to-excel', ...convertHandler('excel'));
+  r.post('/protect-pdf', upload.single('file'), safe(protect));
+  r.post('/compress-pdf', upload.single('file'), safe(compress));
+  r.post('/download', safe(mediaDownload));
+  r.post('/unlock-pdf',upload.single('file'),safe((req,res)=>nativeOperation(req,res,'unlock')));
+  r.post('/repair-pdf',upload.single('file'),safe((req,res)=>nativeOperation(req,res,'repair')));
+  for(const type of ['word','excel','ppt'])r.post('/convert/'+type+'-to-pdf',upload.single('file'),safe((req,res)=>nativeOperation(req,res,'office',type)));
+
+  r.get('/health', safe(async (req,res)=>{const e=await engines();const ok=!!(e.pypdf&&e.docx&&e.openpyxl&&e.pdfplumber&&e.gs);res.status(ok?200:503).json({ok,service:'YoqArt backend',version:'3.0.0',engines:e});}));
+  return r;
+}
+
+// Multer / body-parser errors -> clean JSON, no stack traces.
+export function processingErrorHandler(err, req, res, next) {
+  if (res.headersSent) return next(err);
+  if (req.file?.path) cleanup(req.file.path);
+  if (err?.code === 'LIMIT_FILE_SIZE') return res.status(413).json({error: MSG.tooBig});
+  if (err?.name === 'MulterError') return res.status(400).json({error: MSG.fail});
+  console.error('Processing middleware failed',{code:err.code||'INTERNAL'});
+  res.status(err?.status || 500).json({error: MSG.fail});
+}
+
+// Remove stale temp files left by crashed requests.
+export function startTempSweeper() {
+  const sweep = async () => {
+    for (const d of [UPLOAD_DIR, ...['convert', 'protect', 'compress', 'media'].map(x => path.join(os.tmpdir(), 'yoqart-' + x))]) {
+      for (const n of await fs.readdir(d).catch(() => [])) {
+        const p = path.join(d, n);
+        const st = await fs.stat(p).catch(() => null);
+        if (st && Date.now() - st.mtimeMs > 30 * 60 * 1000) await cleanup(p);
+      }
+    }
+  };
+  setInterval(sweep, 10 * 60 * 1000).unref();
+}

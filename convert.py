@@ -1,1 +1,572 @@
-IiIiWW9xQXJ0IFBERiBjb252ZXJzaW9uIGVuZ2luZS4KClVzYWdlOgogIGNvbnZlcnQucHkgd29yZCAgPHNyYy5wZGY+IDxkc3QuZG9jeD4KICBjb252ZXJ0LnB5IGV4Y2VsIDxzcmMucGRmPiA8ZHN0Lnhsc3g+CiAgY29udmVydC5weSB2ZXJpZnktZW5jcnlwdGVkIDxmaWxlLnBkZj4gPHBhc3N3b3JkPgogIGNvbnZlcnQucHkgZW5naW5lcwoKUGlwZWxpbmU6IERvY2xpbmcgKGxheW91dCAvIHRhYmxlIHN0cnVjdHVyZSAvIE9DUikgLT4gdGVzdGVkIGZhbGxiYWNrIChwZGYyZG9jeCAvIHBkZnBsdW1iZXIgKyBPQ1IpIC0+IG91dHB1dCB2YWxpZGF0aW9uLgpFeGl0IGNvZGVzOiAwIG9rLCAxIGZhaWx1cmUsIDMgZW5jcnlwdGVkIGlucHV0LCA0IG5vIGV4dHJhY3RhYmxlIGNvbnRlbnQuClRoZSBsYXN0IHN0ZG91dCBsaW5lIG9uIHN1Y2Nlc3MgaXMgdGhlIGVuZ2luZSBuYW1lIHRoYXQgcHJvZHVjZWQgdGhlIGZpbGUuCiIiIgppbXBvcnQgc3lzLCBvcywgcmUsIGlvLCBqc29uLCBzaHV0aWwsIHN1YnByb2Nlc3MsIHRlbXBmaWxlLCB6aXBmaWxlLCB0cmFjZWJhY2sKCkVYSVRfRkFJTCwgRVhJVF9FTkNSWVBURUQsIEVYSVRfRU1QVFkgPSAxLCAzLCA0ClVTRV9ET0NMSU5HID0gb3MuZW52aXJvbi5nZXQoJ1lPUUFSVF9VU0VfRE9DTElORycsICcxJykgIT0gJzAnClVTRV9PQ1IgPSBvcy5lbnZpcm9uLmdldCgnWU9RQVJUX09DUicsICcxJykgIT0gJzAnCk1BWF9QQUdFUyA9IGludChvcy5lbnZpcm9uLmdldCgnWU9RQVJUX01BWF9QQUdFUycsICczMDAnKSkKCgpjbGFzcyBGYWlsKEV4Y2VwdGlvbik6CiAgICBkZWYgX19pbml0X18oc2VsZiwgbXNnLCBjb2RlPUVYSVRfRkFJTCk6CiAgICAgICAgc3VwZXIoKS5fX2luaXRfXyhtc2cpOyBzZWxmLmNvZGUgPSBjb2RlCgoKZGVmIGxvZygqYSk6CiAgICBwcmludCgqYSwgZmlsZT1zeXMuc3RkZXJyKQoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBpbnB1dCBjaGVja3MKZGVmIGNoZWNrX2lucHV0KHNyYyk6CiAgICBmcm9tIHB5cGRmIGltcG9ydCBQZGZSZWFkZXIKICAgIHRyeToKICAgICAgICByID0gUGRmUmVhZGVyKHNyYykKICAgICAgICBpZiByLmlzX2VuY3J5cHRlZDoKICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgb2sgPSByLmRlY3J5cHQoJycpCiAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgICAgICBvayA9IDAKICAgICAgICAgICAgaWYgbm90IG9rOgogICAgICAgICAgICAgICAgcmFpc2UgRmFpbCgnZW5jcnlwdGVkJywgRVhJVF9FTkNSWVBURUQpCiAgICAgICAgbiA9IGxlbihyLnBhZ2VzKQogICAgZXhjZXB0IEZhaWw6CiAgICAgICAgcmFpc2UKICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICByYWlzZSBGYWlsKGYndW5yZWFkYWJsZSBwZGY6IHtlfScpCiAgICBpZiBuID09IDA6CiAgICAgICAgcmFpc2UgRmFpbCgncGRmIGhhcyBubyBwYWdlcycpCiAgICBpZiBuID4gTUFYX1BBR0VTOgogICAgICAgIHJhaXNlIEZhaWwoZidwZGYgaGFzIHtufSBwYWdlcyAobGltaXQge01BWF9QQUdFU30pJykKICAgIHJldHVybiBuCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIE9DUiBoZWxwZXIgKHRlc3NlcmFjdCBDTEkpCmRlZiBoYXZlKGJpbmFyeSk6CiAgICByZXR1cm4gc2h1dGlsLndoaWNoKGJpbmFyeSkgaXMgbm90IE5vbmUKCgpkZWYgb2NyX3BhZ2VzKHNyYywgZHBpPTIwMCk6CiAgICAiIiJSZXR1cm4gbGlzdCBvZiBwZXItcGFnZSBPQ1IgdGV4dCB1c2luZyBwb3BwbGVyICsgdGVzc2VyYWN0LiBFbXB0eSBsaXN0IGlmIHRvb2xzIG1pc3NpbmcuIiIiCiAgICBpZiBub3QgKFVTRV9PQ1IgYW5kIGhhdmUoJ3BkZnRvcHBtJykgYW5kIGhhdmUoJ3Rlc3NlcmFjdCcpKToKICAgICAgICByZXR1cm4gW10KICAgIG91dCA9IFtdCiAgICB3aXRoIHRlbXBmaWxlLlRlbXBvcmFyeURpcmVjdG9yeShwcmVmaXg9J3lxLW9jci0nKSBhcyBkOgogICAgICAgIHN1YnByb2Nlc3MucnVuKFsncGRmdG9wcG0nLCAnLXInLCBzdHIoZHBpKSwgJy1wbmcnLCBzcmMsIG9zLnBhdGguam9pbihkLCAncCcpXSwgY2hlY2s9VHJ1ZSwgdGltZW91dD0yNDAsCiAgICAgICAgICAgICAgICAgICAgICAgc3Rkb3V0PXN1YnByb2Nlc3MuREVWTlVMTCwgc3RkZXJyPXN1YnByb2Nlc3MuREVWTlVMTCkKICAgICAgICBmb3IgZiBpbiBzb3J0ZWQoeCBmb3IgeCBpbiBvcy5saXN0ZGlyKGQpIGlmIHguZW5kc3dpdGgoJy5wbmcnKSk6CiAgICAgICAgICAgIHIgPSBzdWJwcm9jZXNzLnJ1bihbJ3Rlc3NlcmFjdCcsIG9zLnBhdGguam9pbihkLCBmKSwgJy0nLCAnLS1wc20nLCAnNiddLCBjYXB0dXJlX291dHB1dD1UcnVlLCB0ZXh0PVRydWUsIHRpbWVvdXQ9MTIwKQogICAgICAgICAgICBvdXQuYXBwZW5kKHIuc3Rkb3V0IGlmIHIucmV0dXJuY29kZSA9PSAwIGVsc2UgJycpCiAgICByZXR1cm4gb3V0CgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIG51bWJlciBwYXJzaW5nIGZvciBFeGNlbApfbnVtID0gcmUuY29tcGlsZShyJ15cKD9bLStdP1xzKig/Olsk4oKswqPigrnCpV18UnNcLj98SU5SfFVTRCk/XHMqWy0rXT9cZFtcZCxdKig/OlwuXGQrKT9ccyolP1wpPyQnLCByZS5JKQoKCmRlZiBjb2VyY2UodmFsKToKICAgICIiIlR1cm4gJ+KCuTEsMjM0LjUwJywgJyg1MDApJywgJzEyJScgaW50byAobnVtYmVyLCBudW1iZXJfZm9ybWF0KS4gQW55dGhpbmcgZWxzZSBzdGF5cyB0ZXh0LiIiIgogICAgaWYgdmFsIGlzIE5vbmU6CiAgICAgICAgcmV0dXJuICcnLCBOb25lCiAgICBpZiBub3QgaXNpbnN0YW5jZSh2YWwsIHN0cik6CiAgICAgICAgcmV0dXJuIHZhbCwgTm9uZQogICAgcyA9IHZhbC5zdHJpcCgpCiAgICBpZiBub3QgczoKICAgICAgICByZXR1cm4gJycsIE5vbmUKICAgIGlmIG5vdCBfbnVtLm1hdGNoKHMpOgogICAgICAgIHJldHVybiBzLCBOb25lCiAgICBuZWcgPSBzLnN0YXJ0c3dpdGgoJygnKSBhbmQgcy5lbmRzd2l0aCgnKScpIG9yIHMuc3RhcnRzd2l0aCgnLScpIG9yICcoLScgaW4gcwogICAgcGN0ID0gcy5lbmRzd2l0aCgnJScpCiAgICBzeW0gPSByZS5zZWFyY2gocidbJOKCrMKj4oK5wqVdfFJzXC4/fElOUnxVU0QnLCBzLCByZS5JKQogICAgZGlnaXRzID0gcmUuc3ViKHInW15cZC5dJywgJycsIHMpCiAgICBpZiBkaWdpdHMuY291bnQoJy4nKSA+IDEgb3Igbm90IGRpZ2l0cyBvciBkaWdpdHMgPT0gJy4nOgogICAgICAgIHJldHVybiBzLCBOb25lCiAgICAjIExlYWRpbmcgemVyb3MgKCIwMDciLCBwaG9uZSAvIGFjY291bnQgbnVtYmVycykgYXJlIGlkZW50aWZpZXJzLCBrZWVwIGFzIHRleHQuCiAgICBpZiByZS5tYXRjaChyJ14wXGQnLCBkaWdpdHMpIGFuZCAnLicgbm90IGluIGRpZ2l0cyBhbmQgbm90IHN5bSBhbmQgbm90IHBjdDoKICAgICAgICByZXR1cm4gcywgTm9uZQogICAgdHJ5OgogICAgICAgIG4gPSBmbG9hdChkaWdpdHMpCiAgICBleGNlcHQgVmFsdWVFcnJvcjoKICAgICAgICByZXR1cm4gcywgTm9uZQogICAgaWYgbmVnOgogICAgICAgIG4gPSAtbgogICAgaWYgcGN0OgogICAgICAgIHJldHVybiBuIC8gMTAwLjAsICcwLjAwJScgaWYgJy4nIGluIGRpZ2l0cyBlbHNlICcwJScKICAgIGlmIG4gPT0gaW50KG4pIGFuZCAnLicgbm90IGluIGRpZ2l0czoKICAgICAgICBuID0gaW50KG4pCiAgICAgICAgcmV0dXJuIG4sICcjLCMjMCcgaWYgJywnIGluIHMgb3IgYWJzKG4pID49IDEwMDAgZWxzZSBOb25lCiAgICByZXR1cm4gbiwgJyMsIyMwLjAwJwoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBYTFNYIHdyaXRlcgpkZWYgd3JpdGVfd29ya2Jvb2soc2hlZXRzLCBkc3QpOgogICAgIiIic2hlZXRzOiBsaXN0IG9mICh0aXRsZSwgWyBbY2VsbHMuLi5dLCAuLi4gXSwgaGVhZGVyX3Jvd3NfY291bnQpIiIiCiAgICBmcm9tIG9wZW5weXhsIGltcG9ydCBXb3JrYm9vawogICAgZnJvbSBvcGVucHl4bC5zdHlsZXMgaW1wb3J0IEZvbnQsIEJvcmRlciwgU2lkZSwgQWxpZ25tZW50LCBQYXR0ZXJuRmlsbAogICAgZnJvbSBvcGVucHl4bC51dGlscyBpbXBvcnQgZ2V0X2NvbHVtbl9sZXR0ZXIKICAgIHdiID0gV29ya2Jvb2soKTsgd2IucmVtb3ZlKHdiLmFjdGl2ZSkKICAgIHRoaW4gPSBTaWRlKHN0eWxlPSd0aGluJywgY29sb3I9J0I3QkVDOScpOyBib3JkZXIgPSBCb3JkZXIobGVmdD10aGluLCByaWdodD10aGluLCB0b3A9dGhpbiwgYm90dG9tPXRoaW4pCiAgICB1c2VkID0gc2V0KCkKICAgIGZvciB0aXRsZSwgcm93cywgaGRyIGluIHNoZWV0czoKICAgICAgICB0ID0gcmUuc3ViKHInW1xbXF1cKlw/L1xcOl0nLCAnICcsIHRpdGxlKVs6MjhdIG9yICdTaGVldCcKICAgICAgICBiYXNlLCBpID0gdCwgMgogICAgICAgIHdoaWxlIHQgaW4gdXNlZDoKICAgICAgICAgICAgdCA9IGYne2Jhc2VbOjI1XX0ge2l9JzsgaSArPSAxCiAgICAgICAgdXNlZC5hZGQodCkKICAgICAgICB3cyA9IHdiLmNyZWF0ZV9zaGVldCh0KQogICAgICAgIGZvciByaSwgcm93IGluIGVudW1lcmF0ZShyb3dzLCAxKToKICAgICAgICAgICAgZm9yIGNpLCByYXcgaW4gZW51bWVyYXRlKHJvdywgMSk6CiAgICAgICAgICAgICAgICB2LCBmbXQgPSBjb2VyY2UocmF3KQogICAgICAgICAgICAgICAgYyA9IHdzLmNlbGwocmksIGNpLCB2KQogICAgICAgICAgICAgICAgaWYgZm10OiBjLm51bWJlcl9mb3JtYXQgPSBmbXQKICAgICAgICAgICAgICAgIGMuYWxpZ25tZW50ID0gQWxpZ25tZW50KHZlcnRpY2FsPSd0b3AnLCB3cmFwX3RleHQ9VHJ1ZSwgaG9yaXpvbnRhbD0ncmlnaHQnIGlmIGlzaW5zdGFuY2UodiwgKGludCwgZmxvYXQpKSBlbHNlIE5vbmUpCiAgICAgICAgICAgICAgICBjLmJvcmRlciA9IGJvcmRlcgogICAgICAgICAgICAgICAgaWYgcmkgPD0gaGRyOgogICAgICAgICAgICAgICAgICAgIGMuZm9udCA9IEZvbnQoYm9sZD1UcnVlKTsgYy5maWxsID0gUGF0dGVybkZpbGwoJ3NvbGlkJywgZmdDb2xvcj0nRUVGMEY3JykKICAgICAgICB3aWR0aHMgPSB7fQogICAgICAgIGZvciByb3cgaW4gcm93czoKICAgICAgICAgICAgZm9yIGNpLCByYXcgaW4gZW51bWVyYXRlKHJvdywgMSk6CiAgICAgICAgICAgICAgICB3aWR0aHNbY2ldID0gbWF4KHdpZHRocy5nZXQoY2ksIDgpLCBtaW4oNDgsIGxlbihzdHIocmF3IG9yICcnKSkgKyAyKSkKICAgICAgICBmb3IgY2ksIHcgaW4gd2lkdGhzLml0ZW1zKCk6CiAgICAgICAgICAgIHdzLmNvbHVtbl9kaW1lbnNpb25zW2dldF9jb2x1bW5fbGV0dGVyKGNpKV0ud2lkdGggPSB3CiAgICAgICAgaWYgaGRyOiB3cy5mcmVlemVfcGFuZXMgPSB3cy5jZWxsKGhkciArIDEsIDEpCiAgICAgICAgd3MucGFnZV9zZXR1cC5maXRUb1dpZHRoID0gMTsgd3MucGFnZV9zZXR1cC5maXRUb0hlaWdodCA9IDAKICAgIGlmIG5vdCB3Yi5zaGVldG5hbWVzOgogICAgICAgIHJhaXNlIEZhaWwoJ25vIGRhdGEnLCBFWElUX0VNUFRZKQogICAgd2Iuc2F2ZShkc3QpCgoKZGVmIHZhbGlkYXRlX3hsc3gocGF0aCk6CiAgICBmcm9tIG9wZW5weXhsIGltcG9ydCBsb2FkX3dvcmtib29rCiAgICBpZiBub3Qgb3MucGF0aC5pc2ZpbGUocGF0aCkgb3Igb3MucGF0aC5nZXRzaXplKHBhdGgpID09IDA6CiAgICAgICAgcmFpc2UgRmFpbCgneGxzeCBtaXNzaW5nL2VtcHR5JykKICAgIHdiID0gbG9hZF93b3JrYm9vayhwYXRoKQogICAgaWYgbm90IHdiLnNoZWV0bmFtZXM6CiAgICAgICAgcmFpc2UgRmFpbCgneGxzeCBoYXMgbm8gc2hlZXRzJykKICAgIGNlbGxzID0gc3VtKDEgZm9yIHdzIGluIHdiIGZvciByb3cgaW4gd3MuaXRlcl9yb3dzKCkgZm9yIGMgaW4gcm93IGlmIGMudmFsdWUgbm90IGluIChOb25lLCAnJykpCiAgICBpZiBjZWxscyA9PSAwOgogICAgICAgIHJhaXNlIEZhaWwoJ3hsc3ggaGFzIG5vIGRhdGEnLCBFWElUX0VNUFRZKQoKCmRlZiB2YWxpZGF0ZV9kb2N4KHBhdGgpOgogICAgaW1wb3J0IGRvY3gKICAgIGlmIG5vdCBvcy5wYXRoLmlzZmlsZShwYXRoKSBvciBvcy5wYXRoLmdldHNpemUocGF0aCkgPT0gMDoKICAgICAgICByYWlzZSBGYWlsKCdkb2N4IG1pc3NpbmcvZW1wdHknKQogICAgaWYgbm90IHppcGZpbGUuaXNfemlwZmlsZShwYXRoKToKICAgICAgICByYWlzZSBGYWlsKCdkb2N4IGlzIG5vdCBhIHppcCBwYWNrYWdlJykKICAgIHdpdGggemlwZmlsZS5aaXBGaWxlKHBhdGgpIGFzIHo6CiAgICAgICAgaWYgei50ZXN0emlwKCkgaXMgbm90IE5vbmUgb3IgJ3dvcmQvZG9jdW1lbnQueG1sJyBub3QgaW4gei5uYW1lbGlzdCgpOgogICAgICAgICAgICByYWlzZSBGYWlsKCdkb2N4IHN0cnVjdHVyZSBpbnZhbGlkJykKICAgIGQgPSBkb2N4LkRvY3VtZW50KHBhdGgpCiAgICB0ZXh0ID0gJycuam9pbihwLnRleHQgZm9yIHAgaW4gZC5wYXJhZ3JhcGhzKS5zdHJpcCgpCiAgICBoYXNfbWVkaWEgPSBhbnkoci5yZWx0eXBlLmVuZHN3aXRoKCcvaW1hZ2UnKSBmb3IgciBpbiBkLnBhcnQucmVscy52YWx1ZXMoKSkKICAgIGlmIG5vdCB0ZXh0IGFuZCBub3QgZC50YWJsZXMgYW5kIG5vdCBoYXNfbWVkaWE6CiAgICAgICAgcmFpc2UgRmFpbCgnZG9jeCBoYXMgbm8gY29udGVudCcsIEVYSVRfRU1QVFkpCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIERvY2xpbmcKX2RvY2xpbmdfY29udiA9IE5vbmUKCgpkZWYgZG9jbGluZ19jb252ZXJ0ZXIoKToKICAgICIiIkJ1aWxkIGEgRG9jdW1lbnRDb252ZXJ0ZXIgb25jZS4gVXNlcyBjdXJyZW50IGRvY3VtZW50ZWQgRG9jbGluZyBBUEkgKFBkZlBpcGVsaW5lT3B0aW9ucykuIiIiCiAgICBnbG9iYWwgX2RvY2xpbmdfY29udgogICAgaWYgX2RvY2xpbmdfY29udiBpcyBub3QgTm9uZToKICAgICAgICByZXR1cm4gX2RvY2xpbmdfY29udgogICAgZnJvbSBkb2NsaW5nLmRvY3VtZW50X2NvbnZlcnRlciBpbXBvcnQgRG9jdW1lbnRDb252ZXJ0ZXIsIFBkZkZvcm1hdE9wdGlvbgogICAgZnJvbSBkb2NsaW5nLmRhdGFtb2RlbC5iYXNlX21vZGVscyBpbXBvcnQgSW5wdXRGb3JtYXQKICAgIGZyb20gZG9jbGluZy5kYXRhbW9kZWwucGlwZWxpbmVfb3B0aW9ucyBpbXBvcnQgUGRmUGlwZWxpbmVPcHRpb25zCiAgICBvcHRzID0gUGRmUGlwZWxpbmVPcHRpb25zKCkKICAgIG9wdHMuZG9fb2NyID0gVVNFX09DUiAgICAgICAgICAgICAgICAgICAgICAgIyBPQ1JzIGJpdG1hcCByZWdpb25zOyBzZWxlY3RhYmxlIHRleHQgaXMgcmVhZCBkaXJlY3RseQogICAgb3B0cy5kb190YWJsZV9zdHJ1Y3R1cmUgPSBUcnVlICAgICAgICAgICAgICAjIFRhYmxlRm9ybWVyCiAgICBvcHRzLnRhYmxlX3N0cnVjdHVyZV9vcHRpb25zLmRvX2NlbGxfbWF0Y2hpbmcgPSBUcnVlCiAgICBvcHRzLmdlbmVyYXRlX3BpY3R1cmVfaW1hZ2VzID0gVHJ1ZSAgICAgICAgICMgbmVlZGVkIGZvciBlbWJlZGRpbmcgZmlndXJlcyBpbiBET0NYCiAgICBvcHRzLmltYWdlc19zY2FsZSA9IDIuMAogICAgaWYgb3MuZW52aXJvbi5nZXQoJ1lPUUFSVF9PQ1JfRU5HSU5FJywgJycpLmxvd2VyKCkgPT0gJ3Rlc3NlcmFjdCc6CiAgICAgICAgZnJvbSBkb2NsaW5nLmRhdGFtb2RlbC5waXBlbGluZV9vcHRpb25zIGltcG9ydCBUZXNzZXJhY3RDbGlPY3JPcHRpb25zCiAgICAgICAgb3B0cy5vY3Jfb3B0aW9ucyA9IFRlc3NlcmFjdENsaU9jck9wdGlvbnMoKQogICAgX2RvY2xpbmdfY29udiA9IERvY3VtZW50Q29udmVydGVyKGZvcm1hdF9vcHRpb25zPXtJbnB1dEZvcm1hdC5QREY6IFBkZkZvcm1hdE9wdGlvbihwaXBlbGluZV9vcHRpb25zPW9wdHMpfSkKICAgIHJldHVybiBfZG9jbGluZ19jb252CgoKZGVmIGRvY2xpbmdfY29udmVydChzcmMpOgogICAgcmVzID0gZG9jbGluZ19jb252ZXJ0ZXIoKS5jb252ZXJ0KHNyYykKICAgIHJldHVybiByZXMuZG9jdW1lbnQKCgpkZWYgZG9jbGluZ190YWJsZV9yb3dzKHRhYmxlLCBkb2MpOgogICAgIiIiUm93cyAobGlzdCBvZiBsaXN0IG9mIHN0cikgKyBudW1iZXIgb2YgaGVhZGVyIHJvd3MgZnJvbSBhIERvY2xpbmcgVGFibGVJdGVtLiIiIgogICAgZGF0YSA9IHRhYmxlLmRhdGEKICAgIG5yb3dzLCBuY29scyA9IGRhdGEubnVtX3Jvd3MsIGRhdGEubnVtX2NvbHMKICAgIGdyaWQgPSBbWycnXSAqIG5jb2xzIGZvciBfIGluIHJhbmdlKG5yb3dzKV0KICAgIGhkciA9IDAKICAgIGZvciBjZWxsIGluIGRhdGEudGFibGVfY2VsbHM6CiAgICAgICAgdHh0ID0gKGNlbGwudGV4dCBvciAnJykuc3RyaXAoKQogICAgICAgIHIwLCByMSA9IGNlbGwuc3RhcnRfcm93X29mZnNldF9pZHgsIGNlbGwuZW5kX3Jvd19vZmZzZXRfaWR4CiAgICAgICAgYzAsIGMxID0gY2VsbC5zdGFydF9jb2xfb2Zmc2V0X2lkeCwgY2VsbC5lbmRfY29sX29mZnNldF9pZHgKICAgICAgICBmb3IgciBpbiByYW5nZShyMCwgbWluKHIxLCBucm93cykpOgogICAgICAgICAgICBmb3IgYyBpbiByYW5nZShjMCwgbWluKGMxLCBuY29scykpOgogICAgICAgICAgICAgICAgaWYgciA9PSByMCBhbmQgYyA9PSBjMDoKICAgICAgICAgICAgICAgICAgICBncmlkW3JdW2NdID0gdHh0CiAgICAgICAgaWYgZ2V0YXR0cihjZWxsLCAnY29sdW1uX2hlYWRlcicsIEZhbHNlKToKICAgICAgICAgICAgaGRyID0gbWF4KGhkciwgcjEpCiAgICBncmlkID0gW3JvdyBmb3Igcm93IGluIGdyaWQgaWYgYW55KHggZm9yIHggaW4gcm93KV0KICAgIHJldHVybiBncmlkLCBtaW4oaGRyLCBsZW4oZ3JpZCkpCgoKZGVmIHRhYmxlX3BhZ2UoaXRlbSk6CiAgICB0cnk6CiAgICAgICAgcmV0dXJuIGl0ZW0ucHJvdlswXS5wYWdlX25vCiAgICBleGNlcHQgRXhjZXB0aW9uOgogICAgICAgIHJldHVybiBOb25lCgoKZGVmIGRvY2xpbmdfdG9fZXhjZWwoc3JjLCBkc3QpOgogICAgZG9jID0gZG9jbGluZ19jb252ZXJ0KHNyYykKICAgIHNoZWV0cywgY291bnRzID0gW10sIHt9CiAgICBmb3IgdCBpbiBkb2MudGFibGVzOgogICAgICAgIHJvd3MsIGhkciA9IGRvY2xpbmdfdGFibGVfcm93cyh0LCBkb2MpCiAgICAgICAgaWYgbm90IHJvd3Mgb3IgbWF4KGxlbihyKSBmb3IgciBpbiByb3dzKSA8IDE6CiAgICAgICAgICAgIGNvbnRpbnVlCiAgICAgICAgcGcgPSB0YWJsZV9wYWdlKHQpIG9yIDAKICAgICAgICBjb3VudHNbcGddID0gY291bnRzLmdldChwZywgMCkgKyAxCiAgICAgICAgc2hlZXRzLmFwcGVuZCgoZidQe3BnfSBUYWJsZSB7Y291bnRzW3BnXX0nLCByb3dzLCBoZHIpKQogICAgc2hlZXRzID0gbWVyZ2VfY29udGludWVkX3RhYmxlcyhzaGVldHMpCiAgICBpZiBub3Qgc2hlZXRzOgogICAgICAgICMgTm8gdGFibGVzIGRldGVjdGVkOiBrZWVwIHRoZSB0ZXh0LCBvbmUgbGluZSBwZXIgcm93LCBzbyB0aGUgd29ya2Jvb2sgaXMgbmV2ZXIgZW1wdHkuCiAgICAgICAgbGluZXMgPSBbdC5zdHJpcCgpIGZvciB0IGluIGRvYy5leHBvcnRfdG9fdGV4dCgpLnNwbGl0bGluZXMoKSBpZiB0LnN0cmlwKCldIGlmIGhhc2F0dHIoZG9jLCAnZXhwb3J0X3RvX3RleHQnKSBlbHNlIFtdCiAgICAgICAgaWYgbm90IGxpbmVzOgogICAgICAgICAgICByYWlzZSBGYWlsKCdkb2NsaW5nIGZvdW5kIG5vIHRhYmxlcyBvciB0ZXh0JywgRVhJVF9FTVBUWSkKICAgICAgICBzaGVldHMgPSBbKCdUZXh0JywgW1tsXSBmb3IgbCBpbiBsaW5lc10sIDApXQogICAgd3JpdGVfd29ya2Jvb2soc2hlZXRzLCBkc3QpCgoKZGVmIG1lcmdlX2NvbnRpbnVlZF90YWJsZXMoc2hlZXRzKToKICAgICIiIkpvaW4gdGFibGVzIG9uIGNvbnNlY3V0aXZlIHBhZ2VzIHRoYXQgc2hhcmUgdGhlIHNhbWUgY29sdW1uIGNvdW50IChtdWx0aS1wYWdlIHRhYmxlcykuIiIiCiAgICBvdXQgPSBbXQogICAgZm9yIHRpdGxlLCByb3dzLCBoZHIgaW4gc2hlZXRzOgogICAgICAgIG0gPSByZS5tYXRjaChyJ1AoXGQrKSAnLCB0aXRsZSkKICAgICAgICBwZyA9IGludChtLmdyb3VwKDEpKSBpZiBtIGVsc2UgTm9uZQogICAgICAgIGlmIG91dCBhbmQgcGcgaXMgbm90IE5vbmUgYW5kIG91dFstMV1bM10gaXMgbm90IE5vbmUgYW5kIHBnID09IG91dFstMV1bM10gKyAxIFwKICAgICAgICAgICAgICAgIGFuZCByb3dzIGFuZCBsZW4ocm93c1swXSkgPT0gbGVuKG91dFstMV1bMV1bMF0pOgogICAgICAgICAgICBwcmV2ID0gb3V0Wy0xXQogICAgICAgICAgICBib2R5ID0gcm93c1toZHI6XSBpZiBoZHIgYW5kIHJvd3NbOmhkcl0gPT0gcHJldlsxXVs6cHJldlsyXV0gZWxzZSByb3dzCiAgICAgICAgICAgIG91dFstMV0gPSAocHJldlswXSwgcHJldlsxXSArIGJvZHksIHByZXZbMl0sIHBnKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIG91dC5hcHBlbmQoKHRpdGxlLCByb3dzLCBoZHIsIHBnKSkKICAgIHJldHVybiBbKHQsIHIsIGgpIGZvciB0LCByLCBoLCBfIGluIG91dF0KCgpkZWYgZG9jbGluZ190b193b3JkKHNyYywgZHN0KToKICAgIGltcG9ydCBkb2N4CiAgICBmcm9tIGRvY3guc2hhcmVkIGltcG9ydCBJbmNoZXMKICAgIGZyb20gZG9jbGluZ19jb3JlLnR5cGVzLmRvYyBpbXBvcnQgRG9jSXRlbUxhYmVsCiAgICBkb2MgPSBkb2NsaW5nX2NvbnZlcnQoc3JjKQogICAgZCA9IGRvY3guRG9jdW1lbnQoKQogICAgd3JvdGUgPSBGYWxzZQogICAgZm9yIGl0ZW0sIGxldmVsIGluIGRvYy5pdGVyYXRlX2l0ZW1zKCk6CiAgICAgICAgY2xzID0gdHlwZShpdGVtKS5fX25hbWVfXwogICAgICAgIGxhYmVsID0gZ2V0YXR0cihpdGVtLCAnbGFiZWwnLCBOb25lKQogICAgICAgIGlmIGNscyA9PSAnVGFibGVJdGVtJzoKICAgICAgICAgICAgcm93cywgaGRyID0gZG9jbGluZ190YWJsZV9yb3dzKGl0ZW0sIGRvYykKICAgICAgICAgICAgaWYgcm93czoKICAgICAgICAgICAgICAgIG5jb2xzID0gbWF4KGxlbihyKSBmb3IgciBpbiByb3dzKQogICAgICAgICAgICAgICAgdCA9IGQuYWRkX3RhYmxlKHJvd3M9bGVuKHJvd3MpLCBjb2xzPW5jb2xzKQogICAgICAgICAgICAgICAgdC5zdHlsZSA9ICdUYWJsZSBHcmlkJwogICAgICAgICAgICAgICAgZm9yIHJpLCByIGluIGVudW1lcmF0ZShyb3dzKToKICAgICAgICAgICAgICAgICAgICBmb3IgY2ksIHYgaW4gZW51bWVyYXRlKHIpOgogICAgICAgICAgICAgICAgICAgICAgICBjZWxsID0gdC5jZWxsKHJpLCBjaSk7IGNlbGwudGV4dCA9IHYKICAgICAgICAgICAgICAgICAgICAgICAgaWYgcmkgPCBoZHI6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBmb3IgcCBpbiBjZWxsLnBhcmFncmFwaHM6CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZm9yIHJ1biBpbiBwLnJ1bnM6IHJ1bi5ib2xkID0gVHJ1ZQogICAgICAgICAgICAgICAgZC5hZGRfcGFyYWdyYXBoKCk7IHdyb3RlID0gVHJ1ZQogICAgICAgIGVsaWYgY2xzID09ICdQaWN0dXJlSXRlbSc6CiAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgIGltZyA9IGl0ZW0uZ2V0X2ltYWdlKGRvYykKICAgICAgICAgICAgICAgIGlmIGltZyBpcyBub3QgTm9uZToKICAgICAgICAgICAgICAgICAgICBidWYgPSBpby5CeXRlc0lPKCk7IGltZy5jb252ZXJ0KCdSR0InKS5zYXZlKGJ1ZiwgJ1BORycpOyBidWYuc2VlaygwKQogICAgICAgICAgICAgICAgICAgIGQuYWRkX3BpY3R1cmUoYnVmLCB3aWR0aD1JbmNoZXMobWluKDYuMCwgbWF4KDEuMCwgaW1nLndpZHRoIC8gMTQ0LjApKSkpOyB3cm90ZSA9IFRydWUKICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgICAgICAgICAgICAgbG9nKCdwaWN0dXJlIHNraXBwZWQ6JywgZSkKICAgICAgICBlbGlmIGNscyA9PSAnU2VjdGlvbkhlYWRlckl0ZW0nIG9yIGxhYmVsID09IERvY0l0ZW1MYWJlbC5USVRMRToKICAgICAgICAgICAgdHh0ID0gKGdldGF0dHIoaXRlbSwgJ3RleHQnLCAnJykgb3IgJycpLnN0cmlwKCkKICAgICAgICAgICAgaWYgdHh0OgogICAgICAgICAgICAgICAgbHZsID0gMCBpZiBsYWJlbCA9PSBEb2NJdGVtTGFiZWwuVElUTEUgZWxzZSBtaW4obWF4KGdldGF0dHIoaXRlbSwgJ2xldmVsJywgMSksIDEpLCA0KQogICAgICAgICAgICAgICAgZC5hZGRfaGVhZGluZyh0eHQsIGxldmVsPWx2bCk7IHdyb3RlID0gVHJ1ZQogICAgICAgIGVsaWYgY2xzID09ICdMaXN0SXRlbSc6CiAgICAgICAgICAgIHR4dCA9IChpdGVtLnRleHQgb3IgJycpLnN0cmlwKCkKICAgICAgICAgICAgaWYgdHh0OgogICAgICAgICAgICAgICAgZC5hZGRfcGFyYWdyYXBoKHR4dCwgc3R5bGU9J0xpc3QgTnVtYmVyJyBpZiBnZXRhdHRyKGl0ZW0sICdlbnVtZXJhdGVkJywgRmFsc2UpIGVsc2UgJ0xpc3QgQnVsbGV0Jyk7IHdyb3RlID0gVHJ1ZQogICAgICAgIGVsaWYgbGFiZWwgaW4gKERvY0l0ZW1MYWJlbC5QQUdFX0hFQURFUiwgRG9jSXRlbUxhYmVsLlBBR0VfRk9PVEVSKToKICAgICAgICAgICAgY29udGludWUKICAgICAgICBlbGlmIGhhc2F0dHIoaXRlbSwgJ3RleHQnKToKICAgICAgICAgICAgdHh0ID0gKGl0ZW0udGV4dCBvciAnJykuc3RyaXAoKQogICAgICAgICAgICBpZiB0eHQ6CiAgICAgICAgICAgICAgICBkLmFkZF9wYXJhZ3JhcGgodHh0KTsgd3JvdGUgPSBUcnVlCiAgICBpZiBub3Qgd3JvdGU6CiAgICAgICAgcmFpc2UgRmFpbCgnZG9jbGluZyBwcm9kdWNlZCBubyBjb250ZW50JywgRVhJVF9FTVBUWSkKICAgIGQuc2F2ZShkc3QpCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIEZhbGxiYWNrIGNvbnZlcnRlcnMKZGVmIGZhbGxiYWNrX3dvcmQoc3JjLCBkc3QpOgogICAgIiIicGRmMmRvY3ggKGxheW91dC1wcmVzZXJ2aW5nKSBmaXJzdDsgaWYgdW5hdmFpbGFibGUvZmFpbGluZywgcGRmcGx1bWJlcitweXRob24tZG9jeDsgc2Nhbm5lZCBwYWdlcyB2aWEgT0NSLiIiIgogICAgdHJ5OgogICAgICAgIGZyb20gcGRmMmRvY3ggaW1wb3J0IENvbnZlcnRlcgogICAgICAgIGN2ID0gQ29udmVydGVyKHNyYykKICAgICAgICB0cnk6CiAgICAgICAgICAgIGN2LmNvbnZlcnQoZHN0KQogICAgICAgIGZpbmFsbHk6CiAgICAgICAgICAgIGN2LmNsb3NlKCkKICAgICAgICB2YWxpZGF0ZV9kb2N4KGRzdCkKICAgICAgICByZXR1cm4gJ3BkZjJkb2N4JwogICAgZXhjZXB0IEZhaWwgYXMgZToKICAgICAgICBpZiBlLmNvZGUgPT0gRVhJVF9FTVBUWToKICAgICAgICAgICAgbG9nKCdwZGYyZG9jeCBvdXRwdXQgZW1wdHksIHRyeWluZyB0ZXh0L09DUiBwYXRoJykKICAgICAgICBlbHNlOgogICAgICAgICAgICBsb2coJ3BkZjJkb2N4IGludmFsaWQgb3V0cHV0OicsIGUpCiAgICBleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICAgICAgbG9nKCdwZGYyZG9jeCB1bmF2YWlsYWJsZS9mYWlsZWQ6JywgZSkKICAgIGlmIG9zLnBhdGguZXhpc3RzKGRzdCk6CiAgICAgICAgb3MucmVtb3ZlKGRzdCkKICAgIHJldHVybiBwbHVtYmVyX3dvcmQoc3JjLCBkc3QpCgoKCmRlZiBwYWdlX2Jsb2NrcyhwYWdlKToKICAgICIiIlNwbGl0IGEgcGRmcGx1bWJlciBwYWdlIGludG8gKCdoMSd8J2gyJ3wnaDMnfCdwJywgdGV4dCkgYmxvY2tzIHVzaW5nIGZvbnQgc2l6ZSBhbmQgbGluZSBzcGFjaW5nLiIiIgogICAgY2hhcnMgPSBwYWdlLmNoYXJzCiAgICBpZiBub3QgY2hhcnM6CiAgICAgICAgcmV0dXJuIFtdCiAgICBmcm9tIGNvbGxlY3Rpb25zIGltcG9ydCBkZWZhdWx0ZGljdAogICAgbGluZXMgPSBkZWZhdWx0ZGljdChsaXN0KQogICAgZm9yIGMgaW4gY2hhcnM6CiAgICAgICAgaWYgY1sndGV4dCddLnN0cmlwKCkgb3IgVHJ1ZToKICAgICAgICAgICAgbGluZXNbcm91bmQoY1sndG9wJ10gLyAyKV0uYXBwZW5kKGMpCiAgICAjIG1lcmdlIGJ1Y2tldHMgdGhhdCBiZWxvbmcgdG8gdGhlIHNhbWUgdmlzdWFsIGxpbmUKICAgIHJvd3MgPSBbXQogICAgZm9yIGsgaW4gc29ydGVkKGxpbmVzKToKICAgICAgICBjcyA9IHNvcnRlZChsaW5lc1trXSwga2V5PWxhbWJkYSBjOiBjWyd4MCddKQogICAgICAgIHRvcCA9IG1pbihjWyd0b3AnXSBmb3IgYyBpbiBjcykKICAgICAgICBpZiByb3dzIGFuZCBhYnModG9wIC0gcm93c1stMV1bJ3RvcCddKSA8IDIuNToKICAgICAgICAgICAgcm93c1stMV1bJ2NoYXJzJ10gKz0gY3M7IHJvd3NbLTFdWydjaGFycyddLnNvcnQoa2V5PWxhbWJkYSBjOiBjWyd4MCddKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHJvd3MuYXBwZW5kKHsndG9wJzogdG9wLCAnYm90dG9tJzogbWF4KGNbJ2JvdHRvbSddIGZvciBjIGluIGNzKSwgJ2NoYXJzJzogY3N9KQogICAgc2l6ZXMgPSBzb3J0ZWQoY1snc2l6ZSddIGZvciByIGluIHJvd3MgZm9yIGMgaW4gclsnY2hhcnMnXSBpZiBjWyd0ZXh0J10uc3RyaXAoKSkKICAgIGlmIG5vdCBzaXplczoKICAgICAgICByZXR1cm4gW10KICAgIGJvZHkgPSBzaXplc1tsZW4oc2l6ZXMpIC8vIDJdCiAgICBvdXQsIGN1ciwgcHJldl9ib3R0b20sIHByZXZfa2luZCA9IFtdLCBbXSwgTm9uZSwgTm9uZQogICAgZGVmIGZsdXNoKCk6CiAgICAgICAgbm9ubG9jYWwgY3VyCiAgICAgICAgaWYgY3VyOgogICAgICAgICAgICBvdXQuYXBwZW5kKChwcmV2X2tpbmQsICcgJy5qb2luKGN1cikpKTsgY3VyID0gW10KICAgIGZvciByIGluIHJvd3M6CiAgICAgICAgdHh0ID0gJycKICAgICAgICBsYXN0ID0gTm9uZQogICAgICAgIGZvciBjIGluIHJbJ2NoYXJzJ106CiAgICAgICAgICAgIGlmIGxhc3QgaXMgbm90IE5vbmUgYW5kIGNbJ3gwJ10gLSBsYXN0Wyd4MSddID4gbWF4KDEuMCwgY1snc2l6ZSddICogMC4yKToKICAgICAgICAgICAgICAgIHR4dCArPSAnICcKICAgICAgICAgICAgdHh0ICs9IGNbJ3RleHQnXTsgbGFzdCA9IGMKICAgICAgICB0eHQgPSAnICcuam9pbih0eHQuc3BsaXQoKSkKICAgICAgICBpZiBub3QgdHh0OgogICAgICAgICAgICBjb250aW51ZQogICAgICAgIHN6ID0gbWF4KGNbJ3NpemUnXSBmb3IgYyBpbiByWydjaGFycyddIGlmIGNbJ3RleHQnXS5zdHJpcCgpKQogICAgICAgIGtpbmQgPSAnaDEnIGlmIHN6ID49IGJvZHkgKiAxLjYgZWxzZSAnaDInIGlmIHN6ID49IGJvZHkgKiAxLjMgZWxzZSAnaDMnIGlmIHN6ID49IGJvZHkgKiAxLjEyIGVsc2UgJ3AnCiAgICAgICAgaGVpZ2h0ID0gbWF4KHJbJ2JvdHRvbSddIC0gclsndG9wJ10sIDEpCiAgICAgICAgZ2FwID0gKHJbJ3RvcCddIC0gcHJldl9ib3R0b20pIGlmIHByZXZfYm90dG9tIGlzIG5vdCBOb25lIGVsc2UgMAogICAgICAgIGlmIGN1ciBhbmQgKGtpbmQgIT0gcHJldl9raW5kIG9yIGtpbmQgIT0gJ3AnIG9yIGdhcCA+IGhlaWdodCAqIDAuNik6CiAgICAgICAgICAgIGZsdXNoKCkKICAgICAgICBwcmV2X2tpbmQgPSBraW5kCiAgICAgICAgY3VyLmFwcGVuZCh0eHQpCiAgICAgICAgcHJldl9ib3R0b20gPSByWydib3R0b20nXQogICAgZmx1c2goKQogICAgcmV0dXJuIG91dAoKZGVmIHBsdW1iZXJfd29yZChzcmMsIGRzdCk6CiAgICBpbXBvcnQgcGRmcGx1bWJlciwgZG9jeAogICAgZCA9IGRvY3guRG9jdW1lbnQoKQogICAgd3JvdGUgPSBGYWxzZQogICAgb2NyID0gTm9uZQogICAgd2l0aCBwZGZwbHVtYmVyLm9wZW4oc3JjKSBhcyBwZGY6CiAgICAgICAgZm9yIHBpLCBwYWdlIGluIGVudW1lcmF0ZShwZGYucGFnZXMpOgogICAgICAgICAgICBpZiBwaToKICAgICAgICAgICAgICAgIGQuYWRkX3BhZ2VfYnJlYWsoKQogICAgICAgICAgICB0YWJsZXMgPSBbXQogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICB0YWJsZXMgPSBwYWdlLmZpbmRfdGFibGVzKCkKICAgICAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgICAgIHBhc3MKICAgICAgICAgICAgYm94ZXMgPSBbdC5iYm94IGZvciB0IGluIHRhYmxlc10KICAgICAgICAgICAgZGVmIG91dHNpZGUob2JqKToKICAgICAgICAgICAgICAgIGN4LCBjeSA9IChvYmpbJ3gwJ10gKyBvYmpbJ3gxJ10pIC8gMiwgKG9ialsndG9wJ10gKyBvYmpbJ2JvdHRvbSddKSAvIDIKICAgICAgICAgICAgICAgIHJldHVybiBub3QgYW55KGJbMF0gPD0gY3ggPD0gYlsyXSBhbmQgYlsxXSA8PSBjeSA8PSBiWzNdIGZvciBiIGluIGJveGVzKQogICAgICAgICAgICBibG9ja3MgPSBbXQogICAgICAgICAgICB0cnk6CiAgICAgICAgICAgICAgICBibG9ja3MgPSBwYWdlX2Jsb2NrcyhwYWdlLmZpbHRlcihvdXRzaWRlKSBpZiBib3hlcyBlbHNlIHBhZ2UpCiAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgICAgIGxvZygnbGF5b3V0IGFuYWx5c2lzIGZhaWxlZCwgcGxhaW4gdGV4dCB1c2VkOicsIGUpCiAgICAgICAgICAgICAgICB0eHQgPSBwYWdlLmV4dHJhY3RfdGV4dCgpIG9yICcnCiAgICAgICAgICAgICAgICBibG9ja3MgPSBbKCdwJywgJyAnLmpvaW4oeC5zcGxpdCgpKSkgZm9yIHggaW4gcmUuc3BsaXQocidcblxzKlxuJywgdHh0KSBpZiB4LnN0cmlwKCldCiAgICAgICAgICAgIGlmIG5vdCBibG9ja3MgYW5kIG5vdCB0YWJsZXM6CiAgICAgICAgICAgICAgICBpZiBvY3IgaXMgTm9uZToKICAgICAgICAgICAgICAgICAgICBvY3IgPSBvY3JfcGFnZXMoc3JjKQogICAgICAgICAgICAgICAgdHh0ID0gb2NyW3BpXSBpZiBwaSA8IGxlbihvY3IpIGVsc2UgJycKICAgICAgICAgICAgICAgIGJsb2NrcyA9IFsoJ3AnLCAnICcuam9pbih4LnNwbGl0KCkpKSBmb3IgeCBpbiByZS5zcGxpdChyJ1xuXHMqXG4nLCB0eHQpIGlmIHguc3RyaXAoKV0KICAgICAgICAgICAgZm9yIGtpbmQsIHR4dCBpbiBibG9ja3M6CiAgICAgICAgICAgICAgICBpZiBraW5kLnN0YXJ0c3dpdGgoJ2gnKToKICAgICAgICAgICAgICAgICAgICBkLmFkZF9oZWFkaW5nKHR4dCwgbGV2ZWw9aW50KGtpbmRbMV0pKTsgd3JvdGUgPSBUcnVlCiAgICAgICAgICAgICAgICBlbHNlOgogICAgICAgICAgICAgICAgICAgIGQuYWRkX3BhcmFncmFwaCh0eHQpOyB3cm90ZSA9IFRydWUKICAgICAgICAgICAgZm9yIHQgaW4gdGFibGVzOgogICAgICAgICAgICAgICAgcm93cyA9IFtbKGMgb3IgJycpLnN0cmlwKCkgZm9yIGMgaW4gcl0gZm9yIHIgaW4gKHQuZXh0cmFjdCgpIG9yIFtdKV0KICAgICAgICAgICAgICAgIHJvd3MgPSBbciBmb3IgciBpbiByb3dzIGlmIGFueShyKV0KICAgICAgICAgICAgICAgIGlmIHJvd3M6CiAgICAgICAgICAgICAgICAgICAgbmNvbHMgPSBtYXgobGVuKHIpIGZvciByIGluIHJvd3MpCiAgICAgICAgICAgICAgICAgICAgdGIgPSBkLmFkZF90YWJsZShyb3dzPWxlbihyb3dzKSwgY29scz1uY29scyk7IHRiLnN0eWxlID0gJ1RhYmxlIEdyaWQnCiAgICAgICAgICAgICAgICAgICAgZm9yIHJpLCByIGluIGVudW1lcmF0ZShyb3dzKToKICAgICAgICAgICAgICAgICAgICAgICAgZm9yIGNpLCB2IGluIGVudW1lcmF0ZShyKToKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRiLmNlbGwocmksIGNpKS50ZXh0ID0gdgogICAgICAgICAgICAgICAgICAgIGQuYWRkX3BhcmFncmFwaCgpOyB3cm90ZSA9IFRydWUKICAgIGlmIG5vdCB3cm90ZToKICAgICAgICByYWlzZSBGYWlsKCdubyB0ZXh0IGZvdW5kJywgRVhJVF9FTVBUWSkKICAgIGQuc2F2ZShkc3QpCiAgICByZXR1cm4gJ3BkZnBsdW1iZXIrcHl0aG9uLWRvY3gnCgoKZGVmIGxvb2tzX2xpa2VfdGFibGUodCwgc3RyaWN0PUZhbHNlKToKICAgIGlmIG5vdCB0IG9yIGxlbih0KSA8IDIgb3IgbWF4KGxlbihyKSBmb3IgciBpbiB0KSA8IDI6CiAgICAgICAgcmV0dXJuIEZhbHNlCiAgICBpZiBub3Qgc3RyaWN0OgogICAgICAgIHJldHVybiBUcnVlCiAgICAjIFRleHQtYWxpZ25tZW50IGRldGVjdGlvbiBhbHNvIGZpcmVzIG9uIHByb3NlOyByZXF1aXJlIGEgcmVhbCBncmlkOiA+PTMgcm93cywgPj0zIGNvbHMsIG1vc3Qgcm93cyBtdWx0aS1jZWxsLAogICAgIyBhbmQgYSBtZWFuaW5nZnVsIHNoYXJlIG9mIG51bWVyaWMgY2VsbHMuCiAgICBuY29scyA9IG1heChsZW4ocikgZm9yIHIgaW4gdCkKICAgIGZpbGxlZCA9IFtzdW0oMSBmb3IgYyBpbiByIGlmIChjIG9yICcnKS5zdHJpcCgpKSBmb3IgciBpbiB0XQogICAgbXVsdGkgPSBzdW0oMSBmb3IgZiBpbiBmaWxsZWQgaWYgZiA+PSAyKQogICAgY2VsbHMgPSBbKGMgb3IgJycpLnN0cmlwKCkgZm9yIHIgaW4gdCBmb3IgYyBpbiByIGlmIChjIG9yICcnKS5zdHJpcCgpXQogICAgbnVtZXJpYyA9IHN1bSgxIGZvciBjIGluIGNlbGxzIGlmIF9udW0ubWF0Y2goYykpCiAgICByZXR1cm4gbGVuKHQpID49IDMgYW5kIG5jb2xzID49IDMgYW5kIG11bHRpID49IDAuNyAqIGxlbih0KSBhbmQgbnVtZXJpYyA+PSAwLjI1ICogbWF4KGxlbihjZWxscyksIDEpCgoKZGVmIGZhbGxiYWNrX2V4Y2VsKHNyYywgZHN0KToKICAgIGltcG9ydCBwZGZwbHVtYmVyCiAgICBzaGVldHMsIGNvdW50cyA9IFtdLCB7fQogICAgdGV4dF9yb3dzID0ge30KICAgIHN0cmF0ZWdpZXMgPSBbCiAgICAgICAgeyd2ZXJ0aWNhbF9zdHJhdGVneSc6ICdsaW5lcycsICdob3Jpem9udGFsX3N0cmF0ZWd5JzogJ2xpbmVzJywgJ3NuYXBfdG9sZXJhbmNlJzogNCwgJ2ludGVyc2VjdGlvbl90b2xlcmFuY2UnOiA1fSwKICAgICAgICB7J3ZlcnRpY2FsX3N0cmF0ZWd5JzogJ3RleHQnLCAnaG9yaXpvbnRhbF9zdHJhdGVneSc6ICd0ZXh0JywgJ3NuYXBfdG9sZXJhbmNlJzogNCwgJ21pbl93b3Jkc192ZXJ0aWNhbCc6IDIsICdtaW5fd29yZHNfaG9yaXpvbnRhbCc6IDJ9LAogICAgXQogICAgd2l0aCBwZGZwbHVtYmVyLm9wZW4oc3JjKSBhcyBwZGY6CiAgICAgICAgZm9yIHBpLCBwYWdlIGluIGVudW1lcmF0ZShwZGYucGFnZXMsIDEpOgogICAgICAgICAgICBmb3VuZCA9IFtdCiAgICAgICAgICAgIGZvciB0cyBpbiBzdHJhdGVnaWVzOgogICAgICAgICAgICAgICAgdHJ5OgogICAgICAgICAgICAgICAgICAgIGZvdW5kID0gW3QgZm9yIHQgaW4gcGFnZS5leHRyYWN0X3RhYmxlcyh0YWJsZV9zZXR0aW5ncz10cykgb3IgW10gaWYgbG9va3NfbGlrZV90YWJsZSh0LCBzdHJpY3Q9dHNbJ3ZlcnRpY2FsX3N0cmF0ZWd5J10gPT0gJ3RleHQnKV0KICAgICAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgICAgICAgICAgZm91bmQgPSBbXQogICAgICAgICAgICAgICAgaWYgZm91bmQ6CiAgICAgICAgICAgICAgICAgICAgYnJlYWsKICAgICAgICAgICAgZm9yIHQgaW4gZm91bmQ6CiAgICAgICAgICAgICAgICByb3dzID0gW1soYyBvciAnJykucmVwbGFjZSgnXG4nLCAnICcpLnN0cmlwKCkgZm9yIGMgaW4gcl0gZm9yIHIgaW4gdF0KICAgICAgICAgICAgICAgIHJvd3MgPSBbciBmb3IgciBpbiByb3dzIGlmIGFueShyKV0KICAgICAgICAgICAgICAgIGlmIHJvd3M6CiAgICAgICAgICAgICAgICAgICAgY291bnRzW3BpXSA9IGNvdW50cy5nZXQocGksIDApICsgMQogICAgICAgICAgICAgICAgICAgIHNoZWV0cy5hcHBlbmQoKGYnUHtwaX0gVGFibGUge2NvdW50c1twaV19Jywgcm93cywgMSkpCiAgICAgICAgICAgIGlmIG5vdCBmb3VuZDoKICAgICAgICAgICAgICAgIHRyeToKICAgICAgICAgICAgICAgICAgICBsaW5lcyA9IChwYWdlLmV4dHJhY3RfdGV4dCgpIG9yICcnKS5zcGxpdGxpbmVzKCkKICAgICAgICAgICAgICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgICAgICAgICAgICAgbGluZXMgPSBbXQogICAgICAgICAgICAgICAgdGV4dF9yb3dzW3BpXSA9IFtyZS5zcGxpdChyJ1xzezIsfScsIGwuc3RyaXAoKSkgZm9yIGwgaW4gbGluZXMgaWYgbC5zdHJpcCgpXQogICAgc2hlZXRzID0gbWVyZ2VfY29udGludWVkX3RhYmxlcyhzaGVldHMpCiAgICBpZiBub3Qgc2hlZXRzOgogICAgICAgIGlmIG5vdCBhbnkodGV4dF9yb3dzLnZhbHVlcygpKToKICAgICAgICAgICAgb2NyID0gb2NyX3BhZ2VzKHNyYykKICAgICAgICAgICAgZm9yIHBpLCB0IGluIGVudW1lcmF0ZShvY3IsIDEpOgogICAgICAgICAgICAgICAgdGV4dF9yb3dzW3BpXSA9IFtyZS5zcGxpdChyJ1xzezIsfScsIGwuc3RyaXAoKSkgZm9yIGwgaW4gdC5zcGxpdGxpbmVzKCkgaWYgbC5zdHJpcCgpXQogICAgICAgIGZvciBwaSwgcm93cyBpbiB0ZXh0X3Jvd3MuaXRlbXMoKToKICAgICAgICAgICAgaWYgcm93czoKICAgICAgICAgICAgICAgIHNoZWV0cy5hcHBlbmQoKGYnUGFnZSB7cGl9Jywgcm93cywgMCkpCiAgICBpZiBub3Qgc2hlZXRzOgogICAgICAgIHJhaXNlIEZhaWwoJ25vIHRhYmxlcyBvciB0ZXh0JywgRVhJVF9FTVBUWSkKICAgIHdyaXRlX3dvcmtib29rKHNoZWV0cywgZHN0KQogICAgcmV0dXJuICdwZGZwbHVtYmVyK29wZW5weXhsJwoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBPcmNoZXN0cmF0aW9uCmRlZiBjb252ZXJ0KGtpbmQsIHNyYywgZHN0KToKICAgIGNoZWNrX2lucHV0KHNyYykKICAgIHByaW1hcnkgPSBkb2NsaW5nX3RvX3dvcmQgaWYga2luZCA9PSAnd29yZCcgZWxzZSBkb2NsaW5nX3RvX2V4Y2VsCiAgICBmYWxsYmFjayA9IGZhbGxiYWNrX3dvcmQgaWYga2luZCA9PSAnd29yZCcgZWxzZSBmYWxsYmFja19leGNlbAogICAgdmFsaWRhdGUgPSB2YWxpZGF0ZV9kb2N4IGlmIGtpbmQgPT0gJ3dvcmQnIGVsc2UgdmFsaWRhdGVfeGxzeAogICAgZW5naW5lID0gTm9uZQogICAgaWYgVVNFX0RPQ0xJTkc6CiAgICAgICAgdHJ5OgogICAgICAgICAgICBwcmltYXJ5KHNyYywgZHN0KQogICAgICAgICAgICB2YWxpZGF0ZShkc3QpCiAgICAgICAgICAgIGVuZ2luZSA9ICdkb2NsaW5nJwogICAgICAgIGV4Y2VwdCBJbXBvcnRFcnJvciBhcyBlOgogICAgICAgICAgICBsb2coJ0RvY2xpbmcgbm90IGluc3RhbGxlZDonLCBlKQogICAgICAgIGV4Y2VwdCBFeGNlcHRpb24gYXMgZToKICAgICAgICAgICAgbG9nKCdEb2NsaW5nIGZhaWxlZCwgdXNpbmcgZmFsbGJhY2s6JywgcmVwcihlKSk7IGxvZyh0cmFjZWJhY2suZm9ybWF0X2V4YygpWy0xNTAwOl0pCiAgICAgICAgaWYgZW5naW5lIGlzIE5vbmUgYW5kIG9zLnBhdGguZXhpc3RzKGRzdCk6CiAgICAgICAgICAgIG9zLnJlbW92ZShkc3QpCiAgICBpZiBlbmdpbmUgaXMgTm9uZToKICAgICAgICBlbmdpbmUgPSBmYWxsYmFjayhzcmMsIGRzdCkKICAgICAgICB2YWxpZGF0ZShkc3QpCiAgICBwcmludChlbmdpbmUpCgoKZGVmIHZlcmlmeV9lbmNyeXB0ZWQocGF0aCwgcHcpOgogICAgZnJvbSBweXBkZiBpbXBvcnQgUGRmUmVhZGVyCiAgICByID0gUGRmUmVhZGVyKHBhdGgpCiAgICBpZiBub3Qgci5pc19lbmNyeXB0ZWQ6CiAgICAgICAgcmFpc2UgRmFpbCgnb3V0cHV0IG5vdCBlbmNyeXB0ZWQnKQogICAgaWYgci5kZWNyeXB0KCcnKSAhPSAwOgogICAgICAgIHJhaXNlIEZhaWwoJ291dHB1dCBvcGVucyB3aXRob3V0IHBhc3N3b3JkJykKICAgIGlmIHIuZGVjcnlwdChwdykgPT0gMDoKICAgICAgICByYWlzZSBGYWlsKCdwYXNzd29yZCBkb2VzIG5vdCBvcGVuIG91dHB1dCcpCiAgICBpZiBsZW4oci5wYWdlcykgPT0gMDoKICAgICAgICByYWlzZSBGYWlsKCdubyBwYWdlcycpCgoKZGVmIGVuZ2luZXMoKToKICAgIG91dCA9IHt9CiAgICBmb3IgbSBpbiAoJ2RvY2xpbmcnLCAncGRmMmRvY3gnLCAncGRmcGx1bWJlcicsICdvcGVucHl4bCcsICdkb2N4JywgJ3B5cGRmJyk6CiAgICAgICAgdHJ5OgogICAgICAgICAgICBfX2ltcG9ydF9fKG0pOyBvdXRbbV0gPSBUcnVlCiAgICAgICAgZXhjZXB0IEV4Y2VwdGlvbjoKICAgICAgICAgICAgb3V0W21dID0gRmFsc2UKICAgIG91dFsndGVzc2VyYWN0J10gPSBoYXZlKCd0ZXNzZXJhY3QnKTsgb3V0WydwZGZ0b3BwbSddID0gaGF2ZSgncGRmdG9wcG0nKQogICAgcHJpbnQoanNvbi5kdW1wcyhvdXQpKQoKCmlmIF9fbmFtZV9fID09ICdfX21haW5fXyc6CiAgICB0cnk6CiAgICAgICAgY21kID0gc3lzLmFyZ3ZbMV0KICAgICAgICBpZiBjbWQgaW4gKCd3b3JkJywgJ2V4Y2VsJyk6CiAgICAgICAgICAgIGNvbnZlcnQoY21kLCBzeXMuYXJndlsyXSwgc3lzLmFyZ3ZbM10pCiAgICAgICAgZWxpZiBjbWQgPT0gJ3ZlcmlmeS1lbmNyeXB0ZWQnOgogICAgICAgICAgICB2ZXJpZnlfZW5jcnlwdGVkKHN5cy5hcmd2WzJdLCBzeXMuYXJndlszXSkKICAgICAgICBlbGlmIGNtZCA9PSAnZW5naW5lcyc6CiAgICAgICAgICAgIGVuZ2luZXMoKQogICAgICAgIGVsc2U6CiAgICAgICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoJ1Vua25vd24gY29tbWFuZCcpCiAgICBleGNlcHQgRmFpbCBhcyBlOgogICAgICAgIGxvZygnRkFJTDonLCBlKTsgc3lzLmV4aXQoZS5jb2RlKQogICAgZXhjZXB0IFN5c3RlbUV4aXQ6CiAgICAgICAgcmFpc2UKICAgIGV4Y2VwdCBFeGNlcHRpb246CiAgICAgICAgbG9nKHRyYWNlYmFjay5mb3JtYXRfZXhjKCkpOyBzeXMuZXhpdChFWElUX0ZBSUwpCg==
+"""YoqArt PDF conversion engine.
+
+Usage:
+  convert.py word  <src.pdf> <dst.docx>
+  convert.py excel <src.pdf> <dst.xlsx>
+  convert.py verify-encrypted <file.pdf> <password>
+  convert.py engines
+
+Pipeline: Docling (layout / table structure / OCR) -> tested fallback (pdf2docx / pdfplumber + OCR) -> output validation.
+Exit codes: 0 ok, 1 failure, 3 encrypted input, 4 no extractable content.
+The last stdout line on success is the engine name that produced the file.
+"""
+import sys, os, re, io, json, shutil, subprocess, tempfile, zipfile, traceback
+
+EXIT_FAIL, EXIT_ENCRYPTED, EXIT_EMPTY = 1, 3, 4
+USE_DOCLING = os.environ.get('YOQART_USE_DOCLING', '1') != '0'
+USE_OCR = os.environ.get('YOQART_OCR', '1') != '0'
+MAX_PAGES = int(os.environ.get('YOQART_MAX_PAGES', '300'))
+
+
+class Fail(Exception):
+    def __init__(self, msg, code=EXIT_FAIL):
+        super().__init__(msg); self.code = code
+
+
+def log(*a):
+    print(*a, file=sys.stderr)
+
+
+# ---------------------------------------------------------------- input checks
+def check_input(src):
+    from pypdf import PdfReader
+    try:
+        r = PdfReader(src)
+        if r.is_encrypted:
+            try:
+                ok = r.decrypt('')
+            except Exception:
+                ok = 0
+            if not ok:
+                raise Fail('encrypted', EXIT_ENCRYPTED)
+        n = len(r.pages)
+    except Fail:
+        raise
+    except Exception as e:
+        raise Fail(f'unreadable pdf: {e}')
+    if n == 0:
+        raise Fail('pdf has no pages')
+    if n > MAX_PAGES:
+        raise Fail(f'pdf has {n} pages (limit {MAX_PAGES})')
+    return n
+
+
+# ---------------------------------------------------------------- OCR helper (tesseract CLI)
+def have(binary):
+    return shutil.which(binary) is not None
+
+
+def ocr_pages(src, dpi=200):
+    """Return list of per-page OCR text using poppler + tesseract. Empty list if tools missing."""
+    if not (USE_OCR and have('pdftoppm') and have('tesseract')):
+        return []
+    out = []
+    with tempfile.TemporaryDirectory(prefix='yq-ocr-') as d:
+        subprocess.run(['pdftoppm', '-r', str(dpi), '-png', src, os.path.join(d, 'p')], check=True, timeout=240,
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        for f in sorted(x for x in os.listdir(d) if x.endswith('.png')):
+            r = subprocess.run(['tesseract', os.path.join(d, f), '-', '--psm', '6'], capture_output=True, text=True, timeout=120)
+            out.append(r.stdout if r.returncode == 0 else '')
+    return out
+
+
+# ---------------------------------------------------------------- number parsing for Excel
+_num = re.compile(r'^\(?[-+]?\s*(?:[$€£₹¥]|Rs\.?|INR|USD)?\s*[-+]?\d[\d,]*(?:\.\d+)?\s*%?\)?$', re.I)
+
+
+def coerce(val):
+    """Turn '₹1,234.50', '(500)', '12%' into (number, number_format). Anything else stays text."""
+    if val is None:
+        return '', None
+    if not isinstance(val, str):
+        return val, None
+    s = val.strip()
+    if not s:
+        return '', None
+    if not _num.match(s):
+        return s, None
+    neg = s.startswith('(') and s.endswith(')') or s.startswith('-') or '(-' in s
+    pct = s.endswith('%')
+    sym = re.search(r'[$€£₹¥]|Rs\.?|INR|USD', s, re.I)
+    digits = re.sub(r'[^\d.]', '', s)
+    if digits.count('.') > 1 or not digits or digits == '.':
+        return s, None
+    # Leading zeros ("007", phone / account numbers) are identifiers, keep as text.
+    if re.match(r'^0\d', digits) and '.' not in digits and not sym and not pct:
+        return s, None
+    try:
+        n = float(digits)
+    except ValueError:
+        return s, None
+    if neg:
+        n = -n
+    if pct:
+        return n / 100.0, '0.00%' if '.' in digits else '0%'
+    if n == int(n) and '.' not in digits:
+        n = int(n)
+        return n, '#,##0' if ',' in s or abs(n) >= 1000 else None
+    return n, '#,##0.00'
+
+
+# ---------------------------------------------------------------- XLSX writer
+def write_workbook(sheets, dst):
+    """sheets: list of (title, [ [cells...], ... ], header_rows_count)"""
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, Border, Side, Alignment, PatternFill
+    from openpyxl.utils import get_column_letter
+    wb = Workbook(); wb.remove(wb.active)
+    thin = Side(style='thin', color='B7BEC9'); border = Border(left=thin, right=thin, top=thin, bottom=thin)
+    used = set()
+    for title, rows, hdr in sheets:
+        t = re.sub(r'[\[\]\*\?/\\:]', ' ', title)[:28] or 'Sheet'
+        base, i = t, 2
+        while t in used:
+            t = f'{base[:25]} {i}'; i += 1
+        used.add(t)
+        ws = wb.create_sheet(t)
+        for ri, row in enumerate(rows, 1):
+            for ci, raw in enumerate(row, 1):
+                v, fmt = coerce(raw)
+                c = ws.cell(ri, ci, v)
+                if isinstance(v,str): c.data_type = "s"  # PDF text must never become an Excel formula.
+                if fmt: c.number_format = fmt
+                c.alignment = Alignment(vertical='top', wrap_text=True, horizontal='right' if isinstance(v, (int, float)) else None)
+                c.border = border
+                if ri <= hdr:
+                    c.font = Font(bold=True); c.fill = PatternFill('solid', fgColor='EEF0F7')
+        widths = {}
+        for row in rows:
+            for ci, raw in enumerate(row, 1):
+                widths[ci] = max(widths.get(ci, 8), min(48, len(str(raw or '')) + 2))
+        for ci, w in widths.items():
+            ws.column_dimensions[get_column_letter(ci)].width = w
+        if hdr: ws.freeze_panes = ws.cell(hdr + 1, 1)
+        ws.page_setup.fitToWidth = 1; ws.page_setup.fitToHeight = 0
+    if not wb.sheetnames:
+        raise Fail('no data', EXIT_EMPTY)
+    wb.save(dst)
+
+
+def validate_xlsx(path):
+    from openpyxl import load_workbook
+    if not os.path.isfile(path) or os.path.getsize(path) == 0:
+        raise Fail('xlsx missing/empty')
+    wb = load_workbook(path)
+    if not wb.sheetnames:
+        raise Fail('xlsx has no sheets')
+    cells = sum(1 for ws in wb for row in ws.iter_rows() for c in row if c.value not in (None, ''))
+    if cells == 0:
+        raise Fail('xlsx has no data', EXIT_EMPTY)
+
+
+def validate_docx(path):
+    import docx
+    if not os.path.isfile(path) or os.path.getsize(path) == 0:
+        raise Fail('docx missing/empty')
+    if not zipfile.is_zipfile(path):
+        raise Fail('docx is not a zip package')
+    with zipfile.ZipFile(path) as z:
+        if z.testzip() is not None or 'word/document.xml' not in z.namelist():
+            raise Fail('docx structure invalid')
+    d = docx.Document(path)
+    text = ''.join(p.text for p in d.paragraphs).strip()
+    has_media = any(r.reltype.endswith('/image') for r in d.part.rels.values())
+    if not text and not d.tables and not has_media:
+        raise Fail('docx has no content', EXIT_EMPTY)
+
+
+# ---------------------------------------------------------------- Docling
+_docling_conv = None
+
+
+def docling_converter():
+    """Build a DocumentConverter once. Uses current documented Docling API (PdfPipelineOptions)."""
+    global _docling_conv
+    if _docling_conv is not None:
+        return _docling_conv
+    from docling.document_converter import DocumentConverter, PdfFormatOption
+    from docling.datamodel.base_models import InputFormat
+    from docling.datamodel.pipeline_options import PdfPipelineOptions
+    opts = PdfPipelineOptions()
+    opts.do_ocr = USE_OCR                       # OCRs bitmap regions; selectable text is read directly
+    opts.do_table_structure = True              # TableFormer
+    opts.table_structure_options.do_cell_matching = True
+    opts.generate_picture_images = True         # needed for embedding figures in DOCX
+    opts.images_scale = 2.0
+    if os.environ.get('YOQART_OCR_ENGINE', '').lower() == 'tesseract':
+        from docling.datamodel.pipeline_options import TesseractCliOcrOptions
+        opts.ocr_options = TesseractCliOcrOptions()
+    _docling_conv = DocumentConverter(format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=opts)})
+    return _docling_conv
+
+
+def docling_convert(src):
+    res = docling_converter().convert(src)
+    return res.document
+
+
+def docling_table_rows(table, doc):
+    """Rows (list of list of str) + number of header rows from a Docling TableItem."""
+    data = table.data
+    nrows, ncols = data.num_rows, data.num_cols
+    grid = [[''] * ncols for _ in range(nrows)]
+    hdr = 0
+    for cell in data.table_cells:
+        txt = (cell.text or '').strip()
+        r0, r1 = cell.start_row_offset_idx, cell.end_row_offset_idx
+        c0, c1 = cell.start_col_offset_idx, cell.end_col_offset_idx
+        for r in range(r0, min(r1, nrows)):
+            for c in range(c0, min(c1, ncols)):
+                if r == r0 and c == c0:
+                    grid[r][c] = txt
+        if getattr(cell, 'column_header', False):
+            hdr = max(hdr, r1)
+    grid = [row for row in grid if any(x for x in row)]
+    return grid, min(hdr, len(grid))
+
+
+def table_page(item):
+    try:
+        return item.prov[0].page_no
+    except Exception:
+        return None
+
+
+def docling_to_excel(src, dst):
+    doc = docling_convert(src)
+    sheets, counts = [], {}
+    for t in doc.tables:
+        rows, hdr = docling_table_rows(t, doc)
+        if not rows or max(len(r) for r in rows) < 1:
+            continue
+        pg = table_page(t) or 0
+        counts[pg] = counts.get(pg, 0) + 1
+        sheets.append((f'P{pg} Table {counts[pg]}', rows, hdr))
+    sheets = merge_continued_tables(sheets)
+    if not sheets:
+        # No tables detected: keep the text, one line per row, so the workbook is never empty.
+        lines = [t.strip() for t in doc.export_to_text().splitlines() if t.strip()] if hasattr(doc, 'export_to_text') else []
+        if not lines:
+            raise Fail('docling found no tables or text', EXIT_EMPTY)
+        sheets = [('Text', [[l] for l in lines], 0)]
+    write_workbook(sheets, dst)
+
+
+def merge_continued_tables(sheets):
+    """Join tables on consecutive pages that share the same column count (multi-page tables)."""
+    out = []
+    for title, rows, hdr in sheets:
+        m = re.match(r'P(\d+) ', title)
+        pg = int(m.group(1)) if m else None
+        if out and pg is not None and out[-1][3] is not None and pg == out[-1][3] + 1 \
+                and rows and len(rows[0]) == len(out[-1][1][0]):
+            prev = out[-1]
+            body = rows[hdr:] if hdr and rows[:hdr] == prev[1][:prev[2]] else rows
+            out[-1] = (prev[0], prev[1] + body, prev[2], pg)
+        else:
+            out.append((title, rows, hdr, pg))
+    return [(t, r, h) for t, r, h, _ in out]
+
+
+def docling_to_word(src, dst):
+    import docx
+    from docx.shared import Inches
+    from docling_core.types.doc import DocItemLabel
+    doc = docling_convert(src)
+    d = docx.Document()
+    wrote = False
+    for item, level in doc.iterate_items():
+        cls = type(item).__name__
+        label = getattr(item, 'label', None)
+        if cls == 'TableItem':
+            rows, hdr = docling_table_rows(item, doc)
+            if rows:
+                ncols = max(len(r) for r in rows)
+                t = d.add_table(rows=len(rows), cols=ncols)
+                t.style = 'Table Grid'
+                for ri, r in enumerate(rows):
+                    for ci, v in enumerate(r):
+                        cell = t.cell(ri, ci); cell.text = v
+                        if ri < hdr:
+                            for p in cell.paragraphs:
+                                for run in p.runs: run.bold = True
+                d.add_paragraph(); wrote = True
+        elif cls == 'PictureItem':
+            try:
+                img = item.get_image(doc)
+                if img is not None:
+                    buf = io.BytesIO(); img.convert('RGB').save(buf, 'PNG'); buf.seek(0)
+                    d.add_picture(buf, width=Inches(min(6.0, max(1.0, img.width / 144.0)))); wrote = True
+            except Exception as e:
+                log('picture skipped:', e)
+        elif cls == 'SectionHeaderItem' or label == DocItemLabel.TITLE:
+            txt = (getattr(item, 'text', '') or '').strip()
+            if txt:
+                lvl = 0 if label == DocItemLabel.TITLE else min(max(getattr(item, 'level', 1), 1), 4)
+                d.add_heading(txt, level=lvl); wrote = True
+        elif cls == 'ListItem':
+            txt = (item.text or '').strip()
+            if txt:
+                d.add_paragraph(txt, style='List Number' if getattr(item, 'enumerated', False) else 'List Bullet'); wrote = True
+        elif label in (DocItemLabel.PAGE_HEADER, DocItemLabel.PAGE_FOOTER):
+            continue
+        elif hasattr(item, 'text'):
+            txt = (item.text or '').strip()
+            if txt:
+                d.add_paragraph(txt); wrote = True
+    if not wrote:
+        raise Fail('docling produced no content', EXIT_EMPTY)
+    d.save(dst)
+
+
+# ---------------------------------------------------------------- Fallback converters
+def fallback_word(src, dst):
+    """pdf2docx (layout-preserving) first; if unavailable/failing, pdfplumber+python-docx; scanned pages via OCR."""
+    try:
+        from pdf2docx import Converter
+        cv = Converter(src)
+        try:
+            cv.convert(dst)
+        finally:
+            cv.close()
+        validate_docx(dst)
+        return 'pdf2docx'
+    except Fail as e:
+        if e.code == EXIT_EMPTY:
+            log('pdf2docx output empty, trying text/OCR path')
+        else:
+            log('pdf2docx invalid output:', e)
+    except Exception as e:
+        log('pdf2docx unavailable/failed:', e)
+    if os.path.exists(dst):
+        os.remove(dst)
+    return plumber_word(src, dst)
+
+
+
+def page_blocks(page):
+    """Split a pdfplumber page into ('h1'|'h2'|'h3'|'p', text) blocks using font size and line spacing."""
+    chars = page.chars
+    if not chars:
+        return []
+    from collections import defaultdict
+    lines = defaultdict(list)
+    for c in chars:
+        if c['text'].strip() or True:
+            lines[round(c['top'] / 2)].append(c)
+    # merge buckets that belong to the same visual line
+    rows = []
+    for k in sorted(lines):
+        cs = sorted(lines[k], key=lambda c: c['x0'])
+        top = min(c['top'] for c in cs)
+        if rows and abs(top - rows[-1]['top']) < 2.5:
+            rows[-1]['chars'] += cs; rows[-1]['chars'].sort(key=lambda c: c['x0'])
+        else:
+            rows.append({'top': top, 'bottom': max(c['bottom'] for c in cs), 'chars': cs})
+    sizes = sorted(c['size'] for r in rows for c in r['chars'] if c['text'].strip())
+    if not sizes:
+        return []
+    body = sizes[len(sizes) // 2]
+    out, cur, prev_bottom, prev_kind = [], [], None, None
+    def flush():
+        nonlocal cur
+        if cur:
+            out.append((prev_kind, ' '.join(cur))); cur = []
+    for r in rows:
+        txt = ''
+        last = None
+        for c in r['chars']:
+            if last is not None and c['x0'] - last['x1'] > max(1.0, c['size'] * 0.2):
+                txt += ' '
+            txt += c['text']; last = c
+        txt = ' '.join(txt.split())
+        if not txt:
+            continue
+        sz = max(c['size'] for c in r['chars'] if c['text'].strip())
+        kind = 'h1' if sz >= body * 1.6 else 'h2' if sz >= body * 1.3 else 'h3' if sz >= body * 1.12 else 'p'
+        height = max(r['bottom'] - r['top'], 1)
+        gap = (r['top'] - prev_bottom) if prev_bottom is not None else 0
+        if cur and (kind != prev_kind or kind != 'p' or gap > height * 0.6):
+            flush()
+        prev_kind = kind
+        cur.append(txt)
+        prev_bottom = r['bottom']
+    flush()
+    return out
+
+def plumber_word(src, dst):
+    import pdfplumber, docx
+    d = docx.Document()
+    wrote = False
+    ocr = None
+    with pdfplumber.open(src) as pdf:
+        for pi, page in enumerate(pdf.pages):
+            if pi:
+                d.add_page_break()
+            tables = []
+            try:
+                tables = page.find_tables()
+            except Exception:
+                pass
+            boxes = [t.bbox for t in tables]
+            def outside(obj):
+                cx, cy = (obj['x0'] + obj['x1']) / 2, (obj['top'] + obj['bottom']) / 2
+                return not any(b[0] <= cx <= b[2] and b[1] <= cy <= b[3] for b in boxes)
+            blocks = []
+            try:
+                blocks = page_blocks(page.filter(outside) if boxes else page)
+            except Exception as e:
+                log('layout analysis failed, plain text used:', e)
+                txt = page.extract_text() or ''
+                blocks = [('p', ' '.join(x.split())) for x in re.split(r'\n\s*\n', txt) if x.strip()]
+            if not blocks and not tables:
+                if ocr is None:
+                    ocr = ocr_pages(src)
+                txt = ocr[pi] if pi < len(ocr) else ''
+                blocks = [('p', ' '.join(x.split())) for x in re.split(r'\n\s*\n', txt) if x.strip()]
+            for kind, txt in blocks:
+                if kind.startswith('h'):
+                    d.add_heading(txt, level=int(kind[1])); wrote = True
+                else:
+                    d.add_paragraph(txt); wrote = True
+            for t in tables:
+                rows = [[(c or '').strip() for c in r] for r in (t.extract() or [])]
+                rows = [r for r in rows if any(r)]
+                if rows:
+                    ncols = max(len(r) for r in rows)
+                    tb = d.add_table(rows=len(rows), cols=ncols); tb.style = 'Table Grid'
+                    for ri, r in enumerate(rows):
+                        for ci, v in enumerate(r):
+                            tb.cell(ri, ci).text = v
+                    d.add_paragraph(); wrote = True
+    if not wrote:
+        raise Fail('no text found', EXIT_EMPTY)
+    d.save(dst)
+    return 'pdfplumber+python-docx'
+
+
+def looks_like_table(t, strict=False):
+    if not t or len(t) < 2 or max(len(r) for r in t) < 2:
+        return False
+    if not strict:
+        return True
+    # Text-alignment detection also fires on prose; require a real grid: >=3 rows, >=3 cols, most rows multi-cell,
+    # and a meaningful share of numeric cells.
+    ncols = max(len(r) for r in t)
+    filled = [sum(1 for c in r if (c or '').strip()) for r in t]
+    multi = sum(1 for f in filled if f >= 2)
+    cells = [(c or '').strip() for r in t for c in r if (c or '').strip()]
+    numeric = sum(1 for c in cells if _num.match(c))
+    return len(t) >= 3 and ncols >= 3 and multi >= 0.7 * len(t) and numeric >= 0.25 * max(len(cells), 1)
+
+
+def fallback_excel(src, dst):
+    import pdfplumber
+    sheets, counts = [], {}
+    text_rows = {}
+    strategies = [
+        {'vertical_strategy': 'lines', 'horizontal_strategy': 'lines', 'snap_tolerance': 4, 'intersection_tolerance': 5},
+        {'vertical_strategy': 'text', 'horizontal_strategy': 'text', 'snap_tolerance': 4, 'min_words_vertical': 2, 'min_words_horizontal': 2},
+    ]
+    with pdfplumber.open(src) as pdf:
+        for pi, page in enumerate(pdf.pages, 1):
+            found = []
+            for ts in strategies:
+                try:
+                    found = [t for t in page.extract_tables(table_settings=ts) or [] if looks_like_table(t, strict=ts['vertical_strategy'] == 'text')]
+                except Exception:
+                    found = []
+                if found:
+                    break
+            for t in found:
+                rows = [[(c or '').replace('\n', ' ').strip() for c in r] for r in t]
+                rows = [r for r in rows if any(r)]
+                if rows:
+                    counts[pi] = counts.get(pi, 0) + 1
+                    sheets.append((f'P{pi} Table {counts[pi]}', rows, 1))
+            if not found:
+                try:
+                    lines = (page.extract_text() or '').splitlines()
+                except Exception:
+                    lines = []
+                text_rows[pi] = [re.split(r'\s{2,}', l.strip()) for l in lines if l.strip()]
+    sheets = merge_continued_tables(sheets)
+    if not sheets:
+        if not any(text_rows.values()):
+            ocr = ocr_pages(src)
+            for pi, t in enumerate(ocr, 1):
+                text_rows[pi] = [re.split(r'\s{2,}', l.strip()) for l in t.splitlines() if l.strip()]
+        for pi, rows in text_rows.items():
+            if rows:
+                sheets.append((f'Page {pi}', rows, 0))
+    if not sheets:
+        raise Fail('no tables or text', EXIT_EMPTY)
+    write_workbook(sheets, dst)
+    return 'pdfplumber+openpyxl'
+
+
+# ---------------------------------------------------------------- Orchestration
+def convert(kind, src, dst):
+    check_input(src)
+    primary = docling_to_word if kind == 'word' else docling_to_excel
+    fallback = fallback_word if kind == 'word' else fallback_excel
+    validate = validate_docx if kind == 'word' else validate_xlsx
+    engine = None
+    if USE_DOCLING:
+        try:
+            primary(src, dst)
+            validate(dst)
+            engine = 'docling'
+        except ImportError as e:
+            log('Docling not installed:', e)
+        except Exception as e:
+            log('Docling failed, using fallback:', repr(e)); log(traceback.format_exc()[-1500:])
+        if engine is None and os.path.exists(dst):
+            os.remove(dst)
+    if engine is None:
+        engine = fallback(src, dst)
+        validate(dst)
+    print(engine)
+
+
+def verify_encrypted(path, pw):
+    from pypdf import PdfReader
+    r = PdfReader(path)
+    if not r.is_encrypted:
+        raise Fail('output not encrypted')
+    if r.decrypt('') != 0:
+        raise Fail('output opens without password')
+    if r.decrypt(pw) == 0:
+        raise Fail('password does not open output')
+    if len(r.pages) == 0:
+        raise Fail('no pages')
+
+
+def engines():
+    out = {}
+    for m in ('docling', 'pdf2docx', 'pdfplumber', 'openpyxl', 'docx', 'pypdf'):
+        try:
+            __import__(m); out[m] = True
+        except Exception:
+            out[m] = False
+    out['tesseract'] = have('tesseract'); out['pdftoppm'] = have('pdftoppm')
+    print(json.dumps(out))
+
+
+if __name__ == '__main__':
+    try:
+        cmd = sys.argv[1]
+        if cmd in ('word', 'excel'):
+            convert(cmd, sys.argv[2], sys.argv[3])
+        elif cmd == 'verify-encrypted':
+            verify_encrypted(sys.argv[2], sys.argv[3])
+        elif cmd == 'engines':
+            engines()
+        else:
+            raise SystemExit('Unknown command')
+    except Fail as e:
+        log('FAIL:', e); sys.exit(e.code)
+    except SystemExit:
+        raise
+    except Exception:
+        log(traceback.format_exc()); sys.exit(EXIT_FAIL)

@@ -1,4 +1,9 @@
 node_modules/
 .wrangler/
-.dev.vars
-.env
+.dev.vars*
+.env*
+!.env.example
+build/
+__pycache__/
+*.pyc
+test-output/
